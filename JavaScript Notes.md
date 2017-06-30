@@ -1,5 +1,31 @@
 # JavaScript Notes
 
+<!-- MarkdownTOC -->
+
+- Variables
+- Select elements
+- Attribute methods
+- DOM manipulation
+- Event
+- Position
+- Promises
+- ES6 Functions
+    - Default parameters in ES6
+    - Rest Parameters
+    - Arrow Functions
+- ES6 classes, inheritance, and static members
+- ES6 arrays
+    - Array.from
+    - Array.of
+    - Array.keys, Array.values, Array.entries
+    - Array.find
+    - Array.findIndex
+    - Array.fill
+    - Array.copyWithin
+
+<!-- /MarkdownTOC -->
+
+
 ## Variables
 **Variable hoisting**: The JavaScript engine treats all variable declarations using `var` as if they are declared at the top of a functional scope (if declared inside a function) or global scope (if declared outside of a function) regardless of where the actual declaration occurs.
 
@@ -235,3 +261,61 @@ console.log(MySubClass.myStaticProperty); // logs: "Goodbye"
 ```
 
 JavaScript classes are just wrappers around JavaScript’s already existing [prototype-based inheritance](http://www.w3schools.com/js/js_object_prototypes.asp).
+
+## ES6 arrays
+### Array.from
+`Array.from`: create arrays from other types of collections
+Select a group of DOM nodes: 
+```javascript
+Array.from(document.querySelectorAll('*'))  // returns Array
+```
+
+`Array.from` can also be used instead of `Array.map` to map elements.
+```javascript
+Array.from(document.querySelectorAll(‘*’), console.log)
+```
+
+Use `Array.from` to populate new Arrays:
+```javascript
+Array.from(new Array(5), k=>'val')
+// ['val','val','val','val','val']
+```
+
+### Array.of
+Can be used as an alternative to the Array constructor, and when passed a single number, will create that value as an element in the array, instead of creating that number of elements — which is what the Array constructor does.
+```javascript
+Array.of(5)
+\\[5]
+Array.of(5, 6)
+\\[5, 6]
+new Array(5)
+\\ [undefined x 5]
+```
+
+### Array.keys, Array.values, Array.entries
+Return iterators for the keys, values, and entries of an array, respectively. `.next()` can be called to advance the array.
+
+### Array.find
+Takes a function to find an element in the array, and returns undefined if it does not exist.
+```javascript
+['a', 'b', 'c'].find(k => k=='b')
+\\ 'b'
+```
+
+### Array.findIndex
+Works similarly to `Array.find`, and returns the index where the element was found, or `-1`.
+
+### Array.fill
+Fills an array with a value, with optional start and end indexes. Has the signature `Array.fill(value, start, end)`
+
+### Array.copyWithin
+Copy blocks of elements to other parts of the array. Has the signature `Array.copyWithin(target, start, end)`. The target is the element index to be copied over. Start and end are optional, and are the elements to be copied.
+```javascript
+[1, 2, 3, 4, 5, 6, 7, 8].copyWithin(2, 5)
+\\ The third element (target index=2) will be copied over with the values starting at element index 5.
+\\ [ 1, 2, 6, 7, 8, 6, 7, 8]
+
+[1, 2, 3, 4, 5, 6, 7, 8].copyWithin(2, 5, 6)
+\\ An end value of 6 means only one element (index 5–6) is copied over.
+\\ [1, 2, 6, 4, 5, 6, 7, 8]
+```
