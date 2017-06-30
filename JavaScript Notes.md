@@ -30,12 +30,12 @@ Accessing a `let` or `const` variables before they’re declared will throw a `R
 - `id`: get or set the value of the id attribute
 
 ## DOM manipulation
-`appendChild()`
-`removeChild()`
-`replaceChild()`
-`insertBefore()`
-`createElement()`
-`createTextNode()`
+- `appendChild()`
+- `removeChild()`
+- `replaceChild()`
+- `insertBefore()`
+- `createElement()`
+- `createTextNode()`
 
 ## Event
 - Using HTML event handlers is bad practice. For example, do not use `<a onclick="hide()">`. It is better to separate JavaScript from the HTML.
