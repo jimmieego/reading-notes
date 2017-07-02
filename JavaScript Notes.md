@@ -10,18 +10,22 @@
 - Position
 - Promises
 - ES6 Functions
-    - Default parameters in ES6
-    - Rest Parameters
-    - Arrow Functions
+  - Default parameters in ES6
+  - Rest Parameters
+  - Arrow Functions
 - ES6 classes, inheritance, and static members
 - ES6 arrays
-    - Array.from
-    - Array.of
-    - Array.keys, Array.values, Array.entries
-    - Array.find
-    - Array.findIndex
-    - Array.fill
-    - Array.copyWithin
+  - Array.from
+  - Array.of
+  - Array.keys, Array.values, Array.entries
+  - Array.find
+  - Array.findIndex
+  - Array.fill
+  - Array.copyWithin
+- Map, filter and reduce
+  - Map
+  - Filter
+  - Reduce
 
 <!-- /MarkdownTOC -->
 
@@ -319,3 +323,125 @@ Copy blocks of elements to other parts of the array. Has the signature `Array.co
 \\ An end value of 6 means only one element (index 5–6) is copied over.
 \\ [1, 2, 6, 4, 5, 6, 7, 8]
 ```
+
+
+## Map, filter and reduce
+- If I already have an array and I want to do the exact same **operation** on each of the elements in the array and return the same amount of items in the array, use the `map`.
+- If I already have an array, but I only want to have items in the array that match certain criteria, use `filter`.
+- If I already have an array, but I want to use the values in that array to **create** something completely new, use `reduce`. 
+
+Advantages:
+- Avoid mutating an array inside a `forEach` or `for` loop.
+- Assign its result directly to a new variable, rather than push into an array defined eleswhere. 
+
+### Map
+Defined on `Array.prototype`. Can call it on any array. It accepts a callback as its first argument. It executes that callback on every element within the array, returning a *new* array with all of the values that the callback returned.
+
+```javascript
+const animals = [
+    {
+        "name": "cat",
+        "size": "small",
+        "weight": 5
+    },
+    {
+        "name": "dog",
+        "size": "small",
+        "weight": 10
+    },
+    {
+        "name": "lion",
+        "size": "medium",
+        "weight": 150
+    },
+    {
+        "name": "elephant",
+        "size": "big",
+        "weight": 5000
+    }
+]
+
+let animal_names = animals.map((animal, index, animals) => {
+    return animal.name
+})
+
+//another version
+let animal_names = animals.map(function (animal, index, animals) {
+    return animal.name; 
+});
+
+//ES6
+let animal_names = animals.map((animal) => animal.name );
+```
+
+`map` accepts three values in the callback function, namely:
+- The current item of the array
+- The current index of the current item
+- The entire array
+
+Implementation of `map`:
+```javascript
+var map = function (array, callback) {
+ 
+    var new_array = [];
+ 
+    array.forEach(function (element, index, array) {
+       new_array.push(callback(element)); 
+    });
+ 
+    return new_array;
+ 
+};
+```
+
+### Filter
+Defined on `Array.prototype`. Pass it a callback as its first argument. `filter` executes the callback on each element of the array, and return a new array containing only the elements for which the callback returned `true`.
+
+```javascript
+let small_animals = animals.filter((animal) => {
+    return animal.size === "small"
+})
+
+//ES6
+let small_animals = animals.filter((animal => animal.size === "small"));
+```
+The `filter` operator accepts the same parameters (current item, index and entire array) in the callback function. Need to make sure that the `return` returns a boolean value.
+
+Implementation:
+```javascript
+var filter = function (array, callback) {
+ 
+    var filtered_array = [];
+ 
+    array.forEach(function (element, index, array) {
+        if (callback(element, index, array)) {
+            filtered_array.push(element);    
+        }
+    });
+ 
+    return filtered_array;
+ 
+};
+```
+
+### Reduce
+`reduce` takes all of the elements in an array and reduces them into a **single** value. First argument is the callback. Second, optional argument is the value to start combining all array elements into. 
+
+```javascript
+let total_weight = animals.reduce((weight, animal, index, animals) => {
+    return weight += animal.weight
+}, 0)
+```
+- The first parameter is the total-so-far, or accumulated value. 
+- The second parameter is the current item in the array.
+- The third parameter is the current index.
+- The last parameter is the full array.
+
+```javascript
+var total = [1, 2, 3, 4, 5].reduce(function (previous, current) {
+    return previous + current;
+}, 0); // The second argument of reduce, 0, is the previous value for the first iteration.
+```
+The callback gets a previous value on each iteration. On the first iteration, there is no previous value. You have the option to pass `reduce` an initial value. It acts as the "previous value" for the first iteration.
+
+It returns the end value of the first parameter at the end of each `reduce` function. 
