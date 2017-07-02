@@ -431,6 +431,9 @@ var filter = function (array, callback) {
 let total_weight = animals.reduce((weight, animal, index, animals) => {
     return weight += animal.weight
 }, 0)
+
+//ES6
+let total_weight = animals.reduce((weight, animal) => weight + animal.weight );
 ```
 - The first parameter is the total-so-far, or accumulated value. 
 - The second parameter is the current item in the array.
@@ -445,3 +448,16 @@ var total = [1, 2, 3, 4, 5].reduce(function (previous, current) {
 The callback gets a previous value on each iteration. On the first iteration, there is no previous value. You have the option to pass `reduce` an initial value. It acts as the "previous value" for the first iteration.
 
 It returns the end value of the first parameter at the end of each `reduce` function. 
+
+Implementation:
+```javascript
+var reduce = function (array, callback, initial) {
+    var accumulator = initial || 0;
+     
+    array.forEach(function (element) {
+       accumulator = callback(accumulator, element);
+    });
+     
+    return accumulator;
+};
+```
