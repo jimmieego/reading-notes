@@ -3,6 +3,7 @@
 <!-- MarkdownTOC -->
 
 - Variables
+- Objects
 - Select elements
 - Attribute methods
 - DOM manipulation
@@ -42,6 +43,31 @@ Also, no error is thrown if a `let` declaration creates a variable with the same
 `const`: The variable can't be reassigned. Every `const` declaration must be initialized at the time of declaration. Its lifecycle is the same as `let`. (Note: properties can be mutated. So for true immutability, use Immutable.js or Mori.)
 
 Accessing a `let` or `const` variables before they’re declared will throw a `ReferenceError`.
+
+## Objects
+Any value in JavaScript that is not a string, a number, `true`, `false`, `null`, or `undefined` is an object. Objects are *mutable* and are manipulated by *reference* rather than by value. 
+
+Properties of objects have associated values called *property attributes*:
+- *writable*: whether the value of the property can be set
+- *enumerable*: whether the property name is returned by a `for` or `in` loop
+- *configurable*: whether the property can be deleted and whether its attributes can be altered
+
+Every object has three associated *object attributes*:
+- *prototype*: reference to another object from which properties are inherited
+- *class*: a string that categorizes the type of an object
+- *extensible*: flag that specifies (in ES5) whether new properties may be added to the object
+
+ES5 defines `Object.create()`. First argument is the prototype of the object. Second argument describes the properties of the new object (*property attributes*). This provides the ability to create a new object with an arbitrary prototype. 
+```javascript
+let obj = Object.create({x:1, y:2});
+```  
+
+We can use square brackets (array notation) to get or set an object's property. Inside the square brackets is a string value which could be dynamic and can change at runtime. The dot notation (.) only works with property identifier which is static and must be hardcoded in the program. 
+```javascript
+let title = book["main title"];
+book["main title"] = "ECMAScript";
+```
+
 
 ## Select elements
 - Select an individual element: `getElementById()`, `querySelector()`
