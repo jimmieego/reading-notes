@@ -4,6 +4,11 @@
 
 - Variables
 - Objects
+  - Property attributes
+  - Object attributes
+  - Inheritance
+  - Create object
+  - Object properties
 - Select elements
 - Attribute methods
 - DOM manipulation
@@ -47,26 +52,52 @@ Accessing a `let` or `const` variables before they’re declared will throw a `R
 ## Objects
 Any value in JavaScript that is not a string, a number, `true`, `false`, `null`, or `undefined` is an object. Objects are *mutable* and are manipulated by *reference* rather than by value. 
 
+### Property attributes
 Properties of objects have associated values called *property attributes*:
 - *writable*: whether the value of the property can be set
 - *enumerable*: whether the property name is returned by a `for` or `in` loop
 - *configurable*: whether the property can be deleted and whether its attributes can be altered
 
+### Object attributes
 Every object has three associated *object attributes*:
 - *prototype*: reference to another object from which properties are inherited
 - *class*: a string that categorizes the type of an object
 - *extensible*: flag that specifies (in ES5) whether new properties may be added to the object
 
+The *prototype* attribute of an object creates a chain or linked list from which properties are inherited.
+
+### Inheritance
+Inheritance occurs when querying properties but not when setting them is a key feature of JavaScript. It allows us to selectively override inherited properties.   
+
+### Create object
 ES5 defines `Object.create()`. First argument is the prototype of the object. Second argument describes the properties of the new object (*property attributes*). This provides the ability to create a new object with an arbitrary prototype. 
 ```javascript
 let obj = Object.create({x:1, y:2});
-```  
+```
 
+### Object properties
 We can use square brackets (array notation) to get or set an object's property. Inside the square brackets is a string value which could be dynamic and can change at runtime. The dot notation (.) only works with property identifier which is static and must be hardcoded in the program. 
 ```javascript
 let title = book["main title"];
 book["main title"] = "ECMAScript";
 ```
+
+#### Delete properties
+The `delete` operator removes a property from an object. The `delete` operator only deletes own properties, not inherited ones. 
+```javascript
+delete book.author;
+delete book["main title"];
+```
+Note: `delete` does not remove properties that have a `configurable` attribute of `false`. Certain properties of the built-in objects are nonconfigurable, as are properties of the global object created by variable declaration and function declaration. 
+
+#### Test properties
+The `in` operator expects a property name as a string on its left side and an object on its right. It returns `true` if the object has an own property or an inherited property by that name. 
+
+It is often sufficient to query the property and use `!==` to make sure it is not `undefined`, but `in` can distinguish between properties that do not exist and properties that exist but have been set to `undefined`.
+
+The `hasOwnProperty()` method of an object tests whether that object has an own property with the given name. It returns `false` for inherited properties. 
+
+The `propertyIsEnumerable()` refines the `hasOwnProperty()` test. It returns `true` only if the named property is an own property and its `enumerable` attribute is `true`.
 
 
 ## Select elements
