@@ -1,5 +1,5 @@
 # Build portfolio
-## (4 Practical Tips for Building Your Design Portfolio)[https://webdesign.tutsplus.com/articles/4-practical-tips-for-building-your-design-portfolio--cms-28976]
+## [4 Practical Tips for Building Your Design Portfolio](https://webdesign.tutsplus.com/articles/4-practical-tips-for-building-your-design-portfolio--cms-28976)
 Tell a story with each project. Keep the sequence of your design process clear and organized. Remember, every story has a beginning, middle and end. Show the context, your design iteration and the design decision-making process.
 
 As an extension of the first point, focus on why you made design decisions (whether that be justification through design principles or user data). Provide the relevant context, the problem, your solution, and for bonus points, explain what you would do differently and what you learned from the process.
