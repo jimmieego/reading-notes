@@ -1,7 +1,7 @@
 # reading-notes
 This repo is for recording my notes from various readings
 
-- [Design](Design.html)
-- [Getting to Know ArcGIS 4ed](Getting to Know ArcGIS 4ed.html)
-- [JavaScript](JavaScript Notes.html)
+- [Design](https://jimmieego.github.io/reading-notes/Design.html)
+- [Getting to Know ArcGIS 4ed](https://jimmieego.github.io/reading-notes/Getting to Know ArcGIS 4ed.html)
+- [JavaScript](https://jimmieego.github.io/reading-notes/JavaScript Notes.html)
 
