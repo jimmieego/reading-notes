@@ -22,3 +22,19 @@ Space in web design can be divided into to types:
 2. **Macro whitespace** – is the space between major elements in your design. These spaces tend to be larger and are usually immediately apparent.
 
 Boxes can be overkill. Yes, they work well at separating things, but they do it too well and can sometimes harm the overall unity of the page. Space can be used instead of boxes to separate and connect. 
+
+# Concept model
+## [A Visual Vocabulary for Concept Models](https://medium.com/@cwodtke/a-visual-vocabulary-for-concept-models-f771b2b2e9)
+There are three types of relationships that concept models depict: 
+- System
+- Process
+- Comparison
+
+**System concept model**: explain the elements of the system and their organization. Example: bubble diagrams, vary the size of each element to express importance.
+
+**Process concept model**: shows how one things leads to the next. It usually describes a series of events, like a story or instructions. Process models tend to fall into two camps, loops and arcs.
+- Loops: a series of steps you repeat, possibly endlessly
+- Arcs: have a beginning, middle and end
+
+**Model for comparison**:  represents opposing concepts, and where elements exist along that continuum. Axis represent continuums, and the intersection of continuums allows new things to emerge. There is always an axis, even if we forget it exists. 
+
