@@ -38,3 +38,36 @@ There are three types of relationships that concept models depict:
 
 **Model for comparison**:  represents opposing concepts, and where elements exist along that continuum. Axis represent continuums, and the intersection of continuums allows new things to emerge. There is always an axis, even if we forget it exists. 
 
+# Grid
+## [How to Master the Design Grid](https://uxplanet.org/how-to-master-the-design-grid-547114080720)
+As long as your parent container is on the grid, the stuff inside that container can have some flexibility.
+
+In addition to the horizontal rhythm you’re creating with columns and gutters, there’s a vertical alignment and rhythm that you should create by using a **baseline grid**. A baseline is a pre-measured, incremental height that all objects and typography should be aligned to. Aligning design elements like images or containers to the baseline means making their heights a multiple of the baseline value (e.g., 7px or 8px). For typography, it means the line-height of that typeface is a multiple of the baseline value. It’s important to note that the font size doesn’t have to be a multiple of the baseline, only the *line height*.
+
+# Creative
+## [Stealing Your Way to Original Designs](http://danmall.me/articles/stealing-your-way-to-original-designs)
+Choose a few reference sources to imitate. This is key: be sure to choose sources far away from what you’re designing. Start smaller. Rather than try to use a whole page as a reference, pick a few different designs to source different elements from.
+
+Make gray boxes for content sections. Stub out each section by simply copying and pasting from source material into gray box document. This sets up with something to imitate and remix. Next, trace over stubbed-out version with simple shapes to get a feel for how it could work together. Start to remix a bit by choosing some new colors. Next, fill in some text content by tracing over the text of the original stubs, but trying to unify them by remixing them with the same typeface. Now that you have a good approximation of all content, start to draw a grid so you can organize that content appropriately. The approach to grids could be to start with content and use the least amount of columns possible. 
+
+The key to stealing in a way that leads to something original is that your result needs to be unrecognizable from the source material as much as possible. Flipping the orientation of elements is a really useful way to to get around that. 
+
+## [Copy If You Can: Improving Your UI Design Skills With Copywork](https://www.smashingmagazine.com/2017/02/improving-ui-design-skills-copywork/)
+When you recreate a design, pixel for pixel, you’re forced to **remake** every decision the original designer made. You immerse yourself in the small design decisions made by awesome designers. Done right, copywork exposes you to design decisions you simply wouldn't have made on your own. 
+
+You can’t copy it worse than the original. You have to achieve something that you view as equal or better, even if the details don’t totally line up.
+
+Advice from designer Sean McCabe about avoiding plagiarism:
+- Soak up all the inspiration you want.
+- Sleep on it.
+- Produce your new work from memory.
+
+I’d recommend this exercise for more advanced copiers. Working blind, you’ll be making both the low-level and high-level decisions without guidance. If you’re trying to reproduce something above your level, there’s plenty to be learned from direct copying.
+
+There is remarkable consensus among artists and creative folk that creativity is fundamentally about mixing together what already exists. Nothing is entirely original.
+
+Copywork enables you to pick up inspiration and remix it into your own style. A casual glance at a great new design would only reveal the surface level of technique and style, but with copywork, you can go deep and really expand your skills.
+
+
+
+
