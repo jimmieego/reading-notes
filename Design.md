@@ -68,6 +68,9 @@ There is remarkable consensus among artists and creative folk that creativity is
 
 Copywork enables you to pick up inspiration and remix it into your own style. A casual glance at a great new design would only reveal the surface level of technique and style, but with copywork, you can go deep and really expand your skills.
 
+# Layout
+## Modular scale
+[Type Scale](http://type-scale.com/) is a visual calculator which will calculate the different values for you. Note that Type Scale gives you the line height also so don't forget to change this when you change the font sizes.
 
-
-
+## Line length
+The average character length per line should be between 45-75 characters.
