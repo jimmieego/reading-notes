@@ -32,6 +32,7 @@
   - Map
   - Filter
   - Reduce
+- Essential Functions
 
 <!-- /MarkdownTOC -->
 
@@ -518,3 +519,6 @@ var reduce = function (array, callback, initial) {
     return accumulator;
 };
 ```
+
+## Essential Functions
+- [debounce](https://gist.github.com/jimmieego/121b00f8276e1cf4f2ee13359465cf61)
