@@ -1,3 +1,29 @@
+# Selectors
+## Child selector
+Select all elements that are immediate children of a specified parent. 
+```css
+.classname > a { }
+```
+
+## Adjacent sibling
+Select elements that are the adjacent siblings of an element.
+```css
+h2 + p { }
+```
+
+## General sibling
+Select elements that are the siblings of an element.
+h2 ~ p { }
+
+## Attribute selectors
+- Select an attribute name: `input[type="text"]`
+- Select from a list of values: `*[class~=box]` selects any element with a class of `box`.
+- Select a value that starts with a string: `a[href^="https"]`
+- Select a value that ends with a string: `a[href$=".com"]`
+- Select a value that contains a string: `a[href*=".com"]`
+- Case insensitivity: `a[href^="http" i]`
+- Select a value or a value followed by a `-`: `span[lang|="en"]`
+
 # Sass
 Never edit or commit .css files.
 ## Variables
