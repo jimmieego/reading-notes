@@ -49,6 +49,12 @@ h2 ~ p { }
 - `em`: Using `em` as a length unit in layout, and in particular in padding and margins can help to maintain a vertical rhythm.
 - `rem`: The `rem` (root `em`) unit is the font-size of the root element, which is usually the `html` element.
 
+## Viewport percentage units
+- `vh`: 1/100th of the height of the viewport. `100vh` is the full height of the viewport.
+- `vw`: 1/100th of the width of the viewport.
+- `vmin`: equal to the smaller of `vh` or `vw`.
+- `vmax`: equal to the larger of `vh` or `vw`.
+
 # Sass
 Never edit or commit .css files.
 ## Variables
