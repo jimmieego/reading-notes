@@ -134,3 +134,41 @@ Or:
 
 @import "global/mixins";
 ```
+
+# Flexbox
+Reference: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+## Basic concepts
+The main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space, or shrinks them to prevent overflow. 
+
+The flexbox layout is direction-agnostic. 
+
+**Note**: Flexbox layout is most appropriate to the components of an application, and small-scale layouts, while the Grid layout is intended for larger scale layouts.
+
+**Flex container**: parent element
+**Flex items**: children
+
+## Flex container (parent) properties
+```css
+.container {
+	display: flex; /* or inline-flex */
+	flex-direction: row | row-reverse | column | column-reverse;
+	flex-wrap: nowrap | wrap | wrap-reverse;
+	flex-flow: <‘flex-direction’> || <‘flex-wrap’>; 
+	justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+	align-items: flex-start | flex-end | center | baseline | stretch; /*defines the default behaviour for how flex items are laid out along the cross axis on the current line */
+	align-content: flex-start | flex-end | center | space-between | space-around | stretch; /*aligns a flex container's lines within when there is extra space in the cross-axis; this property has no effect when there is only one line of flex items. */
+}
+```
+
+## Flex items (children) properties
+```css
+.item {
+	order: <integer>; /*controls the order in which flex items appear in the flex container */
+	flex-grow: <number>; /* default 0; accepts a unitless value that serves as a proportion. */
+	flex-shrink: <number>; /* default 1; defines the ability for a flex item to shrink if necessary. */
+	flex-basis: <length> | auto; /* default auto; defines the default size of an element before the remaining space is distributed.  */
+	flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ] /*This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. It is recommended that you use this shorthand property rather than set the individual properties. The short hand sets the other values intelligently.*/
+	align-self: auto | flex-start | flex-end | center | baseline | stretch; /* This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items. Note that float, clear and vertical-align have no effect on a flex item. */
+}
+```
