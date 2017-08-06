@@ -24,6 +24,26 @@ h2 ~ p { }
 - Case insensitivity: `a[href^="http" i]`
 - Select a value or a value followed by a `-`: `span[lang|="en"]`
 
+## Pseudo-class selectors
+- `:first-child`: target an element when it is the first child of a parent.
+- `:last-child`: target an element when it is the last child of a parent. 
+- `:nth-child`: select multiple elements according to their position in the document tree. 
+	- `:nth-child(2)`: 2nd child
+	- `:nth-child(odd)` or `:nth-child(2n+1)`: odd children
+	- `:nth-child(even)`: even children
+- `:nth-of-type`: select multiple elements according to their position in the document tree but only those elements that are the same as the type the rule is applied to. Example: `p:nth-of-type(odd){ }`
+- `:only-child`: match if the element is the only child of the parent.
+- `:empty`: match if an element is completely empty or just contains an HTML comment.
+- `:not`: allows you do something if a selector does not match. Example: `td:not(.animal) { }`
+
+## Pseudo-element selectors
+- `::first-letter`: the first character of the first line of text.
+- `::first-line`: the first formatted line of text.
+- `::before` and `::after`: give us the ability to insert generated content before and after another element. Example: `.classname::before {content:"Content inserted before";}`
+
+# Units
+
+
 # Sass
 Never edit or commit .css files.
 ## Variables
