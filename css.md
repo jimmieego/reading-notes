@@ -42,7 +42,12 @@ h2 ~ p { }
 - `::before` and `::after`: give us the ability to insert generated content before and after another element. Example: `.classname::before {content:"Content inserted before";}`
 
 # Units
+## Absolute units
+`px`: You should avoid using absolute units when your aim is to create a flexible and responsive site. However absolute units can be useful in components when you know you do not want the area to stretch. They can also be helpful in defining `max-width` and `min-width`to stop areas becoming too narrow or too wide.
 
+## Relative units
+- `em`: Using `em` as a length unit in layout, and in particular in padding and margins can help to maintain a vertical rhythm.
+- `rem`: The `rem` (root `em`) unit is the font-size of the root element, which is usually the `html` element.
 
 # Sass
 Never edit or commit .css files.
