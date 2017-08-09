@@ -148,6 +148,8 @@ The flexbox layout is direction-agnostic.
 **Flex container**: parent element
 **Flex items**: children
 
+Any `:before` and `:after` pseudo-elements on flex container will be treated as children. 
+
 ## Flex container (parent) properties
 ```css
 .container {
@@ -155,11 +157,13 @@ The flexbox layout is direction-agnostic.
 	flex-direction: row | row-reverse | column | column-reverse;
 	flex-wrap: nowrap | wrap | wrap-reverse;
 	flex-flow: <‘flex-direction’> || <‘flex-wrap’>; 
-	justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+	justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly; /* on main axis */
 	align-items: flex-start | flex-end | center | baseline | stretch; /*defines the default behaviour for how flex items are laid out along the cross axis on the current line */
 	align-content: flex-start | flex-end | center | space-between | space-around | stretch; /*aligns a flex container's lines within when there is extra space in the cross-axis; this property has no effect when there is only one line of flex items. */
 }
 ```
+
+Note: When switching to `flex-direction: column;`, `align-items` becomes the horizontal alignment while `justify-content` becomes the vertical alignment.
 
 ## Flex items (children) properties
 ```css
