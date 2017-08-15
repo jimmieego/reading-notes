@@ -2,7 +2,8 @@
 Never edit or commit .css files.
 
 ## Variables
-Example: 
+Example:
+
 ```css
 $site_max_width: 960px;
 $font_color: $333;
@@ -32,6 +33,7 @@ body {
 A mixin is a collection of of re-usable styles, properties and selectors.
 
 Examples:
+
 ```css
 @mixin box-shadow($shadow) {
   -webkit-box-shadow: $shadow;
