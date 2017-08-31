@@ -9,6 +9,7 @@
   - Inheritance
   - Create object
   - Object properties
+- `this`
 - Select elements
 - Attribute methods
 - DOM manipulation
@@ -99,6 +100,16 @@ It is often sufficient to query the property and use `!==` to make sure it is no
 The `hasOwnProperty()` method of an object tests whether that object has an own property with the given name. It returns `false` for inherited properties. 
 
 The `propertyIsEnumerable()` refines the `hasOwnProperty()` test. It returns `true` only if the named property is an own property and its `enumerable` attribute is `true`.
+
+## `this`
+http://georgemauer.net/2017/08/03/on-this-in-javascript.html
+In JavaScript, `this` is just a function parameter that you don't get to name. 
+
+Rules on standard `invocation()`:
+- By default this will be the global object (`window` in the browser, `global` in node).
+- Unless you are running in strict mode (almost always a good idea) and `use strict` is somewhere in the function's scope chain - then `this` will be undefined.
+
+The dot operator actually modifies the invocation to the right to say that the thing to the left of the dot operator is set as `this`. 
 
 
 ## Select elements
