@@ -137,7 +137,14 @@ The dot operator actually modifies the invocation to the right to say that the t
 - `createElement()`
 - `createTextNode()`
 
+Before adding a new element, it needs to be created. `document` acts as a factory for new elements:
+- `document.createElement` used to create elements. ``
+- `document.createTextNode` used to create text nodes. 
+
 ## Event
+- Event target is the originator of the event, not necessarily the element the handler was added to. 
+- Element the handler was added to is referred to as the "current target" by the W3C
+  - Acessible via `e.currentTarget` or `this` 
 - Using HTML event handlers is bad practice. For example, do not use `<a onclick="hide()">`. It is better to separate JavaScript from the HTML.
 - Traditional DOM event handlers: `element.onevent = functionName;` You can only attach one function to each event handler. The event name is preceded by the word “on”.
 - Event listeners: `element.addEventListener('event', functionName, [,Boolean]);` The Boolean indicates event capturing phase or bubbling phase, and is usually set to false. The event name is not preceded by the word “on”. There is a function called removeEventListener() which removes the event listener from the specified element.
