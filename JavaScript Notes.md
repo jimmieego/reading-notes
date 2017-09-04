@@ -34,6 +34,7 @@
   - Filter
   - Reduce
 - Essential Functions
+- Regular Expressions
 
 <!-- /MarkdownTOC -->
 
@@ -533,3 +534,10 @@ var reduce = function (array, callback, initial) {
 
 ## Essential Functions
 - [debounce](https://gist.github.com/jimmieego/121b00f8276e1cf4f2ee13359465cf61)
+
+
+## Regular Expressions
+Regular expressions are represented with RegExp objects and can be created with literal syntax or with RegExp constructor. Expressions can be modified with attributes:
+- `g` performs a global match
+- `i` performs case-insensitive matching
+- `m` enables multiline mode
