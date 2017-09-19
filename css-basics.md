@@ -18,19 +18,24 @@
 # Selectors
 ## Child selector
 Select all elements that are immediate children of a specified parent. 
+
 ```css
 .classname > a { }
 ```
 
 ## Adjacent sibling
 Select elements that are the adjacent siblings of an element.
+
 ```css
 h2 + p { }
 ```
 
 ## General sibling
 Select elements that are the siblings of an element.
+
+```css
 h2 ~ p { }
+```
 
 ## Attribute selectors
 - Select an attribute name: `input[type="text"]`
