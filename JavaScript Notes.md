@@ -3,6 +3,10 @@
 <!-- MarkdownTOC -->
 
 - Variables
+- Iterables and Iterators
+  - User-defined Iterables
+- Events
+  - Custom Events
 - Objects
   - Property attributes
   - Object attributes
@@ -46,6 +50,7 @@
 - Use `let` to declare a variable with its scope being only that code block.
 - Place `let` declarations at the top in a block so they’ll be available within that entire block.
 - Note: If an identifier has already been defined inside a scope, using that same identifier in a `let` declaration inside the same scope throws an error.
+
 Also, no error is thrown if a `let` declaration creates a variable with the same name as that of a variable in it’s outer scope. (This case is same with `const` declarations.)
 
 `const`: The variable can't be reassigned. Every `const` declaration must be initialized at the time of declaration. Its lifecycle is the same as `let`. (Note: properties can be mutated. So for true immutability, use Immutable.js or Mori.)
@@ -102,6 +107,7 @@ for (let user of users) {
 ```
 
 You can also use the spread operator to create an array from a sequence of values.
+
 ```JavaScript
 console.log([...users]);
 // [
@@ -109,6 +115,33 @@ console.log([...users]);
 //   { first: 'Tom', last: 'Dale' },
 //   { first: 'Taylor', last: 'Otwell' }
 // ]
+```
+
+## Events
+
+### Custom Events
+Use `new CustomEvent()` to create the event, passing in the name of the event. Then use `dispatchEvent()` on the element you want to attach the event to, passing in your new custom event. 
+
+```JavaScript
+var makeBlue = function (elem) {
+
+    elem.classList.add('blue');
+
+    // Create a new event
+    var event = new CustomEvent('madeBlue');
+
+    // Dispatch the event
+    elem.dispatchEvent(event);
+
+};
+
+var elem = document.querySelector('.not-blue');
+makeBlue(elem);
+
+// Run function on `madeBlue` event
+elem.addEventListener('madeBlue', function (elem) {
+    elem.classList.add('color-changed');
+}, false);
 ```
 
 ## Objects
