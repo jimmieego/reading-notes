@@ -17,6 +17,7 @@
 - Select elements
 - Attribute methods
 - DOM manipulation
+- Insert element
 - Event
 - Position
 - Promises
@@ -234,6 +235,63 @@ The dot operator actually modifies the invocation to the right to say that the t
 Before adding a new element, it needs to be created. `document` acts as a factory for new elements:
 - `document.createElement` used to create elements. ``
 - `document.createTextNode` used to create text nodes.
+
+## Insert element
+The old-school way: You need to call `insertBefore()` on the parent of the element you’re inserting your new element before (the `referenceNode`), and pass in both the new element and the reference node as arguments.
+
+```javascript
+// Create a new element
+var newNode = document.createElement('div');
+
+// Get the reference node
+var referenceNode = document.querySelector('#some-element');
+
+// Insert the new node before the reference node
+referenceNode.parentNode.insertBefore(newNode, referenceNode);
+```
+
+The ES6 way:
+You call the `before()` method on the reference node, and pass in the new node as an argument.
+
+```javascript
+// Create a new element
+var newNode = document.createElement('div');
+
+// Get the reference node
+var referenceNode = document.querySelector('#some-element');
+
+// Insert the new node before the reference node
+referenceNode.before(newNode);
+```
+
+A polyfill for `before` adds support back to IE9:
+
+```javascript
+// from: https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/before()/before().md
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('before')) {
+      return;
+    }
+    Object.defineProperty(item, 'before', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function before() {
+        var argArr = Array.prototype.slice.call(arguments),
+          docFrag = document.createDocumentFragment();
+
+        argArr.forEach(function (argItem) {
+          var isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+
+        this.parentNode.insertBefore(docFrag, this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+```
 
 ## Event
 - Event target is the originator of the event, not necessarily the element the handler was added to.
