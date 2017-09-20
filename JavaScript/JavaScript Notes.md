@@ -363,11 +363,20 @@ Notes:
 
 ## ES6 classes, inheritance, and static members
 **Define a class**:
+
 ```javascript
 class Profile {
     constructor(name) {
         console.log('User ${name} was created.');
         this.name = name;
+    }
+
+    methodOne() {
+      //
+    }
+
+    static methodTwo() {
+      //
     }
 }
 
@@ -375,7 +384,25 @@ class Profile {
 const user = new MyClass('Aram'); // logs: "User Aram was created"
 ```
 
-Note a class constructor cannot be made static in JavaScript via the `static` keyword, but you can make class members as static using the keyword.
+If a class's constructor has too many parameters, consider using an object as the parameter. 
+
+Note a class constructor cannot be made static in JavaScript via the `static` keyword, but you can make class members as `static` using the keyword. A static method is a property of the class, not the object. A static method could be used as a helper method for objects.
+
+For organization, a class can be stored as a module. A module is just a file that contains your code. To make a class into a module, we add an `export` statement before it. 
+
+```javascript
+export class Profile { 
+  //
+}
+```
+
+To use the Profile class in another file, we import it.
+
+```javascript
+import { Profile } from Profile
+```
+
+Where the `{ }` contains the values that were exported from the module, and `from Profile` is a reference to the file Profile.js.
 
 **Class inheritance**:
 - Methods defined on the base are accessible in the child class.
