@@ -2,6 +2,5 @@
 This repo is for recording my notes from various readings
 
 - [Design](https://jimmieego.github.io/reading-notes/Design.html)
-- [Getting to Know ArcGIS 4ed](https://jimmieego.github.io/reading-notes/Getting%20to%20Know%20ArcGIS%204ed.html)
-- [JavaScript](https://jimmieego.github.io/reading-notes/JavaScript%20Notes.html)
-
+- [Getting to Know ArcGIS 4ed](https://jimmieego.github.io/reading-notes/getting-to-know-arcgis-4ed.html)
+- [JavaScript](https://jimmieego.github.io/reading-notes/JavaScript/javascript_notes.html)
