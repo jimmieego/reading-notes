@@ -1,5 +1,6 @@
 <!-- MarkdownTOC -->
 
+- Template Strings
 - ES6 Functions
   - Default parameters in ES6
   - Rest Parameters
@@ -18,6 +19,37 @@
 
 <!-- /MarkdownTOC -->
 
+## Template Strings
+Use back-ticks (``) to make a string:
+
+```javascript
+const name = 'Snickers';
+const age = 2;
+const sentence = `My dog ${name} is ${age * 7} years old.'`;
+console.log(sentence);
+```
+You can run any JavaScript code inside `${ }`. 
+
+You can also use line breaks inside back-ticks:
+
+```javascript
+const multi = `This is a 
+multiline string`;
+
+const person = {
+  name: 'Ryan',
+  job: 'Developer/Instructor'
+};
+
+const markup = `
+  <div>
+    <h2>${person.name}</h2>
+    <h3>${person.job}</h3>
+  </div>
+`;
+```
+
+
 
 ## ES6 Functions
 ### Default parameters in ES6
@@ -35,6 +67,7 @@ A rest parameter is simply a named parameter which is preceded by three dots(…
 There can only be one rest parameter, and it has to be the last parameter.
 
 Example:
+
 ```javascript
 function pickProperties(object, ...properties) {
   let result = {};
@@ -56,7 +89,7 @@ console.log(vehicleData.maker); // "Aston Martin"
 ```
 
 ### Arrow Functions
-Arrow functions begin with the **arguments**, followed by the **arrow** (=>), followed by the **function body**.
+Arrow functions begin with the **arguments**, followed by the **fat arrow** (=>), followed by the **function body**.
 
 ```javascript
 let add = (no1, no2) => no1 + no2;
@@ -67,6 +100,7 @@ let add = function(no1, no2) {
 ```
 
 If there are no arguments at all, you must include empty parentheses like below:
+
 ```javascript
 let getMessage = () => 'Hello World';
 // equivalent to:
