@@ -25,6 +25,8 @@
   - Rest Parameters
   - Arrow Functions
 - ES6 classes, inheritance, and static members
+  - Class inheritance
+  - Static methods and properties
 - ES6 arrays
   - Array.from
   - Array.of
@@ -408,7 +410,7 @@ import { Profile } from Profile
 
 Where the `{ }` contains the values that were exported from the module, and `from Profile` is a reference to the file Profile.js.
 
-**Class inheritance**:
+### Class inheritance
 - Methods defined on the base are accessible in the child class.
 - If the child class declares its own constructor then it must invoke the parents constructor via `super()` before it can access `this`.
 
@@ -434,7 +436,7 @@ const suvCar = new SuvCar();
 suvCar.log(); // logs: "Hello SUV Car Name"
 ```
 
-**Static methods and properties**:
+### Static methods and properties
 Static methods and properties are defined on the *class/constructor itself*, not on instance objects. These are specified in a class definition by using the `static` keyword.
 
 ```javascript
