@@ -255,6 +255,7 @@ Before adding a new element, it needs to be created. `document` acts as a factor
 
 ## Promises
 Style 1:
+
 ```javascript
 fetch(url).then(function(dogBiscuits) {
   dogBiscuits.text().then(function(text) {
@@ -264,6 +265,7 @@ fetch(url).then(function(dogBiscuits) {
 ```
 
 Style 2:
+
 ```javascript
 fetch(url).then(function(response) {
   return response.text()
@@ -331,6 +333,7 @@ let getMessage = function() {
 ```
 
 For a function body with just a return statement, curly braces are **optional**. For a function body having more than just a return statement, you need to wrap the body in curly braces just like traditional functions. Example:
+
 ```javascript
 let calculate = (no1, no2, operation) => {
     let result;
@@ -347,6 +350,7 @@ let calculate = (no1, no2, operation) => {
 ```
 
 Another example:
+
 ```javascript
 // with arrow function
 let result = sampleArray.filter(element => element > 5000);
