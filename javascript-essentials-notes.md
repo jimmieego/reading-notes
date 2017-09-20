@@ -50,3 +50,29 @@ var args = Array.prototype.slice.call(arguments);
 **Invocation as a constructor**: Constructor functions get’s declared just like any other functions. To invoke the function as a constructor, we precede the function invocation with the `new` keyword. When this happens, `this` is bound to the new object. For easier distinction, constructor functions are named using **PascalCase** as opposed to camelCase.
 
 ## Class
+
+## `const`, `let`, and `var`
+`const`: Constant variable, never be reassigned. Scope is in closest `{ }`. Must be immediately assigned with a value. 
+`let`: Can reassign value. Scope is in closest `{ }`. Does not support hoisting.
+`var`: Can reassign value. Scope is in function. Supports hoisting.
+
+## Arrow functions
+In normal function, `this` is bound to the function itself. In arrow founction, `this` is **not** bound to the function.
+
+``` javascript
+function name() {
+	if (this.name === undefined) {
+		this.name = 0;
+	}
+
+	this.name++;
+}
+
+// arrow function
+var functioname = (param1, param2) => {
+	console.log(param1 + param2);
+	// this is not bound to the function
+}
+
+```  
+
