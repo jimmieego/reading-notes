@@ -35,6 +35,7 @@ A rest parameter is simply a named parameter which is preceded by three dots(…
 There can only be one rest parameter, and it has to be the last parameter.
 
 Example:
+
 ```javascript
 function pickProperties(object, ...properties) {
   let result = {};
@@ -67,6 +68,7 @@ let add = function(no1, no2) {
 ```
 
 If there are no arguments at all, you must include empty parentheses like below:
+
 ```javascript
 let getMessage = () => 'Hello World';
 // equivalent to:
@@ -104,8 +106,8 @@ let result = sampleArray.filter(function(element) {
 ```
 
 Notes:
-- Arrow functions can’t be called with new, can’t be used as constructors (and therefore lack prototype as well).
-- Arrow functions have their own scope, but there’s no ‘this’ of their own.
+- Arrow functions can’t be called with `new`, can’t be used as constructors (and therefore lack prototype as well).
+- Arrow functions have their own scope, but there’s no `this` of their own.
 - No arguments object is available. You **can use** rest parameters however.
 
 ## ES6 classes, inheritance, and static members
@@ -223,6 +225,7 @@ Array.from(document.querySelectorAll(‘*’), console.log)
 ```
 
 Use `Array.from` to populate new Arrays:
+
 ```javascript
 Array.from(new Array(5), k=>'val')
 // ['val','val','val','val','val']
@@ -230,6 +233,7 @@ Array.from(new Array(5), k=>'val')
 
 ### Array.of
 Can be used as an alternative to the Array constructor, and when passed a single number, will create that value as an element in the array, instead of creating that number of elements — which is what the Array constructor does.
+
 ```javascript
 Array.of(5)
 \\[5]
@@ -257,6 +261,7 @@ Fills an array with a value, with optional start and end indexes. Has the signat
 
 ### Array.copyWithin
 Copy blocks of elements to other parts of the array. Has the signature `Array.copyWithin(target, start, end)`. The target is the element index to be copied over. Start and end are optional, and are the elements to be copied.
+
 ```javascript
 [1, 2, 3, 4, 5, 6, 7, 8].copyWithin(2, 5)
 \\ The third element (target index=2) will be copied over with the values starting at element index 5.
