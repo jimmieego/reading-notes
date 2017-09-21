@@ -45,6 +45,62 @@ Also, no error is thrown if a `let` declaration creates a variable with the same
 
 Accessing a `let` or `const` variables before they’re declared will throw a `ReferenceError`.
 
+## Scope
+When a function is defined in another function, the inner function has access to the outer function's variables. This behavior is called **lexical scoping**. However, the outer function does not have access to the inner function's variables. 
+
+## Closures
+Whenever you create a function within another function, you have created a **closure**. *The inner function is the closure*. This closure is usually returned so you can use the outer function's variables at a later time.
+
+```javascript
+function outerFunction () {
+  const outer = `I see the outer variable!`;
+
+  return function innerFunction() {
+    console.log(outer);
+  }; // return innerFunction
+}
+
+outerFunction()(); // I see the outer variable!
+```
+
+Since closures have access to the variables in the outer function, they are usually used for two things: 
+1. To control side effects
+2. To create private variables
+
+### Controlling side effects with closures
+When you use closures to control side effects, you're usually concerned with ones that can mess up your code flow like Ajax or timeouts. You create a function that activates the inner closure at your whim.
+
+```javascript
+function prepareCake (flavor) {
+  return function makeCake (flavor) {
+    setTimeout(() => console.log(`Made a ${flavor} cake`), 1000);
+  }
+}
+
+const makeCakeLater = prepareCake('banana');
+
+// Later in your code ...
+makeCakeLater();
+
+```
+
+### Private variables with closures
+Variables created in a function cannot be accessed outside the function. Since they can't be accessed, they are also called *private variables*.
+
+```javascript
+function secret (secretCode) {
+  return {
+    saySecretCode () {
+      console.log(secretCode);
+    }
+  };
+}
+
+const theSecret = secret('CSS Tricks is amazing');
+theSecret.saySecretCode();
+```
+
+`saySecretCode` in this example above is the only function (a closure) that exposes the secretCode outside the original secret function. As such, it is also called a *privileged function*.
 
 ## Iterables and Iterators
 The iterable protocol was introduced to JavaScript in ES2015, and it allows us to define custom iteration behavior on objects so that we can control what values are looped over in a `for...of` loop, which was also introduced in ES2015.
@@ -52,6 +108,7 @@ The iterable protocol was introduced to JavaScript in ES2015, and it allows us t
 A few built-in objects that implement the iterable protocol include `Array`, `String`, `Map`, `Set` and `NodeList`.
 
 Example:
+
 ```javascript
 let listItems = document.querySelectorAll('li');
 
@@ -217,11 +274,13 @@ The dot operator actually modifies the invocation to the right to say that the t
 - `createElement()`
 - `createTextNode()`
 
+### Create element
+
 Before adding a new element, it needs to be created. `document` acts as a factory for new elements:
-- `document.createElement` used to create elements. ``
+- `document.createElement()` used to create elements. 
 - `document.createTextNode` used to create text nodes.
 
-## Insert element
+### Insert element
 The old-school way: You need to call `insertBefore()` on the parent of the element you’re inserting your new element before (the `referenceNode`), and pass in both the new element and the reference node as arguments.
 
 ```javascript

@@ -158,7 +158,7 @@ let result = sampleArray.filter(function(element) {
 
 Notes:
 - Arrow functions can’t be called with `new`, can’t be used as constructors (and therefore lack prototype as well).
-- Arrow functions have their own scope, but there’s no `this` of their own. In other words, the `this` keyword is lexically scoped with arrow function. The scoped of an arrow function will be bound based on where it was defined. The value of `this` refers to the **parent scope**. 
+- Arrow functions have their own scope, but there’s no `this` of their own. In other words, the `this` keyword is *lexically scoped* with arrow function. The scoped of an arrow function will be bound based on where it was defined. The value of `this` refers to the **parent scope**. 
 - No arguments object is available. You **can use** rest parameters however.
 
 ```javascript
@@ -319,6 +319,7 @@ Array.from(document.querySelectorAll(‘*’), console.log)
 ```
 
 Use `Array.from` to populate new Arrays:
+
 ```javascript
 Array.from(new Array(5), k=>'val')
 // ['val','val','val','val','val']
@@ -326,6 +327,7 @@ Array.from(new Array(5), k=>'val')
 
 ### Array.of
 Can be used as an alternative to the Array constructor, and when passed a single number, will create that value as an element in the array, instead of creating that number of elements — which is what the Array constructor does.
+
 ```javascript
 Array.of(5)
 \\[5]
@@ -353,6 +355,7 @@ Fills an array with a value, with optional start and end indexes. Has the signat
 
 ### Array.copyWithin
 Copy blocks of elements to other parts of the array. Has the signature `Array.copyWithin(target, start, end)`. The target is the element index to be copied over. Start and end are optional, and are the elements to be copied.
+
 ```javascript
 [1, 2, 3, 4, 5, 6, 7, 8].copyWithin(2, 5)
 \\ The third element (target index=2) will be copied over with the values starting at element index 5.
