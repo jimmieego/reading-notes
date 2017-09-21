@@ -1,5 +1,6 @@
 <!-- MarkdownTOC -->
 
+- Spread Operator
 - Template Strings
 - ES6 Functions
   - Default parameters in ES6
@@ -18,6 +19,24 @@
   - Array.copyWithin
 
 <!-- /MarkdownTOC -->
+
+## Spread Operator
+The syntax looks like this: `...arrayName`. Spread will expand the array in place and pass the elements in as if it were a comma separated list.
+
+```javascript
+const numbers = [39, 25, 90, 123];
+const max = Math.max(...numbers);
+console.log(max); // 123
+```
+
+You can also use the spread operator to concatenate arrays together.
+
+```javascript
+const numbersArray1 = [3, 4, 5, 7, 8];
+const numbersArray2 = [9, 6, 10, 11];
+const concatArray = [...numbersArray1, ...numbersArray2];
+console.log(concatArray); // [3, 4, 5, 7, 8, 9, 6, 10, 11]
+```
 
 ## Template Strings
 Use back-ticks (``) to make a string:
@@ -138,9 +157,52 @@ let result = sampleArray.filter(function(element) {
 ```
 
 Notes:
-- Arrow functions can’t be called with new, can’t be used as constructors (and therefore lack prototype as well).
-- Arrow functions have their own scope, but there’s no ‘this’ of their own.
+- Arrow functions can’t be called with `new`, can’t be used as constructors (and therefore lack prototype as well).
+- Arrow functions have their own scope, but there’s no `this` of their own. In other words, the `this` keyword is lexically scoped with arrow function. The scoped of an arrow function will be bound based on where it was defined. The value of `this` refers to the **parent scope**. 
 - No arguments object is available. You **can use** rest parameters however.
+
+```javascript
+const person = {
+  firstName: "Ryan",
+  sayName: () => {
+    return this.firstName; 
+  }
+}
+console.log(person.sayName()); // undefined
+```
+
+Note in the example above, `this` is bound to the `window` object. 
+
+
+Another example:
+
+```javascript
+const person = {
+  firstName: 'Ryan',
+  hobbies: ['Robots', 'Games', 'Internet'],
+  showHobbies: function() {
+    this.hobbies.forEach(function(hobby) {
+      console.log(`${this.firstName} likes ${hobby}`);
+    });
+  }
+};
+person.showHobbies();
+```
+
+Running this will produce `Uncaught TypeError: Cannot read property 'firstName' of undefined`. The `this` in the callback function for the `.forEach()` method is bound to nothing (in strict mode, in non strict it will be the `window`). But if we change the callback to an arrow function we can use the lexically bound this to get the value we want.
+
+```javascript
+const person = {
+  firstName: 'Ryan',
+  hobbies: ['Robots', 'Games', 'Internet'],
+  showHobbies: function() {
+    this.hobbies.forEach(hobby => {
+      console.log(`${this.firstName} likes ${hobby}`);
+    });
+  }
+};
+person.showHobbies();
+```
 
 ## ES6 classes, inheritance, and static members
 **Define a class**:
