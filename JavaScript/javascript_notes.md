@@ -281,6 +281,7 @@ Before adding a new element, it needs to be created. `document` acts as a factor
 - `document.createTextNode` used to create text nodes.
 
 ### Insert element
+#### Insert before an element
 The old-school way: You need to call `insertBefore()` on the parent of the element you’re inserting your new element before (the `referenceNode`), and pass in both the new element and the reference node as arguments.
 
 ```javascript
@@ -336,6 +337,64 @@ A polyfill for `before` adds support back to IE9:
   });
 })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 ```
+
+#### Insert after an element
+Old way:
+
+```javascript
+// Create a new element
+var newNode = document.createElement('div');
+
+// Get the reference node
+var referenceNode = document.querySelector('#some-element');
+
+// Insert the new node before the reference node
+referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+```
+
+Modern approach:
+
+```javascript
+// Create a new element
+var newNode = document.createElement('div');
+
+// Get the reference node
+var referenceNode = document.querySelector('#some-element');
+
+// Insert the new node before the reference node
+referenceNode.after(newNode);
+```
+
+Polyfill supporting back to IE9:
+
+```javascript
+//from: https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/after()/after().md
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('after')) {
+      return;
+    }
+    Object.defineProperty(item, 'after', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function after() {
+        var argArr = Array.prototype.slice.call(arguments),
+          docFrag = document.createDocumentFragment();
+
+        argArr.forEach(function (argItem) {
+          var isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+
+        this.parentNode.insertBefore(docFrag, this.nextSibling);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
+```
+
 
 ## Event
 - Event target is the originator of the event, not necessarily the element the handler was added to.
