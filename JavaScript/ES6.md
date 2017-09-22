@@ -47,7 +47,7 @@ const age = 2;
 const sentence = `My dog ${name} is ${age * 7} years old.'`;
 console.log(sentence);
 ```
-You can run any JavaScript code inside `${ }`. 
+You can run any JavaScript code including regular string inside `${ }`. 
 
 You can also use line breaks inside back-ticks:
 
@@ -69,7 +69,6 @@ const markup = `
 ```
 
 
-
 ## ES6 Functions
 ### Default parameters in ES6
 ```javascript
@@ -81,11 +80,11 @@ function counts(number1 = 5, number2 = 10) {
 NOTE: When a value of `undefined` is passed for a parameter with default argument, as expected the value passed is **invalid** and the **default parameter value is assigned**. But if `null` is passed, it is considered **valid** and the **default parameter is not used** and `null` is assigned to that parameter.
 
 ### Rest Parameters
-A rest parameter is simply a named parameter which is preceded by three dots(…). This named parameter becomes an **array** which contains rest of the parameters(i.e apart from the named parameters) passed during function call.
+A rest parameter is simply a named parameter which is preceded by three dots(`…`). This named parameter becomes an **array** which contains rest of the parameters(i.e., apart from the named parameters) passed during function call.
 
-There can only be one rest parameter, and it has to be the last parameter.
+There can only be *one* rest parameter, and it has to be the *last* parameter.
 
-Example:
+Examples:
 
 ```javascript
 function pickProperties(object, ...properties) {
@@ -105,6 +104,13 @@ let vehicle = {
 let vehicleData = pickProperties(vehicle, 'typeOfVehicle', 'maker', 'color');
 console.log(vehicleData.typeOfVehicle); // "car"
 console.log(vehicleData.maker); // "Aston Martin"
+```
+
+```javascript
+const multi = (multiplier, ...numbers) => {
+  return numbers.map(n => n * multiplier);
+}
+
 ```
 
 ### Arrow Functions
@@ -128,7 +134,7 @@ let getMessage = function() {
 }
 ```
 
-For a function body with just a return statement, curly braces are **optional**. For a function body having more than just a return statement, you need to wrap the body in curly braces just like traditional functions. Example:
+For a function body with just a return statement, curly braces are optional. For a function body having more than just a return statement, you need to wrap the body in curly braces just like traditional functions. Example:
 
 ```javascript
 let calculate = (no1, no2, operation) => {
@@ -149,11 +155,23 @@ Another example:
 
 ```javascript
 // with arrow function
-let result = sampleArray.filter(element => element > 5000);
+let result = sampleArray.filter(element => element > 5000); // The return here is implicit.
 // without arrow function
 let result = sampleArray.filter(function(element) {
   return element > 5000;
 });
+```
+
+If the arrow function has only one parameter, we can leave the `()` off the definition of the function:
+
+```javascript
+const add5 = a => a + 5;
+```
+
+There is a new pattern emerging where people will use a `_` as a placeholder in place of the empty parenthesis.
+
+```javascript
+const eight = _ => 3 + 5;
 ```
 
 Notes:

@@ -3,6 +3,10 @@
 <!-- MarkdownTOC -->
 
 - Variables
+- Scope
+- Closures
+  - Controlling side effects with closures
+  - Private variables with closures
 - Iterables and Iterators
   - User-defined Iterables
 - Events
@@ -17,7 +21,8 @@
 - Select elements
 - Attribute methods
 - DOM manipulation
-- Insert element
+  - Create element
+  - Insert element
 - Event
 - Position
 - Promises
@@ -525,6 +530,7 @@ let small_animals = animals.filter((animal => animal.size === "small"));
 The `filter` operator accepts the same parameters (current item, index and entire array) in the callback function. Need to make sure that the `return` returns a boolean value.
 
 Implementation:
+
 ```javascript
 var filter = function (array, callback) {
 
