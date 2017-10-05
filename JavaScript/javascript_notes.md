@@ -400,6 +400,65 @@ Polyfill supporting back to IE9:
 
 ```
 
+#### Insert before begining of a set of elements
+The traditional way:
+
+```javascript
+// Create a new element
+var newNode = document.createElement('div');
+
+// Get the parent node
+var parentNode = document.querySelector('#some-element');
+
+// Insert the new node before the reference node
+parentNode.insertBefore(newNode, parentNode.firstChild);
+```
+
+The ES6 way:
+
+```javascript
+// Create a new element
+var newNode = document.createElement('div');
+
+// Get the parent node
+var parentNode = document.querySelector('#some-element');
+
+// Insert the new node before the reference node
+parentNode.prepend(newNode);
+```
+
+#### Insert after end of a set of elements
+The traditional way:
+
+```javascript
+// Create a new element
+var newNode = document.createElement('div');
+
+// Get the parent node
+var parentNode = document.querySelector('#some-element');
+
+// Insert the new node after the last element in the parent node
+parentNode.appendChild(newNode);
+```
+
+Note: The `appendChild()` method is supported back to at least IE6.
+
+The ES6 way:
+
+```javascript
+// Create a new element
+var newNode = document.createElement('div');
+
+// Get the parent node
+var parentNode = document.querySelector('#some-element');
+
+// Insert the new node after the last element in the parent node
+parentNode.append(newNode);
+```
+
+Note: Unlike `appendChild()`, `append()` only works in newer version of Chrome, Firefox, Opera, and Safari. It has no IE or Edge support. Use `appendChild()` in most cases.
+
+
 
 ## Event
 - Event target is the originator of the event, not necessarily the element the handler was added to.
