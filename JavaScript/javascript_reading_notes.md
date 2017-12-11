@@ -1,3 +1,27 @@
+## Get URL Variables
+
+```javascript
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+```
+
+Usage:
+
+Example URL:
+http://www.example.com/index.php?id=1&image=awesome.jpg
+
+Calling `getQueryVariable("id")` - would return "1".
+Calling `getQueryVariable("image")` - would return "awesome.jpg".
+
+
 ## Detect when the DOM is ready
 We can use `requestAnimationFrame()` to repeatedly check if the `body` element and any other target element exist, and then run a function once it does. 
 
