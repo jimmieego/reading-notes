@@ -9,3 +9,6 @@ When a section is visually obvious you can hide headings from sighted users.
 
 - Don’t style text to look like a heading unless you use heading mark-up.
 - The level of heading is not the same as the text size.
+
+## Reporting accessibility issues
+- Focus on conversions: focus on user workflows that lead to success
