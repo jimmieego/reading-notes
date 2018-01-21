@@ -71,4 +71,39 @@ A `<picture>` element contains any number of `<source>` elements, and exactly on
 
 The `<source>` element can have a `type` attribute for specifying the image file format (e.g., `type="image/svg+xml"`).
 
-## Chapter 4. Responsive Advertising 
+## Chapter 4. Responsive Advertising
+Most ads on the web are fixed-width.
+
+### Conditional loading
+Load only what we need at any given viewport, rather than hiding the excess with CSS. Identify the ads best suited fro each breakpoint, and then load them only if the design can accommodate them. 
+
+Ajax-Include pattern:
+
+```html
+<div class="sb"
+	data-append = "/include/sidebar-contents.html"
+	data-media = "(min-width: 63.75em)"></div>
+```
+
+### Rethinking the hierarchy
+Resposition the advertisements: The placement of an advertisement would be determined by the width of the page. When the site is a single column, insert ads into sensible points in the content flow. As the layout widened to two columns, the ad would move from its initial position and stick to the top of that new column. Similarly, when a third column appeared at the widest breakpoint, the ad would shift again. 
+
+```html
+<div data-adname="MAIN_AD" class="ad-slot-a"></div>
+
+<div data-adname="MAIN_AD" class="ad-slot-b"></div>
+
+<div data-adname="MAIN_AD" class="ad-slot-c"></div>
+```
+
+1. JavaScript begins by looping through all `div`s that share a `data-adname` value, and looking for the first one that’s set to `display: block`.
+2. Once it’s found, the JavaScript inserts the ad into that slot.
+3. Whenever the browser window resizes or the device’s orientation changes, the JavaScript starts the process over again: looking for the visible block, and moving the ad into that container.
+
+
+### New models
+- Treat ads as small-scale responsive layouts instead of fixed, inflexible blocks. Reposition these elements within a flexible, responsive canvas. 
+
+
+## Chapter 5. Designing the Infinite Grid
+
