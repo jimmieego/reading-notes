@@ -1,3 +1,6 @@
+# Responsive Design: Patterns & Principles
+by Ethan Marcotte
+
 ## Chapter 2. Navigation
 - Think about content through a three-part, mobile-first framework:
 	1. Identify the content critical to the smaller screen.
@@ -106,4 +109,35 @@ Resposition the advertisements: The placement of an advertisement would be deter
 
 
 ## Chapter 5. Designing the Infinite Grid
+We need to focus not just on the individual bits of a design, but also the relationship between those elements within a larger layout system. With responsive, it's everything first. 
 
+Most complex layout don't preclude us from refining the smallest view of the design — in many instances, reviewing the work at one breakpoint informed the shape of the other. 
+
+A framework should be more about defining the characteristics of a desirable outcome. 
+
+Book: *The Illusion of Life*, by Frank Thomas and Ollie Johnston, talked about "The Tweleve Basic Principles of Animation": http://www.frankanollie.com/PhysicalAnimation.html.
+
+Three guiding principles by Mark Boulton:
+
+- **Define relationships from your content**. A grid for the web should be defined by the content, not the edge of an imaginary page.
+- **Use ratios or relationnal measurements above fixed measurements**.
+- **Bind the content to the device**. Use CSS media queries, and techniques such as responsive web design, to create layouts that respond to the viewport.
+
+The "content out" process: looking at the smallest version of a piece of content, then expanding that element until its seams begin to show and it starts to lose its shape. Then introduce a breakpoint that reshpaes the element and preserves its integrity.
+
+Find an element's seams by looking at four characteristics:
+
+- **Width**: As the design gets wider or narrower, so will the elements within it, and as those modules expand or contract, there may be opportunities to add a breakpoint.
+- **Hierarchy**: As the shape of an element changes, the hierarchy of elements may need to change as well. Hierarchy is generally a reminder to be more *vertically aware* in our designs.
+- **Interaction**: The way we interact with an element may change along with the design. As an example, menus are often displayed in full at wider breakpoints but concealed at smaller ones, perhaps hidden behind expandable icons or links when space is at a premium.
+- **Density**: The amount of information you’re showing in an element might need to vary. 
+
+Use a small-screen-friendly layout as the foundation/starting point.
+
+Technique: CSS `:nth-child()` provides us with a powerful way to address specific elements of design based on where they fall within the structure of the document.
+
+Technique: CSS flexbox.
+
+Talk about features (input method, screen size, network speed, and network condition), not device classes (mobile, tablet, and desktop).
+
+Break down the page into component parts: understand how our small layout systems need to adapt, and then use those modules to gradually build more complex, responsive layout systems.  
