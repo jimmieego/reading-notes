@@ -6,3 +6,5 @@ A hacker values knowledge and learns whatever he needs to learn to achieve his v
 There really is a thought process - a decision-making framwork - behind design. 
 
 # Chapter 1: Why Design Matters
+Layers of design:
+- Purpose
