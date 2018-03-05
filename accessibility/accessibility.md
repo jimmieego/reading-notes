@@ -14,7 +14,7 @@ When a section is visually obvious you can hide headings from sighted users.
 https://medium.com/@ckundo/6-tenets-of-accessibility-bug-reporting-cdfed82af0b8
 
 - Focus on Conversions: Focus remediation on user journeys that lead to conversion.. For example, if your customer can’t complete a purchase, they’ll be more frustrated than (for a screen reader user) a poorly described image on the home page. You’re also more likely to get buy-in from product managers and leadership when you focus on conversion.
-- Describe Human Impact: Describe an issue’s impact in human terms. Include customer feedback if you can. 
+- Describe Human Impact: Describe an issue’s impact in human terms. Include customer feedback if you can.
 - Let Teams Prioritize: Give teams the information they need, then trust them to be professional and organized.
 - Recommend Solutions: Give technical guidance, but avoid prescribing solutions.
 - Attention, not Assignment: Bring attention to an issue, then let teams decide how to assign.
