@@ -114,10 +114,17 @@ const multi = (multiplier, ...numbers) => {
 ```
 
 ### Arrow Functions
+The intent of arrow functions was to provide a shorter syntax for writing functions and eliminate some of the confusion that exists around `this`.  
+
 Arrow functions begin with the **arguments**, followed by the **fat arrow** (=>), followed by the **function body**.
 
 ```javascript
+let add = (num1, num2) => {
+    return num1 + num2;
+};
+// Simplified. This only works if the only thing you’re doing is returning a value.
 let add = (no1, no2) => no1 + no2;
+
 // equivalent to:
 let add = function(no1, no2) {
   return no1 + no2;
