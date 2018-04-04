@@ -11,3 +11,10 @@ A responsible responsive design equally considers the following throughout a pro
 - **Sustainability**: The ability for the technology driving a site or application to work for devices that exist today and to continue to be usable and accessible to users, devices, and browsers in the future.
 - **Performance**: The speed at which a site’s features and content are perceived to be delivered to the user and the efficiency with which they operate within the user interface.
 
+## Responsible Design
+
+Responsive design's core tenets: fluid grids, fluid images, and media queries.
+
+Two responsible tenets: **usability** and **accessibility**.
+
+ 
