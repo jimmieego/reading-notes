@@ -1,5 +1,43 @@
 # Collection of Git commands
 
+## Files
+
+- Add a file to the next commit: 
+
+```
+git add <filename>
+```
+
+- Delete a file in the next commit: 
+
+```
+git rm <file>
+````
+
+- Rename a file in the next commit:
+
+```
+git mv <file>
+```
+
+Add files interactively:
+
+```
+git add -p
+```
+## Stashing
+
+Save un-commited work. The stash is safe from destructive operations. 
+
+```
+# stash changes
+git stash
+
+# list changes
+git stash list
+
+```
+
 ## Edit configuration
 
 ```
