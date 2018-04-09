@@ -1,5 +1,21 @@
 # Collection of Git commands
 
+## Branch
+
+Create a branch that points to the last commit you made in a detached state
+```
+git branch <new-branch-name> <commit>
+```
+
+## Merge
+
+To retain the history of a merge commit, even if there are no changes to the base branch (no fast forward):
+
+```
+git checkout master
+git merge <feature-branch-name> --no-ff
+```
+
 ## Files
 
 - Add a file to the next commit: 
@@ -44,7 +60,17 @@ git stash pop
 git stash --include-untracked
 ```
 
+## Tag
 
+```
+git tag -a v1.0 -m "Version 1.0"
+
+# list all tags
+git tag
+git show-ref --tags
+# show a tag
+git show <tagname>
+```
 
 ## Edit configuration
 
