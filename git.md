@@ -32,11 +32,19 @@ Save un-commited work. The stash is safe from destructive operations.
 ```
 # stash changes
 git stash
+git stash save "WIP: making progress on foo"
 
 # list changes
 git stash list
 
+# remove the last stash and apply changes (does not remove if there's merge conflict)
+git stash pop
+
+# keep untracked files
+git stash --include-untracked
 ```
+
+
 
 ## Edit configuration
 
