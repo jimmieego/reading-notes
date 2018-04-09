@@ -14,19 +14,19 @@ Look at a commit:
 
 View unstaged changes:
 
-```
+```git
 git diff
 ```
 
 View staged changes:
 
-```
+```git
 git diff --staged
 ```
 
 Show changes only in branch `B`:
 
-```
+```git
 git diff A B
 ```
 
@@ -34,7 +34,7 @@ git diff A B
 
 Create a branch that points to the last commit you made in a detached state
 
-```
+```git
 git branch <new-branch-name> <commit>
 ```
 
@@ -42,26 +42,26 @@ git branch <new-branch-name> <commit>
 
 To retain the history of a merge commit, even if there are no changes to the base branch (no fast forward):
 
-```
+```git
 git checkout master
 git merge <feature-branch-name> --no-ff
 ```
 
 Which branches are merged with `master`, and can be cleaned up?
 
-```
+```git
 git branch --merged master
 ```
 
 Which branches aren't merged with `master` yet?
 
-```
+```git
 git branch --no-merged master
 ```
 
 ## Log
 
-```
+```git
 git log --since="yesterday"
 git log --since="2 weeks ago"
 
@@ -81,25 +81,25 @@ git log -grep <regexp>
 
 - Add a file to the next commit:
 
-```
+```git
 git add <filename>
 ```
 
 - Delete a file in the next commit:
 
-```
+```git
 git rm <file>
 ````
 
 - Rename a file in the next commit:
 
-```
+```git
 git mv <file>
 ```
 
 - Add files interactively:
 
-```
+```git
 git add -p
 ```
 
@@ -109,26 +109,26 @@ Save un-commited work. The stash is safe from destructive operations.
 
 - stash changes
 
-```
+```git
 git stash
 git stash save "WIP: making progress on foo"
 ```
 
 - List changes:
 
-```
+```git
 git stash list
 ```
 
 - Remove the last stash and apply changes (does not remove if there's merge conflict):
 
-```
+```git
 git stash pop
 ```
 
 - Keep untracked files:
 
-```
+```git
 git stash --include-untracked
 ```
 
@@ -136,20 +136,20 @@ git stash --include-untracked
 
 - Create tag
 
-```
+```git
 git tag -a v1.0 -m "Version 1.0"
 ```
 
 - List all tags:
 
-```
+```git
 git tag
 git show-ref --tags
 ```
 
 - Show a tag:
 
-```
+```git
 git show <tagname>
 ```
 
@@ -157,19 +157,19 @@ git show <tagname>
 
 Overwrite the working area file with the staging area version from the last commit. This operation overwrites files in the working directory without warning.
 
-```
+```git
 git checkout -- <file_path>
 ```
 
 Checkout a file from a specific commit. Copies to both working area and staging area.
 
-```
+```git
 git checkout <commit> -- <file_path>
 ```
 
 Restore a deleted file
 
-```
+```git
 git checkout <deleting_commit>^1 -- <file_path>
 ```
 
@@ -177,7 +177,7 @@ git checkout <deleting_commit>^1 -- <file_path>
 
 Clear working area by deleting untracked files:
 
-```
+```git
 git clean
 ```
 
@@ -198,7 +198,7 @@ For commits:
 
 In case of an accidental `git reset`, Git keeps the previous value of HEAD in variable called `ORIG_HEAD`. To go back to the way things were:
 
-```
+```git
 git reset ORIG_HEAD
 ```
 
@@ -208,27 +208,35 @@ For file:
 
 ### Revert
 
-The "safe" reset. Creates a new commit that introduces the opposite changes from the specified commit. The original commit stays in the repository. 
+The "safe" reset. Creates a new commit that introduces the opposite changes from the specified commit. The original commit stays in the repository.
 
 Use revert if you're undoing a commit that has already been shared.
 
 Revert does not change history.
 
-```
+```git
 git revert <commit>
 ```
 
 ## Edit configuration
 
-```
+```git
 git config --global -e
 ```
+
+## Amend
+
+```git
+git commit --amend
+```
+
+Note: amend creates a new commit. The original commit has no references pointing to it, and will eventually be garbage collected. Do this in local machine.
 
 ## Clone submodules
 
 If the repo contains submodules, and you want to bring the code in the submodules down, you'll need to clone recursively.
 
-```
+```git
 git clone --recursive <submodule URL>
 ```
 
@@ -236,13 +244,13 @@ git clone --recursive <submodule URL>
 
 Show remote URL for "origin":
 
-```
+```git
 git remote get-url origin
 ```
 
 If the remote has moved, you can change the URL using `set-url`:
 
-```
+```git
 git remote set-url origin <new remote URL>
 ```
 
@@ -250,14 +258,14 @@ git remote set-url origin <new remote URL>
 
 Delete the remote branch:
 
-```
+```git
 git push -d <remote_name> <branch_name>
 git push -d origin my-feature-branch
 ```
 
 Delete the local branch:
 
-```
+```git
 git branch -d <branch_name>
 ```
 
@@ -265,25 +273,25 @@ git branch -d <branch_name>
 
 Undo all unstaged local changes:
 
-```
+```git
 git checkout .
 ```
 
 Undo `git add` for at single file:
 
-```
+```git
 git reset folder/filename
 ```
 
 Undo `git add .`:
 
-```
+```git
 git reset .
 ```
 
 ## Fix untracked files
 
-```
+```git
 git rm . -r --cached
 git add .
 git commit -m "Fixed untracked files"
