@@ -54,4 +54,14 @@ When Modernizr tests run, the framework retains a JavaScript property, stored on
 
 ### `@supports` in CSS
 
-By passing any CSS property and value pair (e.g., `display: flex`) to the `@supports` rule, you can define entire style blocks to apply only in browsers that implement that CSS feature.   
+By passing any CSS property and value pair (e.g., `display: flex`) to the `@supports` rule, you can define entire style blocks to apply only in browsers that implement that CSS feature.
+
+### polyfills
+
+The decision to use a polyfill should be based on three main points:
+
+- how much the feature improves your audience’s user experience,
+- the cost to performance of including the polyfill in a page,
+- its ability to one day be removed seamlessly from your codebase.
+
+## Performance
