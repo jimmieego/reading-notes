@@ -153,6 +153,13 @@ git show-ref --tags
 git show <tagname>
 ```
 
+Git does not automatically push local tags to a remote repository. To push tags:
+
+```git
+git push <tagname>
+git push --tags
+```
+
 ## Checkout
 
 Overwrite the working area file with the staging area version from the last commit. This operation overwrites files in the working directory without warning.
@@ -202,6 +209,14 @@ In case of an accidental `git reset`, Git keeps the previous value of HEAD in va
 git reset ORIG_HEAD
 ```
 
+Note: `ORIG_HEAD` store the commit `HEAD` was pointing to before a reset or merge.
+
+Use `ORIG_HEAD` to undo merges. Use `--merge` to preserve any uncommited changes.
+
+```git
+git reset --merge ORIG_HEAD
+```
+
 For file:
 
 `git reset <commit> -- <file>`: reset the staging area.
@@ -232,6 +247,33 @@ git commit --amend
 
 Note: amend creates a new commit. The original commit has no references pointing to it, and will eventually be garbage collected. Do this in local machine.
 
+## Rebase
+
+Rebase: guve a commit a new parent (i.e., a new "base" commit).
+
+Before rebase, make a copy of current branch:
+
+```git
+git branch my_branch_backup
+```
+
+If you want to go back:
+
+```git
+git reset my_branch_backup --hard
+```
+
+**Git best practice**: Commit often, perfect later, publish one
+
+When working locally:
+
+- Commit whenever you make changes
+- It'll help you be more productive
+
+Before pushing work to a shared repo:
+
+- Rebase to clean up the commit history
+
 ## Clone submodules
 
 If the repo contains submodules, and you want to bring the code in the submodules down, you'll need to clone recursively.
@@ -240,7 +282,13 @@ If the repo contains submodules, and you want to bring the code in the submodule
 git clone --recursive <submodule URL>
 ```
 
-## Show remote URL
+## Remote
+
+View remotes:
+
+```git
+git remote -v
+```
 
 Show remote URL for "origin":
 
@@ -252,6 +300,12 @@ If the remote has moved, you can change the URL using `set-url`:
 
 ```git
 git remote set-url origin <new remote URL>
+```
+
+To update remote forked repo, you need to set up an upstream remote
+
+```git
+git remote add upstream https://github.com/ORIG_OWNER/REPO.git
 ```
 
 ## Delete branch
@@ -296,3 +350,41 @@ git rm . -r --cached
 git add .
 git commit -m "Fixed untracked files"
 ```
+
+## GitHub workflow
+
+### Triangular workflow
+
+fork --(PR)--> upstream
+^           /
+|          /
+(push)   (pull or fetch)
+|        /
+|       v
+  clone
+
+### Tracking branches
+
+Track a branch to tie it to an upstream branch. 
+
+To checkout a remote branch, with tracking:
+
+```git
+git checkout -t origin/feature
+
+git branch -vv
+```
+
+Tell git which branch to track the first time you push:
+
+```git
+git push -u origin feature
+```
+
+Git fetch is important for keeping your local repository up to date with a remote. It pulls down all the changes that happened on the server. But, it doesn't change your local repository.
+
+Pulling will pull down the changes from the remote repository to your local repository, and merging them with a local branch. If changes happened upstream, git will create a merge commit. Otherwise, it will fast-forward.
+
+`git pull` = `git fetch` && `git merge`
+
+`git pull --rebase`: fetch, update your local branch to copy the upstream branch, then replay any commits you made via rebase. 
