@@ -50,4 +50,8 @@ A mobile-first responsive stylesheet begins with styles that are shared across a
 
 ### Use Modernizr to run feature tests
 
-When Modernizr tests run, the framework retains a JavaScript property, stored on the globally available `Modernizr` object, of that test's name that equals `true` if it passes or `false` if it doesn't.
+When Modernizr tests run, the framework retains a JavaScript property, stored on the globally available `Modernizr` object, of that test's name that equals `true` if it passes or `false` if it doesn't. When a test passe, Modernizr also adds a class of that test's name to the `html` element, which you can then use within your CSS selectors to qualify the user of certain features. 
+
+### `@supports` in CSS
+
+By passing any CSS property and value pair (e.g., `display: flex`) to the `@supports` rule, you can define entire style blocks to apply only in browsers that implement that CSS feature.   
