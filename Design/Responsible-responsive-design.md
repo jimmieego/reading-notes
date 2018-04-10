@@ -47,3 +47,7 @@ Designing for features and constraints allows us to see how patterns that may ot
 **Mobile first**: Start small and layer in more complex layout as space permits. This helps prioritize content.
 
 A mobile-first responsive stylesheet begins with styles that are shared across all experiences, forming the foundation of the smallest screen layout. These styles are followed by a series of mostly `min-width` media queries to scale that layout up to greater viewport sizes and pixel depths.
+
+### Use Modernizr to run feature tests
+
+When Modernizr tests run, the framework retains a JavaScript property, stored on the globally available `Modernizr` object, of that test's name that equals `true` if it passes or `false` if it doesn't.
