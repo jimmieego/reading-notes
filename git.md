@@ -387,4 +387,4 @@ Pulling will pull down the changes from the remote repository to your local repo
 
 `git pull` = `git fetch` && `git merge`
 
-`git pull --rebase`: fetch, update your local branch to copy the upstream branch, then replay any commits you made via rebase. 
+`git pull --rebase`: fetch, update your local branch to copy the upstream branch, then replay any commits you made via rebase.
