@@ -50,7 +50,7 @@ A mobile-first responsive stylesheet begins with styles that are shared across a
 
 ### Use Modernizr to run feature tests
 
-When Modernizr tests run, the framework retains a JavaScript property, stored on the globally available `Modernizr` object, of that test's name that equals `true` if it passes or `false` if it doesn't. When a test passe, Modernizr also adds a class of that test's name to the `html` element, which you can then use within your CSS selectors to qualify the user of certain features. 
+When Modernizr tests run, the framework retains a JavaScript property, stored on the globally available `Modernizr` object, of that test's name that equals `true` if it passes or `false` if it doesn't. When a test passe, Modernizr also adds a class of that test's name to the `html` element, which you can then use within your CSS selectors to qualify the user of certain features.
 
 ### `@supports` in CSS
 
@@ -65,3 +65,85 @@ The decision to use a polyfill should be based on three main points:
 - its ability to one day be removed seamlessly from your codebase.
 
 ## Performance
+
+### Page-loading process
+
+**Critical path**: the events that take place from the moment a page is requested to the moment that page is usable.
+
+CSS works best when all styles relevant to the initial page layout are loaded and parsed *before* an HTML document is rendered visually on a screen.
+
+JavaScript behavior is often able to be applied to page elements *after* they’re loaded and rendered.
+
+**Blocking**: By default, browsers wait to render a page’s content until assets like CSS and JavaScriptfinish loading and parsing.
+
+Note: images are non-blocking asset.
+
+We need to reduce the number of blocking requests.
+
+### Chrome developer tools
+
+When it comes to page-load performance, two panes are especially useful: **Network** and **Timeline**.
+
+### Percevied performance
+
+**Perceived load time** is often more important to us than total page-load time.
+
+One-second page load has emerged as a de facto standard goal.
+
+Test tools:
+
+- [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [WebPagetest](https://www.webpagetest.org/): the lower the Speed Index score, the better; 1000 is a great score to shoot for.
+
+### Performance budget
+
+A performance budget is a number, or set of numbers, used as a guideline for whether you can afford a particular code addition to a codebase, or whether an existing site’s performance needs to improve. The numbers can be page transfer weight or perceived load time.
+
+Performance is not just developmental concern, it's a fundamental component of the user experience.
+
+### Prepare files for web delivery
+
+- Optimize image files: [ImageOptim](https://imageoptim.com/howto.html)
+- Concatenate text files: `cat foo.js bar.js > foobar.js`
+- Minify text files
+- Compress text files: Gzip makes text files smaller for transfer between server and browser.
+- Caches
+  - Browser's default cache: automatically store any files it requests so that the next time those files are requested, it can avoid a network request and instead use the local copy. Use response headers to configure the ways in which any given files should be cached.
+  - HTML 5 offline cache: `<html manifest="example.appcache">`. The contents of the `example.appcache` file tell the browser which assets it should cache for offline use and which assets it should always request over the network. Application cache and other related browser features like local storage and Service Worker API make it possible to specify how and which features of a site should work offline and which ones require a web connection.
+
+Use [Grunt](https://gruntjs.com/) to automate tasks.
+
+### Deliver HTML
+
+**Deferred or lazy loading**: Identify what portions of the content are absolutely necessary and load the rest later on, after the essentials have been served.
+
+If a piece of supplementary content is already accessible in its own dedicated place elsewhere on the site, that piece may be a good candidate for deferred loading.
+
+Configuring our pages to serve critical content first can lead to a faster initial page load. To load auxiliary content, we can then use JavaScript after the page is presented to the user.
+
+### Deliver CSS
+
+- Approach A: one big stylesheet containing inline media queries.
+- Approach B: separate, media-specific files
+
+  ```html
+  <link href="medium.css" media="(min-width: 35em) rel="stylesheet""
+  ```
+
+  Note: Browsers will still request all stylesheets, regardless of whether their media attributes match or note. Some modern browsers will give inapplicable stylesheets lower priorities and won't block page rendering.
+
+- Approach C: everything inline.
+
+  Note: inlining styles into the HTML removes a browser’s ability to cache those styles as its own asset for future page loads.
+
+- A hybrid approach
+
+  Inline only the CSS critical for rendering content in the initial view, and load the rest in a non-blocking way. Critical CSS is the subset of CSS rules required to render the top portion of a page at a given viewport size.
+
+  JavaScript has a function called `loadCSS` which loads CSS files asynchronously so that they don't block page rendering. It's recommended to place the script with `loadCSS` *after* the `<style>` element, which allows the JavaScript to insert the site's full CSS after the inline CSS, avoiding potential specificity conflicts.
+
+### Deliver images
+
+All browsers request images asynchronously, or without blocking page rendering, by default.
+
+**Data URI** embeds an image’s (or any file’s) data directly into a string of gibberish that you can use in place of an external reference to that file, removing the need to make a request to the server for that asset.
