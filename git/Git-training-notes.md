@@ -11,7 +11,6 @@ Resources:
 
 - github.com/works-with
 
-
 Notes:
 
 - Create branch remotely first and pull down. The remote branch will be auto tracked.
