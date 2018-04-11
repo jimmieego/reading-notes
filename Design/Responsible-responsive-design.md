@@ -157,3 +157,6 @@ data:[<MIME-type>][;charset=<encoding>][;base64],<data>
 ```
 
 Reserve data URIs for universal assets that apply across devices and breakpoints.
+
+#### Responsive images with HTML
+
