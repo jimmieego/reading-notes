@@ -146,4 +146,8 @@ Configuring our pages to serve critical content first can lead to a faster initi
 
 All browsers request images asynchronously, or without blocking page rendering, by default.
 
-**Data URI** embeds an image’s (or any file’s) data directly into a string of gibberish that you can use in place of an external reference to that file, removing the need to make a request to the server for that asset.
+**Data URI** embeds an image’s (or any file’s) data directly into a string of gibberish that you can use in place of an external reference to that file, removing the need to make a request to the server for that asset. Syntax:
+
+```html
+data:[<MIME-type>][;charset=<encoding>][;base64],<data>
+```
