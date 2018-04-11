@@ -160,3 +160,24 @@ Reserve data URIs for universal assets that apply across devices and breakpoints
 
 #### Responsive images with HTML
 
+```html
+<picture>
+  <source media="(min-width: 45em)" srcset="large.jpg 45em, large-2x.jpg 90em">
+  <source media="(min-width: 18em)" srcset="med.jpg 18em, med-2x.jpg 36em">
+  <img srcset="small.jpg 8em, small-2x.jpg 16em" alt="...">
+</picture>
+```
+
+A `picture` element contains a series of `source` elements followed by an `img` element.
+
+The `source` elements are listed in order of largest first, with media attributes specifying the maximum viewport size at which they should be applied. 
+
+A browser will iterate over the `source` elements in order of appearance and stop when it encounters a `source` with a matching media attribute, then set the `img` element’s source to a URL specified in the `source` element’s `srcset` attribute. If no source elements end up matching, the `img` element’s own attributes (such as `srcset`) will be used to determine its source.
+
+`srcset` is a new attribute to contain one or more potential source URLs (comma-delimited) for an image. The browser can decide the most appropriate asset based on any criteria the browser deems relevant.
+
+You can pair each value with a description of the image’s dimensions (using `w` and `h` units representing pixel measurements of the image asset itself).
+
+```html
+<img srcset="imgs/small.png 400w, imgs/medium.png 800w" alt="...">
+```
