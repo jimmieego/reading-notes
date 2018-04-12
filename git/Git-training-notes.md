@@ -13,7 +13,8 @@
 
 ## Resources
 
-- github.com/works-with
+- http://github.com/works-with
+- http://git-school.github.io/visualizing-git
 
 ## Notes
 
@@ -39,6 +40,13 @@
   - Unset: `git config --global --unset alias.lol`
   - [GitHub Flow Like a Pro with these 13 Git Aliases](https://haacked.com/archive/2014/07/28/github-flow-aliases/)
   - `git config --global --list` to see all aliases.
+- Github always does `git merge --no-ff <branch>`. Note there is a merge commit in order to show the pull request.
+- Every time you start working, do a `git pull` first.
+- Rules for merge conflict:
+  - On the feature branch with conflicts, do `git merge master`.
+  - Resolve the conflicts.
+  - Push resolved changes.
+  - Merge on Github UI.
 
 ## Rebase
 
