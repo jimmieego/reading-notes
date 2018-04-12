@@ -47,6 +47,12 @@
   - Resolve the conflicts.
   - Push resolved changes.
   - Merge on Github UI.
+- `git bisect`: https://git-scm.com/docs/git-bisect
+- `git add -p`: select changes to be added to staging
+- See differences:
+  - `git diff`: difference between working and staging
+  - `git diff --staged`:
+  - `git diff HEAD`
 
 ## Rebase
 
