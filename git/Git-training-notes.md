@@ -53,6 +53,9 @@
   - `git diff`: difference between working and staging
   - `git diff --staged`:
   - `git diff HEAD`
+- `git commit --amend`: use it in local branch.
+- `git reflog` to view local commit history
+- `git cherry-pick <commit-sha1>`
 
 ## Rebase
 
