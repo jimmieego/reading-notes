@@ -181,3 +181,18 @@ You can pair each value with a description of the image’s dimensions (using `w
 ```html
 <img srcset="imgs/small.png 400w, imgs/medium.png 800w" alt="...">
 ```
+
+The new `sizes` attribute let's us suggest the size at which an image will be rendered in the layout at a given media query breakpoint. Note that these widths won’t actually apply to the image; they’re merely cues to allow the browser to render the image as close to its intended dimensions as possible.
+
+```html
+<img
+srcset="imgs/small.png 400w, imgs/medium.png 800w" sizes="(max-width: 30em) 100%, 50%" "alt="...">
+```
+
+- `(max-width:30em)100%`: When the viewport is `30em` or narrower, the image’s width will be `100%` of the viewport’s width.
+- `50%`: Otherwise, if the viewport is wider than `30em`, the image’s width will be `50%` of the viewport’s width.
+
+`type`: can be `"image/svg+xml"`, `"image/webp"` (a new, highly optimized image format).
+
+#### SVG
+
