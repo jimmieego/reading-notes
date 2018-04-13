@@ -196,3 +196,29 @@ srcset="imgs/small.png 400w, imgs/medium.png 800w" sizes="(max-width: 30em) 100%
 
 #### SVG
 
+SVG as an img:
+
+```html
+<picture>
+  <source type="image/svg+xml" srcset="star.svg">
+  <img srcset="star.png" alt="...">
+</picture>
+```
+
+SVG in html: To embed SVG in a document, just paste that SVG markup anywhere in the `body` of your page and it’ll render in any supporting browser.
+
+SVG as an object: 
+
+```html
+<object data="star.svg" type="image/svg+xml">
+   ...Fallback content goes here.
+</object>
+```
+
+SVG as background image:
+
+```css
+.star {
+  background: url(star.svg);
+}
+```
