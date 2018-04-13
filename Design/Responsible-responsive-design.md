@@ -101,6 +101,8 @@ A performance budget is a number, or set of numbers, used as a guideline for whe
 
 Performance is not just developmental concern, it's a fundamental component of the user experience.
 
+## Deliver
+
 ### Prepare files for web delivery
 
 - Optimize image files: [ImageOptim](https://imageoptim.com/howto.html)
@@ -222,3 +224,52 @@ SVG as background image:
   background: url(star.svg);
 }
 ```
+
+### Deliver fonts
+
+FOUT: Flash of unstyled text. It happens whenever an HTML page is displayed before its custom web fonts have finished loading.
+
+Recommendation: Convert each of your custom fonts into data URIs and packing them into a single CSS file along with their `font-face` definitions. Use the `loadCSS` in JavaScript to load fonts.css in a non-blocking manner. 
+
+### Deliver JavaScript
+
+Consider JS a tertiary enhancement. Alaways try to determine whether behavior or presentation can be achieved with HTML and CSS alone. 
+
+Question whether a library is necessary at all. For example, `querySelectorAll()` in JavaScript can query the DOM for elements using CSS selectors, just as in jQuery.
+
+Consider a simple DOM framework or a custom library build.
+
+#### Options for loading JavaScript:
+
+- Use the `script` element within the `head` of a document. Scripts referenced this way delay page rendering until they have finished loading and executing.
+- Inline JavaScript in the `head`. This is good for the small, critical portion of JavaScript. Any script embedded directly in the page can't be cached as an individual file, so it will re-download with every new page that includes it.
+- Place `script` elements at the end of an HTML document. This allows content to load and render as soon as possible, and force scripts to load and execute after the content itself has been parsed and rendered.
+- `async` attribute in `script`: instruct the browser to load a JavaScript file in parallel while the HTML is stll loading. This does not guarantee that multiple scripts will execute in the order they're specified in the page source.
+- `defer` attribute in `script`: execute the script after the HTML has finished loading.
+- Dynamic loading: place a bit of JavaScript inline in the page and use that script to append additional `script` elements, which will download and execute in parallel. The `insertBefore` method is the safest and most reliable. Note that this approach does not ensure that scripts will execute in the order they are requested.
+
+```html
+  <head>
+    <script>
+      var myJS = document.createElement("script");
+      myJS.src = "myScript.js";
+      var ref = document.getElementByTagName("script")[0];
+      ref.parentNode.insertBefore(myJS, ref);
+    </script>
+  </head>
+```
+
+### Deliver enhancement
+
+Two-tiered responsive solution: depending on their capabilities, browsers receive either a functional, simple HTML-only experience or the enhanced version. Use feature tests to ensure that we only apply enhanced scripting and styles in places that can understand them.
+
+Qualified asset loading:
+
+```javascript
+if("querySelector" in document) {
+  document.documentElement.className += "enhanced";
+  loadJS("myScript.js");
+}
+```
+
+Within the `head`, inline both critical CSS and JavaScript to help load additional scripts, styles, and fonts in a qualified manner.
