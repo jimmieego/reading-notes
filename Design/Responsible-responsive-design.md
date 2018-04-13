@@ -207,7 +207,7 @@ SVG as an img:
 
 SVG in html: To embed SVG in a document, just paste that SVG markup anywhere in the `body` of your page and it’ll render in any supporting browser.
 
-SVG as an object: 
+SVG as an object:
 
 ```html
 <object data="star.svg" type="image/svg+xml">
