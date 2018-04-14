@@ -11,3 +11,6 @@ David Kadavy
 ## Chapter 1: Why Design Matters
 
 The layers of design: purpose, medium and technology, and aesthetic decisions.
+
+## Chapter 2: The Purpose of Design
+
