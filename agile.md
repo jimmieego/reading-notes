@@ -1,24 +1,32 @@
 # Agile & Scrum Method
 
+**Agile** is also a way of thinking and a systematic approach for the rapid delivery of complex products and services. Agile minimizes risk by incremental delivery, emphasizes real time collaboration, automation, mistake proof development practices, and uses business value as the primary measure of progress.
+
+**Scrum** is a style of Agile that provides a project management wrapper for incremental delivery of projects, independent of technology used.
+
+## Summary of Scrum
+
 The Scrum Team's members, the Product Owner, the Development Team, and the ScrumMaster, collaborate to create a series of Product Increments, at short time-boxed intervals called Sprints, meeting the Product Owner's acceptance criteria and the team's shared "Definition of Done". They work from a Product Backlog. In each Sprint, they begin with Sprint Planning to produce the Sprint Backlog, a plan for the Sprint. They self-organize to do the Development, using Daily Scrum meetings to coordinate and to ensure that they produce the best possible Product Increment. They perform Product Backlog Refinement to prepare for the next Sprint's planning meeting. They end the Sprint with the Sprint Review and Sprint Retrospective, reviewing the product and their process.
 
 ## Scrum Framework
 
 ### Roles
 
-The Scrum Team includes three roles, the Product Owner, the Scrum Master, and the members of the Development Team. 
+The Scrum Team includes three roles, the Product Owner, the Scrum Master, and the members of the Development Team.
 
 The Product Owner is responsible for drawing out the most valuable possible product by the desired date. The Product Owner does this by managing the Product Backlog, and by ensuring that the Product Backlog, and progress against it, is kept visible.
 
-The Development Team is responsible for determining how much work will be taken on in a Sprint, and for producing a usable Product Increment in every Sprint.
+The Development Team is responsible for determining how much work will be taken on in a Sprint, and for producing a usable Product Increment in every Sprint. The Development Team can be Feature Teams that build complete features in vertical slices of technology layers (GUI, Client, Server, Database, etc.).
 
-The ScrumMaster is a "servant leader", helping the rest of the Scrum Team follow their process.
+The ScrumMaster is a "servant leader", helping the rest of the Scrum Team follow their process. The ScrumMaster removes impediments and shield the team from external interferences.
 
 ### Artifacts
 
 Scrum includes three essential artifacts, the Product Backlog, the Sprint Backlog, and the Product Increment.
 
 The most important Scrum artifact is the Product Increment. Every Sprint produces a Product Increment. The Product Increment must be of high enough quality to be given to users. The Product Increment must meet the Scrum Team's current Definition of Done, and each component of it be acceptable to the Product Owner.
+
+User stories make great product backlog items. User stories are simple, clear, brief descriptions of functionality that will be valuable to either a user or purchaser of a product. Template: "As a \<type of user\>, I can \<Feature/function\> so that \<business value\>".
 
 ### Activities
 
