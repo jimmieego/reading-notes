@@ -27,3 +27,13 @@ Formula: `target / context = result` (`em`)
 
 ## Chapter 3. Flexible Images
 
+```css
+img,
+embed,
+object,
+video {
+	max-width: 100%;
+}
+```
+
+The `max-width: 100%` forces the image's width to *match* the width of its container. It can also apply to most fixed-width elements, like video and other rich media.
