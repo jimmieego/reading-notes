@@ -37,3 +37,5 @@ video {
 ```
 
 The `max-width: 100%` forces the image's width to *match* the width of its container. It can also apply to most fixed-width elements, like video and other rich media.
+
+Also use CSS media queries to apply different image sizes for different resolution ranges.
