@@ -55,3 +55,28 @@ Clip off excess image:
 ```
 
 Note: `overflow` is generally less useful than scaling the image via `max-width`.
+
+## Chapter 4. Media Queries
+
+Examples:
+
+```css
+@media screen and (min-width: 1024px) {
+	body {
+		font-size: 100%;
+	}
+}
+```
+
+```css
+@import url("wide.css") screen and (min-width: 1024px);
+```
+
+```html
+<link rel="stylesheet" href="wide.css" media="screen and (min-width: 1024px)" />
+```
+
+**display area**: the browser's viewport.
+**rendering surface**: the entire display.
+
+We can chain multiple queries together with the `and` keyword:
