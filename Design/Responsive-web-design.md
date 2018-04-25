@@ -80,3 +80,9 @@ Examples:
 **rendering surface**: the entire display.
 
 We can chain multiple queries together with the `and` keyword:
+
+```css
+@media screen and (min-device-width: 480px) and (orientation: landscape) {}
+```
+
+Research your target devices and browsers thoroughly for the query features they support, and test accordingly.
