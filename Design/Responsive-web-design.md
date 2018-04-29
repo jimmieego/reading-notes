@@ -90,3 +90,5 @@ Research your target devices and browsers thoroughly for the query features they
 ```html
 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 ```
+
+You can also use `max-width` to contraint your page design.
