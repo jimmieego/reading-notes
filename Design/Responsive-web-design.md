@@ -92,3 +92,33 @@ Research your target devices and browsers thoroughly for the query features they
 ```
 
 You can also use `max-width` to contraint your page design.
+
+## Chapter 5. Becoming Responsive
+
+At its most basic level, responsive design is about serving one HTML document to countless browsers and devices, using flexible layouts and media queries to ensure that design is as portable and accessible as possible.
+
+Responsive web design isn’t intended to serve as a replacement for mobile web sites.
+
+How do you know if responsive design is right for you?
+
+- Know the users' goals
+- Design for *mobile first*
+- Ask this during site planning: *How does this content or feature benefit the mobile users?*
+
+### Workflow
+
+1. Identify the breakpoints
+2. Iterative, collaborative design.   
+  Prototype before the designs are final to get beyond the pixel limitations of design tools. Beging building a design that can flex and grow inside a changing browser window. 
+3. The interactive design review.  
+  The goal is to close the gap between the traditional "design" and "development" cycles, to let the two groups collaborate more closely to produce a finished, responsive design.
+
+### Be more responsible
+
+In general, responsive design is about starting from a reference resolution, and using media queries to adapt it to other contexts. We should build our stylesheet with "mobile first" in mind, rather than defaulting to a desktop layout. We should begin by defining a layout appropriate to smaller screens, and then use media queries to progressively enhance our design as the resolution increases.
+
+Use `min-width` media queries to scale the design *up*.
+
+### Progressive enhancement
+
+Progressive enhancement builds documents for the least capable or differently capable devices first, then moves on to enhance those documents with separate logic for presentation.
