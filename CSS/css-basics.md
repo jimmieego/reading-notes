@@ -24,19 +24,53 @@ Selectors can be separated into two categories: DOM selectors (class, type, attr
 ### DOM selectors
 
 #### Attribute selectors
-- Select an attribute name: `input[type="text"]`
-- Select from a list of values: `*[class~=box]` selects any element with a class of `box`.
-- Select a value that starts with a string: `a[href^="https"]`
-- Select a value that ends with a string: `a[href$=".com"]`
-- Select a value that contains a string: `a[href*=".com"]`
-- Case insensitivity: `a[href^="http" i]`
-- Select a value or a value followed by a `-`: `span[lang|="en"]`
+
+```
+E[attr] {...} /* Simple Attribute Selector */
+E[attr='value'] {...} /* Exact Attribute Value Selector */ 
+E[attr~='value'] {...} /* Partial Attribute Value Selector, matches a full item in a space-separated list */ 
+E[attr|='value'] {...} /* Language Attribute Selector */
+```
+
+Select an attribute name: `input[type="text"]`
+
+Select from a list of values: `*[class~=box]` selects any element with a class of `box`.
+
+Select a value that starts with a string: `a[href^="https"]`. Example of showing an icon for external links:
+  
+```css
+  a[href^='http'] {
+    background: url('link.svg') no-repeat left center;
+    display: inline-block;
+    padding-left: 20px;
+  }
+```
+
+Select a value that ends with a string: `a[href$=".com"]`. Example:
+
+```css
+a[href$='.pdf'] { background-image: url('pdf.svg'); }
+a[href$='.doc'] { background-image: url('word.svg'); }
+a[href$='.rss'] { background-image: url('feed.svg'); }
+```
+
+Select a value that contains a string or a *substring*: `a[href*=".com"]`
+
+Case insensitivity: `a[href^="http" i]`
+
+Select a value or a value followed by a `-`: `span[lang|="en"]`
+
+You can chain multiple selectors together:
+
+```css
+a[href^='http://'][href*='/folder2/'][href$='.pdf'] {...}
+```
 
 ### Pseudo-selectors
 
 #### Child selector
 
-Select all elements that are immediate children of a specified parent. 
+Select all elements that are *immediate* children of a specified parent. 
 
 ```css
 .classname > a { }
@@ -44,14 +78,15 @@ Select all elements that are immediate children of a specified parent.
 
 #### Adjacent sibling
 
-Select elements that are the adjacent siblings of an element.
+Select elements that are the *immediate*, *adjacent* siblings of the first selector.
 
 ```css
 h2 + p { }
 ```
 
 #### General sibling
-Select elements that are the siblings of an element.
+
+Select any elements that are preceded by the first selector, regardless of whether it is immediately adjacent.
 
 ```css
 h2 ~ p { }
