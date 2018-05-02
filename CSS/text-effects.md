@@ -8,3 +8,24 @@ h2 {
 }
 ```
 
+You can add multiple shadows by separating them using commas (`,`).
+
+## Restricting overflow
+
+Text is clipped at the point where it flows out of the container element:
+
+```css
+p {
+	text-overflow: clip;
+}
+```
+
+
+Replaces the last whole or partial character before the overflow with an ellipsis character (`...`):
+
+```css
+span {
+	text-overflow: ellipsis;
+}
+
+```
