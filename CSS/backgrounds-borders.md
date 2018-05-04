@@ -101,3 +101,37 @@ Shorthand syntax with irregular curves:
 .radius-1 { border-radius: 20px / 10px; } /*horizontal-radius / vertical-radius*/
 ```
 
+## Using percentage values
+
+Example:
+
+```css
+div {
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+}
+```
+
+## Using images for borders
+
+Example:
+
+```css
+div {
+	border: 34px 10px; /* 34px border on the top and bottom, 10px on the left and right */
+	border-image-source: url('foo.png');
+	border-image-slice: 34; /* set a distance from each edge of the image */
+	border-image-width: 34px; /* creates a “virtual” border on the element with no impact on page layout or flow */
+	border-image-outset: 15px 30px 15px 30px; /* top, right, bottom, left; outsetting the image to start from outside the border box */
+	border-image-repeat: stretch round; /* default is `stretch`, can be `repeat` and `round`; horizontal repetition, vertical */
+} 
+```
+
+`border-image` shorthand: `border-image: source slice / width / outset repeat;`
+
+## Drop shadows
+
+Syntax: `E { box-shadow: inset horizontal vertical blur-radius spread color; }`
+
+`inset`: sets whether the shadow sits inside or outside of the element. If not set, the shadow sits outside the element. 
