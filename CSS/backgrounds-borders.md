@@ -75,3 +75,29 @@ To make the image appear at its natual size, use `auto`. If you only specify a s
 - `border-box`: the background originates at the limit of the border.
 - `padding-box`: the background originates from the limit of the padding.
 - `content-box`: the background originates from the limit of the content box.
+
+## Borders with rounded corners
+
+Example:
+
+```css
+div {
+	border-top-left-radius: 10px 20px; /*irregular rounded corners*/
+	border-top-right-radius: 20px; /*regular rounded corners*/
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+```
+
+Shorthand property:
+
+```css
+div { border-radius: 20px 20px 10px 10px; } /*[top-left] [top-right] [bottom-right] [bottom-left]*/
+```
+
+Shorthand syntax with irregular curves:
+
+```css
+.radius-1 { border-radius: 20px / 10px; } /*horizontal-radius / vertical-radius*/
+```
+
