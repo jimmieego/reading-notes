@@ -48,3 +48,67 @@ div {
 ```
 
 A length or percentage value is required for the final color-stop. The final color-stop value sets the point at which the gradient should end and then start repeating.
+
+## Radial gradients
+
+Example:
+
+```css
+div {
+	background-image: radial-gradient(white, black);
+}
+```
+
+### Shape
+
+You can set the shape of a radial gradient by adding a keyword before the color-stops. The default is `ellipse`, but you can use the alternative `circle`:
+
+```css
+div {
+	background-image: radial-gradient(circle at 100% 50%, white, black);
+} 
+```
+
+The default center of a radial gradient is at the center of the element. You can set the gradient center position after the shape keyword.
+
+### Extent
+
+You can also set the *extent* of a gradient:
+
+```css
+div {
+	background-image: radial-gradient(circle 50px, black, white);
+	/*The extent argument is placed immediately after the shape keyword*/
+}
+```
+
+The *extent* can be a length or position value or one of four extent keywords: 
+
+- `closest-corner`
+- `closest-side`
+- `farthest-corner` (the default)
+- `farthest-side`
+
+### Using multiple color-stop values
+
+Radial gradients can accept multiple color-stop values and length or percentage values for positioning control. 
+
+Example:
+
+```css
+.gradient-3 { 
+	background-image: radial-gradient(farthest-side circle at left, white, black 25%, white 75%, black);
+}
+```
+
+### Repeating radial gradients
+
+Example:
+
+```css
+div {
+	background-image: repeating-radial-gradient(circle, black, white 20%);
+	/* a circular gradient, repeats black-white every 20 percent until its extent is reached */
+}
+```
+
