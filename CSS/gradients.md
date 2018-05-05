@@ -112,3 +112,24 @@ div {
 }
 ```
 
+## Multiple gradients
+
+Because gradients are applied with the `background-image` property, you can use CSS3’s multiple background values’ syntax to apply multiple gradients to an element using comma-separated values.
+
+Examples:
+
+```css
+.linears {
+  background-image:
+  linear-gradient(to right bottom, black, white 50%, transparent 50%),
+  linear-gradient(to left bottom, black, white 50%, black 50%);
+}
+.radials {
+  background-image:
+  radial-gradient(closest-side circle at 20% 50%, white, black 95%, transparent),
+  radial-gradient(closest-side circle at 50% 50%, white, black 95%, transparent),
+  radial-gradient(closest-side circle at 80% 50%, white, black 95%, transparent);
+}
+
+/* the last color-stop has a value of transparent to allow the layers below to show through. */
+```
