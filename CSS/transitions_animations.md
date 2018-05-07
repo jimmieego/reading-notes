@@ -75,3 +75,79 @@ div { transition: border-width 4s, height 500ms, padding 4s; }
 
 ## Animations
 
+The process of creating animations:
+
+1. define the properties and timings (keyframes);
+2. add the animation controls to the elements that will be animated.
+
+### Define keyframes
+
+*Keyframes* are points that set the start and end of a transition.
+
+Syntax:
+
+```css
+@keyframes name {
+	selector {
+		property: value;
+	}
+}
+```
+
+The `selector` sets the position along the duration of the animation that the keyframe will occur. The usual value here is a percentage value. You can also use keyword `from` for 0 percent and `to` for 100 percent.
+
+Example:
+
+```css
+@keyframes expand {
+	from { border-width: 4px; }
+	50% { border-width: 12px; }
+	to {
+		border-width: 4px;
+		height: 100%;
+		width: 100%;
+	}
+}
+```
+
+Note that inheritance operates on individual keyframes, so if you want a change to persist between frames, you need to specify it in each frame.
+
+### Apply animation control
+
+#### `animation-name`
+
+The `animation-name` property refers to an animation that’s been defined with the `@keyframes` rule.
+
+Syntax: `div { animation-name: name; }`
+
+#### `animation-duration`
+
+Syntax: `div { animation-duration: time; }`
+
+#### `animation-timing-function`
+
+Syntax: `div { animation-timing-function: value; }`. 
+
+The `value` can be keywords (`ease`, `linear`, `ease-in`, `ease-out`, and `ease-in-out`), the `cubic-bezier()` function, or the `steps()` function.
+
+#### `animation-delay`
+
+Syntax: `div { animation-delay: time; }`
+
+Note: negative values of `time` cause the animation to “skip” by that amount.
+
+#### `animation-iteration-count`
+
+Sets the number of repetitions.
+
+Syntax: `div { animation-iteration-count: count; }`
+
+The `count` can be a whole number or `infinite`. Default value is 1.
+
+#### `animation-direction`
+
+Sets whether the animation always plays in one direction or alternates playing forward and backward.
+
+Syntax: `div { animation-direction: keyword; }`
+
+The `keyword` can be `normal` or `alternate`. The `normal` always plays the animation forward.
