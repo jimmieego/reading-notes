@@ -150,4 +150,56 @@ Sets whether the animation always plays in one direction or alternates playing f
 
 Syntax: `div { animation-direction: keyword; }`
 
-The `keyword` can be `normal` or `alternate`. The `normal` always plays the animation forward.
+The `keyword` can be `normal` or `alternate`. The `normal` always plays the animation forward. The `alternate` plays the animation from start to finish and then plays in reverse before starting over again.
+
+#### `animation-fill-mode`
+
+Sets how the element appears outside of the animation cycle.
+
+Syntax: `div { animation-fill-mode: keyword; }`
+
+The `keyword` can be:
+
+- `none`: default.
+- `backwards`: the declarations specified in the `0%` (or `from`) keyframe will be applied to the element before the animation begins.
+- `forwards`: the declarations in the `100%` (or `to`) keyframe will be applied when the animation ends.
+- `both`: the `0%` declarations will apply before the animation and the `100%`, after.
+
+#### `animation-play-state`
+
+Sets whether an animation is active.
+
+Syntax: `div { animation-play-state: keyword; }`
+
+The `keyword` can be:
+
+- `running`: means the animation is playing.
+- `paused`: means the animation is not playing.
+
+### The `animation` shorthand
+
+Syntax:
+
+```css
+div {
+	animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+}
+```
+
+### Multiple animations
+
+You can add multiple animations to an element using a comma-separated list. This method works for each of the subproperties and the shorthand property.
+
+Example:
+
+```css
+#animation {
+	animation-name: first-anim, second-anim; 
+	animation-duration: 6s, 1.25ms; 
+	animation-delay: 0, 750ms;
+}
+
+#animation2 {
+	animation: first-anim 6s, second-anim 1.25ms 750ms;
+}
+```
