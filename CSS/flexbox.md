@@ -113,6 +113,40 @@ The `keyword` can be:
 
 ### Vertical alignment with `align-items`
 
+Syntax:
+
+```css
+.flex-container {
+	align-items: keyword;
+}
+```
+
+The `keyword` can be:
+
+- `stretch`, which makes items the same height as the parent.
+- `flex-start`, which aligns items to the top of the container.
+- `flex-end`, which aligns items to the bottom of the container.
+- `center`, which aligns items to the vertical center of the container, with equal space above and below.
+
+The default value is `stretch` if the items have no height explicitly specified, or `flex-start` if they do.
+
+### Cross-axis alignment with `align-self`
+
+`align-self` controls the cross-axis alignment of individual items. This property applies to the item, not the container.
+
+Example:
+
+```css
+#item {
+	align-self: flex-start;
+}
+```
+
+The values are the same as for `align-items`, and they have the same effects on the selected item only; sibling items are unaffected.
+
+### Wrap and flow
+
+
 
 
 
@@ -121,7 +155,7 @@ You can use Flexbox for displaying the elements in center if the parent componen
 ```css
 div.child {
 	display: flex;
-	align-items: center; /* vertical alignment */
-	justify-content: center; /* horizontal alignment */
+	align-items: center; /* cross axis (vertical) alignment */
+	justify-content: center; /* main axis (horizontal) alignment */
 }
 ```
