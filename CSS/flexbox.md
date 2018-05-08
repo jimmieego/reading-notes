@@ -1,3 +1,5 @@
+# Flexbox
+
 **Flexbox** is most suitable for working with interface elements and smaller components.
 
 ## Declare the flexible box model
@@ -146,9 +148,29 @@ The values are the same as for `align-items`, and they have the same effects on 
 
 ### Wrap and flow
 
+The `flex-wrap` property controls whether items wrap to multiple lines. It can be set to:
 
+- `nowrap`: default, which preserves all items on the same line.
+- `wrap`: breaks items onto extra lines below the first (or to the right in column view), if required.
+- `wrap-reverse`: changes the direction of the cross axis so new lines appear above (or to the left).
 
+### The `flex-flow` shorthand
 
+Example:
+
+```css
+.flex-container {
+	flex-flow: column wrap-reverse;
+}
+```
+
+### Aligning multiple lines with `align-content`
+
+When items wrap over multiple lines, you can control their alignment with the `align-content` property. This property works like `justify-content` but on the cross axis. 
+
+Possible values: `flex-start`, `flex-end`, `center`, `space-between`,`space-around`, `stretch` (resizes the items to fill all unused space).
+
+## An example
 
 You can use Flexbox for displaying the elements in center if the parent component(div) contains “more than one child components/elements(div)” for specific structure. 
 
