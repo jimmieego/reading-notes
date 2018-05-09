@@ -82,3 +82,13 @@ The `function` value is at least one of a range of nine filter effect functions.
 
 ### `blur()`
 
+Applies a blur effect to an element. The argument for the `blur()` function is a unit of length that controls the radius of the blur. The effect is called *Gaussian blur*. The higher the radius value, the greater the blur effect.
+
+Example:
+
+```css
+E { filter: blur(10px); }
+```
+
+### `brightness()` and `contrast()`
+
