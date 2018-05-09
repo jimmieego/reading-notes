@@ -195,3 +195,48 @@ The `keyword` can be:
 
 - `column`: Items will fill empty cells in columns, moving down the column.
 - `row`: Items will fill empty rows, moving across the row.
+
+## Combine explicit and implicit grids
+
+The following code creates an explicit grid of three columns and two rows and allows for any items exceeding this explicit grid by adding an implicit grid. The extra columns in the implicit grid are defined as 1fr wide, with extra rows being 80px high:
+
+```css
+#container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 80px);
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 80px;
+}
+```
+
+### The `grid` shorthand
+
+Syntax: 
+
+```css
+#container {
+    grid: grid-auto-flow grid-auto-columns / grid-auto-rows;
+}
+```
+
+Note you can only use `grid` to set either explicit or implicit grids, not both.
+
+Example:
+
+```css
+/* Implicit grid */
+#container {
+    grid: row 1fr / 80px;
+}
+
+/* Explicit grid */
+#container2 {
+    grid: repeat(3, 1fr) / 'a b b' 80px 'a c d' auto;
+}
+```
+
+## Grid item stacking order
+
+Use the `z-index` property: items with the highest `z-index` value will be stacked above all others.
+
+Use the `order` property: In explicit grids, this property acts exactly like `z-index`, changing the stacking order; in implicit grids, however, it also changes the order in which items are placed in the grid.
