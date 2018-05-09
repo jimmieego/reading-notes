@@ -1,7 +1,9 @@
 # Sass
+
 Never edit or commit .css files.
 
 ## Variables
+
 Example:
 
 ```css
@@ -30,7 +32,8 @@ body {
 ## Functions and Operators
 
 ## Mixins
-A mixin is a collection of of re-usable styles, properties and selectors.
+
+A *mixin* is a collection of of re-usable styles, properties and selectors.
 
 Examples:
 
@@ -53,7 +56,9 @@ Examples:
 Use something like `@import "global/mixins;"` to include component `.scss` files. Make sure use an underscore (`_`) character at the start of the file name (e.g., `_variables.scss`). The Sass compiler will interpret these files as snippets and won’t actually preprocess them individually. Only the files you want the preprocessor to compile should be named without an underscore, e.g., `style.scss`.
 
 ## Compass
+
 Minimum `config.rb` file in the root of project folder:
+
 ```
 http_path = "/"
 css_dir = "css"
@@ -67,12 +72,15 @@ environment = :development
 ```
 
 Import Compass:
+
 ```
 @import "compass";
 
 @import "global/mixins";
 ```
+
 Or:
+
 ```
 @import "compass/utilities";
 @import "compass/css3";
@@ -82,9 +90,11 @@ Or:
 ```
 
 # Flexbox
+
 Reference: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ## Basic concepts
+
 The main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space, or shrinks them to prevent overflow. 
 
 The flexbox layout is direction-agnostic. 
@@ -97,6 +107,7 @@ The flexbox layout is direction-agnostic.
 Any `:before` and `:after` pseudo-elements on flex container will be treated as children. 
 
 ## Flex container (parent) properties
+
 ```css
 .container {
 	display: flex; /* or inline-flex */
@@ -112,6 +123,7 @@ Any `:before` and `:after` pseudo-elements on flex container will be treated as 
 Note: When switching to `flex-direction: column;`, `align-items` becomes the horizontal alignment while `justify-content` becomes the vertical alignment.
 
 ## Flex items (children) properties
+
 ```css
 .item {
 	order: <integer>; /*controls the order in which flex items appear in the flex container */
