@@ -86,3 +86,6 @@ div {
 }
 ```
 
+The `keyword` can be:
+
+- `max-content`, `min-content`: intrinsic values that make an element as wide or as high as the largest (`max-content`) or smallest (`min-content`) item of content it contains.
