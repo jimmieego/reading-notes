@@ -73,3 +73,16 @@ The `keyword` can be:
 
 - `content-box`: default, which means apply the specified `width` or `height` to the content box only, as in the W3C model.
 - `border-box`: any specified length should also include any padding and border boxes.
+
+### Intrinsic and extrinsic sizing
+
+*Intrinsic sizing* is based on an element’s *children*, and *extrinsic sizing* is based on the size of the *parent* element.
+
+All of the intrinsic and extrinsic sizing models are applied using a keyword value on the `width` or `height` properties (and their `min-` and `max-` variants):
+
+```css
+div {
+    width: keyword;
+}
+```
+
