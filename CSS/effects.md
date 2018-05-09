@@ -67,3 +67,18 @@ The default value is `auto`. To create the new stacking context, use `isolate`:
 ```css
 div { isolation: isolate; }
 ```
+
+## Filter effects
+
+Filters are used to change an element’s appearance before it reaches the page.
+
+Syntax:
+
+```css
+E { filter: function; }
+```
+
+The `function` value is at least one of a range of nine filter effect functions. Each accepts a single argument, except when a series of arguments is required (in a space-separated list).
+
+### `blur()`
+
