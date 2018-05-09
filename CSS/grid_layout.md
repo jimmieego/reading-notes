@@ -113,3 +113,85 @@ Example:
 
 ### Named grid areas
 
+Use the `grid-template-areas` property. 
+
+Example 1:
+
+```css
+#container {
+    display: grid;
+    grid-template-areas: `nav main side`;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#itemMain {
+    grid-area: main;
+}
+```
+
+Example 2:
+
+```css
+#container {
+    display: grid;
+    grid-template-areas:
+      'nav head head'
+      'nav main side';
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 80px auto;
+}
+
+#F { grid-area: head; }
+#G { grid-area: nav; }
+```
+
+### The `grid-template` shorthand
+
+Syntax:
+
+```css
+#container {
+    grid-template: grid-template-columns / grid-template-rows;
+}
+```
+
+To use the property with named grid areas, you add the identifiers after the slash:
+
+```css
+#container {
+   grid-template: repeat(3, 1fr) / 'nav head head' 80px 'nav main side' auto; 
+}
+```
+
+### Implicit grids
+
+Implicit grids are defined by their contents, rather than the specified length values of explicit grids.
+
+`grid-auto-columns` and `grid-auto-rows`: take a single value to specify the width of the row or column.
+
+Example:
+
+```css
+#container {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 80px;
+    /*
+        Any created columns should be 1fr wide
+        any new rows should be 80px
+    */
+}
+```
+
+### Grid items without a decleared place
+
+```css
+#container {
+    grid-auto-flow: keyword;
+}
+```
+
+The `keyword` can be:
+
+- `column`: Items will fill empty cells in columns, moving down the column.
+- `row`: Items will fill empty rows, moving across the row.
