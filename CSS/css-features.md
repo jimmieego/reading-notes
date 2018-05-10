@@ -34,7 +34,13 @@ CSS variable names must be a string of characters with no spaces and prefixed wi
 
 ## Feature queries
 
+Example:
 
+```css
+@supports (display: flex) { ... }
+@supports (display: flex) and (transition: 1s) {...}
+@supports not (display: flex) {...}
+```
 
 ## Shadow DOM
 
