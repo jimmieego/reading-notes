@@ -29,6 +29,7 @@ Example:
 div {
     grid-template-columns: 60px 3fr 1fr;
     grid-template-rows: 60px auto 5em;
+    grid-gap: 20px 30px; /* grid-row-gap grid-column-gap  */
 }
 ```
 
