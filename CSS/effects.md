@@ -187,3 +187,94 @@ Note this technique only works for a single filter.
 
 ## Masking
 
+Masking is a technique in which certain parts of an element are hidden from view. 
+
+Two approaches to *masking*:
+
+- *Clipping*: the area that’s hidden is set by a polygonal shape that’s overlaid on an element.
+- *Image masking*: an image’s alpha channel is used to set the hidden area.
+
+### Clipping
+
+A shape is laid over an image and any parts of the element that are behind the shape will be shown, while any parts outside the boundaries of the shape will be hidden. The boundary of the shape is called the *clip path* and is created with the `clip-path` property:
+
+```css
+E { clip-path: shape; }
+```
+
+The `shape` can be:
+
+- `circle()`: `circle(r at cx cy)`. Example: `E { clip-path: circle(100px at 50% 50%); }`
+- `ellipse()`: `ellipse(rx ry at cx cy)`. Example: `E { clip-path: ellipse(50px 100px at 50% 50%); }`
+- `inset()`: create a rectangle that is inset from the border of the element to which it is applied. `inset(o1 o2 o3 o4)`, syntax is similar to `border-image-slice`. The first four arguments set the distance that each side of the rectangle is offset. A single value will set the offset distance equally on all sides; if two values are supplied, the first will set the top and bottom and the second the left and right; and so on. Example: `E { clip-path: inset(2em round 20px); }`, round the corner of the clip path, syntax is similar to `border-radius`.
+- `polygon()`: takes an unlimited number of arguments, in pairs, in a comma-separated list. Each pair creates a coordinate value, and the full set of coordinates is used to draw the required clip shape. Example: `E { clip-path: polygon(0% 100%, 100% 0%, 0% 0%); }`, a triangle.
+
+Example of animating clip paths:
+
+```css
+E {
+    clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+    transition: clip-path 1s;
+}
+E:hover { 
+    clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
+}
+```
+
+### Image masking
+
+Syntax:
+
+```css
+E { mask: image position / size; }
+```
+
+Values:
+
+- `image`: the `url()` notation with a path to the image to be used as a mask.
+- `position`: works the same as the `background-position`.
+- `size`: works the same as the `background-size`.
+
+Example:
+
+```css
+E { mask: url('mask.png') 50% 50% / 100% auto; }
+```
+
+The `mask` property is a shorthand:
+
+```css
+E { mask: image mode position / size repeat origin clip composite; }
+```
+
+Values:
+
+- The `mask-mode` property determines whether the mask should work on the default alpha channel or through luminance (lightness);
+- The `mask-repeat` tiles the mask image just as `background-repeat`;
+- The `mask-origin` and `mask-clip` work like `background-origin` and `background-clip`;
+- The `mask-composite` controls how multiple `mask-image` values should interact if they overlap.
+
+### Masking in SVG
+
+Define the mask with ID in SVG:
+
+```svg
+<defs>
+    <mask id="masking">
+        <rect y="0.3" width="1" height=".7" fill="black" />
+        <circle cx=".5" cy=".5" r=".35" fill="white" />
+    </mask>
+     </defs>
+```
+
+Apply the mask to the target element:
+
+```css
+E { mask: url('#masking'); }
+```
+
+## Combining filter effects and masking
+
+The order: filter effects > clipping > masking > opacity
+
+Note: To avoid the clipping of the drop shadow, you can apply the filter effect to a parent element.
