@@ -151,7 +151,7 @@ Syntax:
 E { filter: drop-shadow(5px 5px 3px gray); } /* x-offset, y-offset, blur radius, and shadow color */
 ```
 
-The `drop-shadow()` function is aware of any alpha value (opacity) in the target element. The `box-shadow` property doesn’t care about alpha transparency, and its shadow follows only the outline of the element box.
+The `drop-shadow()` function is aware of any alpha value (opacity) in the target element. The `box-shadow` property doesn’t care about alpha transparency, and its shadow follows only the outline of the element bounding box.
 
 ### Multiple filter effect functions
 
