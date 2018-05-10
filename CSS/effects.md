@@ -92,3 +92,98 @@ E { filter: blur(10px); }
 
 ### `brightness()` and `contrast()`
 
+The `brightness()` function changes the brightness of an element. The `contrast()` function increases or decreases the contrast between the dark and light of an element. Both functions take a percentage as an argument.
+
+Example:
+
+```css
+E { filter: brightness(50%); }
+E { filter: contrast(50%); }
+```
+
+Note:
+
+- An argument of 100% leaves the element unchanged.
+- An argument of 0% for `brightness()` makes the element fully black, and 0% for `contrast()` makes the element fully gray.
+
+### `grayscale()`, `sepia()`, and `saturate()`
+
+The `grayscale()` function replaces colors with shades of gray so you can convert images to black and white.
+
+The `sepia()` toning function is similar to `grayscale()`, except it uses a gold tint to produce a vintage photo effect.
+
+The `saturate()` function controls the color intensity.
+
+All three functions accepts a percentage value as an argument:
+
+```css
+E { filter: grayscale(100%); } /* 100%: completely black and white */
+E { filter: sepia(100%); } /* 100%: fully sepia toned */
+E { filter: saturate(200%); }
+```
+
+Note: 
+
+- A value of 0% for `grayscale()` and `sepia()` leaves the image unchanged.
+- A value of 0% for `saturate()` makes an image appear fully unsaturated or grayscal; values greater than 100% oversaturate the image.
+
+### `hue-rotate()`
+
+Shifts the hue of all colors in an element around the color wheel by the same amount. The required argument is a degree:
+
+```css
+E { filter: hue-rotate(45deg); }
+```
+
+### `opacity()`
+
+Works the same as the `opacity` property. The function accepts a percentage value as an argument, with 0% equal to fully transparent and 100% equal to fully opaque:
+
+```css
+E { filter: opacity(25%); }
+```
+
+### `drop-shadow()`
+
+Syntax:
+
+```css
+E { filter: drop-shadow(5px 5px 3px gray); } /* x-offset, y-offset, blur radius, and shadow color */
+```
+
+The `drop-shadow()` function is aware of any alpha value (opacity) in the target element. The `box-shadow` property doesn’t care about alpha transparency, and its shadow follows only the outline of the element box.
+
+### Multiple filter effect functions
+
+List multiple filter functions in a space-separated list. Example:
+
+```css
+E { filter: blur(5px) drop-shadow(5px 5px 3px gray); }
+```
+
+Note:
+
+- The order of the function is the order in which they'll be applied.
+- When you list multiple functions in the `filter` property, any functions not in the list will have their values returned to the default.
+
+### Filters in SVG
+
+You can create your own filters in SVG and apply them in CSS by using an ID reference:
+
+```svg
+<filter id="blur">
+    <feGaussianBlur stdDeviation="blur-radius" />
+</filter>
+```
+
+Refer the SVG filter in CSS using the `url()`:
+
+```css
+E { filter: url('#blur'); } /* if the SVG is in line */
+E { filter: url('filters.svg#blur'); } /* if the SVG is an external file */
+```
+
+Note this technique only works for a single filter.
+
+## Masking
+
