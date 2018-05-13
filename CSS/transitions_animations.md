@@ -14,10 +14,13 @@ div {
     transition: background-color 2s;
 }
 
+div:focus,
 div:hover { 
 	background-color: silver; 
 }
 ```
+
+Note: The transition instructions are attached to the normal state to avoid duplication in other states.
 
 ## `transition-property`
 
