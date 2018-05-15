@@ -33,7 +33,7 @@ div {
 }
 ```
 
-You can use the specialized grid unit of length, `fr`, or *franction*. One `fr` is equivalent to one equal share of any *unassigned* length in a grid.
+You can use the specialized grid unit of length, `fr`, or *franction*. One `fr` is equivalent to one equal share of any *unassigned* length in a grid. Grid is only sharing out the available space *after* ensuring that the tracks are big enough to contain the items.
 
 ### Place items in an explicit grid
 
@@ -241,3 +241,7 @@ Example:
 Use the `z-index` property: items with the highest `z-index` value will be stacked above all others.
 
 Use the `order` property: In explicit grids, this property acts exactly like `z-index`, changing the stacking order; in implicit grids, however, it also changes the order in which items are placed in the grid.
+
+## The `minmax()` function
+
+The `minmax(min, max)` CSS function defines a size range greater than or equal to `min` and less than or equal to `max`.
