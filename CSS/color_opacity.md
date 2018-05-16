@@ -29,6 +29,7 @@ E { color: rgba(red, green, blue, alpha); } /* alpha is a decimal fraction from 
 Note:
 - `rgba()` is a color value, so you couldn’t, for example, use it to change the opacity of an image (or an element with a background image).
 - although the value of the `rgba()` function can be inherited, child elements can overrule with an `rgba()` value of their own.
+- Specify solid backups for RGBA colors in a separate rule that appears *before* the RGBA rule.
 
 ### HSL color
 
