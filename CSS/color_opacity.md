@@ -1,3 +1,5 @@
+# Color
+
 ## The `opacity` property
 
 The `opacity` property is the measure of the opacity of an *element*.
@@ -12,7 +14,10 @@ div {
 }
 ```
 
-**Note**: Opacity affects not only the element it’s applied to but also all of that element’s children. You can never make an element more opaque than its parent, but you can make it *less* opaque.
+**Note**:
+
+- Opacity affects not only the element it’s applied to but also all of that element’s children. You can never make an element more opaque than its parent, but you can make it *less* opaque.
+- Set a low `opacity` value to dim hyperlinked images in your designs and set a higher `opacity` value to brighten them up when hovered or focused.
 
 ## New and extended color values
 
