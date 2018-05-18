@@ -47,7 +47,7 @@ h2 {
 }
 ```
 
-Note the layers are created in reverse order: the first layer in the list becomes the topmost layer and so on.
+Note the layers are created in *reverse* order: the first layer in the list becomes the topmost layer and so on.
 
 ## background-size
 
