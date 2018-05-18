@@ -1,3 +1,5 @@
+# Gradients
+
 **Note**: Graphical effects like gradients can be quite computationally taxing and will slow the rendering and performance of pages, especially in mobile browsers.
 
 ## Linear gradients
