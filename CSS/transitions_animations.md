@@ -87,7 +87,7 @@ The process of creating animations:
 
 ### Define keyframes
 
-*Keyframes* are points that set the start and end of a transition.
+*Keyframes* are points that set the start and end of a transition. Keyframes can be reused throughout the stylesheet within multiple declarations.
 
 Syntax:
 
