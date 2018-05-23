@@ -89,3 +89,38 @@ Using ems can be convenient when setting properties like `padding`, `height`, `w
 The `:root` pseudo-class selector is equivalent to the `html` type selector.
 
 Use rems for font sizes, pixels for borders, and ems for most other measures, especially paddings, margins, and border radius. Use percentages for container widths when necessary.
+
+### Setting default font size
+
+```css
+:root {
+    font-size: 0.875em; /* 14 px; 14/16 = 0.875 */
+}
+```
+
+### Viewport-relative units
+
+Viewport-relative units define lengths relative to the browser's viewport.
+
+- `vh`: 1/100th of the viewport height
+- `vw`: 1/100th of the viewport width
+- `vmin`: 1/100th of the smaller dimension, height or width
+- `vmax`: 1/100th of the larger dimension, height or width
+
+Using `calc()` for font size;
+
+```css
+:root {
+    font-size: calc(0.5em + 1vw);
+}
+```
+
+This will make the font scale smoothly.
+
+### Unitless numbers
+
+Properties that allow for unitless values:
+
+- `line-height`
+- `z-index`
+- `font-weight`: 700 is equivalent to bold; 400 is equivalent to normal
