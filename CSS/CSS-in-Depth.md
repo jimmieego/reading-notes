@@ -73,3 +73,19 @@ Most shorthand properties let you omit certain values and only specify the bits 
 ## Working with relative units
 
 When you’ve multiple ways to solve a particular problem, you’ll need to favor the solution that works more generally under multiple and different circumstances.
+
+### em
+
+`em`: 1 em means the font size of the current element.
+
+Using ems can be convenient when setting properties like `padding`, `height`, `width`, or `border-radius` because these will scale evenly with the element if it inherits different font sizes, or if the user changes the font settings.
+
+`font-size` ems are derived from the *inherited* font size. For most browsers, the default font size is 16px.
+
+### rem
+
+`rem`: relative to the root element.
+
+The `:root` pseudo-class selector is equivalent to the `html` type selector.
+
+Use rems for font sizes, pixels for borders, and ems for most other measures, especially paddings, margins, and border radius. Use percentages for container widths when necessary.
