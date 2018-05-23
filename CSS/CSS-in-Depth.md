@@ -121,6 +121,49 @@ This will make the font scale smoothly.
 
 Properties that allow for unitless values:
 
-- `line-height`
+- `line-height`: this can prevent the overlapping text because of small line height.
 - `z-index`
-- `font-weight`: 700 is equivalent to bold; 400 is equivalent to normal
+- `font-weight`: `700` is equivalent to bold; `400` is equivalent to normal
+
+Example:
+
+```css
+body {
+    line-height: 1.2; /* Descendant elements inherit the unitless value */
+}
+```
+
+When you use a unitless number, that declared value is inherited, meaning its com- puted value is recalculated for each inheriting child element.
+
+### Custom properties (CSS variables)
+
+The name must begin with two hypthens (`--`). Variables must be declared inside a declaration block.
+
+Example:
+
+```css
+:root {
+    --main-font: Helvetica, Arial, sans-serif;
+    --brand-color: #369;
+}
+
+p {
+    font-family: var(--main-font, sans-serif);
+    color: blue; /* fallback */
+    color: var(--brand-color, blue); /* blue is the fallback value */
+}
+```
+
+The `var()` function accepts a second parameter, which specifies a fallback value.
+
+The declarations of custom properties cascade and inherit: You can define the same variable inside multiple selectors, and the variable will have a different value for various parts of the page. The custom properties behave as a sort of scoped variable because the values are inherited by descendant elements.
+
+Use JavaScript to access custom properties:
+
+```javascript
+var rootElement = document.documentElement;
+var styles = getComputedStyle(rootElement);
+var mainColor = styles.getPropertyValue('--main-bg');
+
+rootElement.style.setProperty('--main-bg', '#cdf');
+```
