@@ -167,3 +167,5 @@ var mainColor = styles.getPropertyValue('--main-bg');
 
 rootElement.style.setProperty('--main-bg', '#cdf');
 ```
+
+## Mastering the box model
