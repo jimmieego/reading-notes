@@ -169,3 +169,64 @@ rootElement.style.setProperty('--main-bg', '#cdf');
 ```
 
 ## Mastering the box model
+
+When you set the width or height of an element, you’re specifying the width or height of its *content*; any padding, border, and margins are then added to that width.
+
+![The default box model](images/default-box-model.png)
+
+By default, `box-sizing` is set to the value of `content-box`. This means that any height or width you specify only sets the size of the content box.
+
+You can set `box-sizing` to `border-box`, then the `height` and `width` properties set the combined size of the content, padding, and border. With this model, padding doesn’t make an element wider; it makes the inner content narrower. It also does the same for height.
+
+![The box model with box sizing set to border-box](images/border-box-sizing-model.png)
+
+Apply border box sizing to all elements and pseudo-elements on the page:
+
+```css
+/* Adding this snippet near the beginning of your stylesheet */
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+```
+
+### Element height
+
+Typically it’s best to avoid setting explicit heights on elements. The height of a container is organically determined by its contents, not by the container itself. When you explicitly set an element’s height, you run the risk of its contents overflowing the container.
+
+`overflow` controls the behavior of overflowing content:
+
+- `visible`: default value; all content is visible, even when it overflows the container’s edges.
+- `hidden`: content that overflows the container’s padding edge is clipped and won’t be visible.
+- `scroll`: scrollbars are added to the container so the user can scroll to see the remaining content.
+- `auto`: scrollbars are added to the container only if the contents overflow.
+
+You can use `overflow-x` or `overflow-y` to control only horizontal or vertical overflow. Explicitly setting both `overflow-x` and `overflow-y` to different values, however, tends to have unpredictable results.
+
+Specifying height using a percentage is problematic. A better approach is to use the viewport-relative `vh` units.
+
+#### Columns of equal height
+
+By default, using a flexbox produces elements of equal height. By applying `display: flex` to the container, it becomes a *flex container*. Its child elements will become the same height by default.
+
+`min-height` and `max-height`: you specify a minimum or maximum value, allowing the element to size naturally within those bounds.
+
+Similar properties `min-width` and `max-width` constrain an element’s width.
+
+#### Vertically centering content
+
+A `vertical-align` declaration only affects inline and table-cell elements. With inline elements, it controls alignment among other elements on the same line. You can use it to control how an inline image aligns with the neighboring text, for example. With table-cell elements, `vertical-align` controls the alignment of the contents within the cell.
+
+Options:
+
+- Can you use a natural height container? Apply an equal top and bottom padding to the container to center its contents.
+- Do you need a specific height container, or do you need to avoid using padding? Use `display: table-cell` and `vertical-align: middle` on your container.
+- Can you use flexbox? Use `align-items:center`.
+- Is the inner content only one line of text? Set a tall line height equal to the desired container height. This will force the container to grow to contain the line height. If the contents aren’t inline, you may have to set them to `inline-block`.
+
+Reference: http://howtocenterincss.com
