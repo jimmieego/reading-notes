@@ -231,11 +231,11 @@ Options:
 
 Reference: http://howtocenterincss.com
 
-#### Negative margins
+### Negative margins
 
 ![Behavior of negative margins](images/negative-margins.png)
 
-#### Collapsed margins
+### Collapsed margins
 
 *Collapsing*: When top and/or bottom margins are adjoining, they overlap, combining to form a single margin. The size of the collapsed margin is equal to the *largest* of the joined margins.
 
@@ -244,3 +244,11 @@ Example: Paragraphs (`<p>`), by default, have a 1 em top margin and a 1 em botto
 This behavior typically means you can style margins on various elements without much concern for what might appear above or below them. The collapsed margin between the elements only appears larger if the following element requires more space.
 
 Note: Margin collapsing only occurs with top and bottom margins. Left and right margins don’t collapse.
+
+Ways to prevent margins from collapsing:
+
+- Apply `overflow: auto` (or any value other than `visible`) to the container prevents margins inside the container from collapsing with those outside the container. This is often the least intrusive solution.
+- Add a border or padding between two margins stops them from collapsing.
+- Margins won’t collapse to the outside of a container that is floated, that is an inline block, or that has an absolute or fixed position.
+- When using a flexbox, margins won’t collapse between elements that are part of the flex layout. This is also the case with grid layout.
+- Elements with a `table-cell` display don’t have a margin, so they won’t collapse. This also applies to `table-row` and most other table display types. Exceptions are `table`, `table-inline`, and `table-caption`.
