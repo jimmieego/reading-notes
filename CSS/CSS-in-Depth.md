@@ -252,3 +252,5 @@ Ways to prevent margins from collapsing:
 - Margins won’t collapse to the outside of a container that is floated, that is an inline block, or that has an absolute or fixed position.
 - When using a flexbox, margins won’t collapse between elements that are part of the flex layout. This is also the case with grid layout.
 - Elements with a `table-cell` display don’t have a margin, so they won’t collapse. This also applies to `table-row` and most other table display types. Exceptions are `table`, `table-inline`, and `table-caption`.
+
+### Spacing elements within a container
