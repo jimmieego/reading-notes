@@ -230,3 +230,7 @@ Options:
 - Is the inner content only one line of text? Set a tall line height equal to the desired container height. This will force the container to grow to contain the line height. If the contents aren’t inline, you may have to set them to `inline-block`.
 
 Reference: http://howtocenterincss.com
+
+#### Negative margins
+
+![Behavior of negative margins](images/negative-margins.png)
