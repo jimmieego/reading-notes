@@ -234,3 +234,11 @@ Reference: http://howtocenterincss.com
 #### Negative margins
 
 ![Behavior of negative margins](images/negative-margins.png)
+
+#### Collapsed margins
+
+*Collapsing*: When top and/or bottom margins are adjoining, they overlap, combining to form a single margin. The size of the collapsed margin is equal to the *largest* of the joined margins.
+
+Example: Paragraphs (`<p>`), by default, have a 1 em top margin and a 1 em bottom margin. When you stack two paragraphs, one after the other, their margins don’t add up to a gap of 2 em. Instead they collapse, overlapping to produce only 1 em of space between the two paragraphs.
+
+Note: Margin collapsing only occurs with top and bottom margins. Left and right margins don’t collapse.
