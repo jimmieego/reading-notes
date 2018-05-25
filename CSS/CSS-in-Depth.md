@@ -241,4 +241,6 @@ Reference: http://howtocenterincss.com
 
 Example: Paragraphs (`<p>`), by default, have a 1 em top margin and a 1 em bottom margin. When you stack two paragraphs, one after the other, their margins don’t add up to a gap of 2 em. Instead they collapse, overlapping to produce only 1 em of space between the two paragraphs.
 
+This behavior typically means you can style margins on various elements without much concern for what might appear above or below them. The collapsed margin between the elements only appears larger if the following element requires more space.
+
 Note: Margin collapsing only occurs with top and bottom margins. Left and right margins don’t collapse.
