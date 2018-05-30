@@ -256,3 +256,13 @@ Ways to prevent margins from collapsing:
 ### Spacing elements within a container
 
 `* + *` targets any element that immediately follows any other element. That is, it selects all elements on the page that aren’t the first child of their parent. You’ll have to override it in places where you don’t want it to apply.
+
+## Floats
+
+Purpose of floats: A float pulls an element (often an image) to one side of its container, allowing the document flow to wrap around it.
+
+A floated element is removed from the normal document flow and pulled to the edge of the container. The document flow then resumes, but it’ll wrap around the space where the floated element now resides.
+
+Floats are still the only way to move an image to the side of the page and allow text to wrap around it.
+
+*Double container pattern*: Place the content inside two nested containers and then set margins on the inner container to position it within the outer one.
