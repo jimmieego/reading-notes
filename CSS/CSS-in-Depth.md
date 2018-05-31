@@ -297,3 +297,24 @@ Example:
   clear: both;
 }
 ```
+
+### Media object and block formatting context
+
+By default, the text in the media object body wraps around the floated image (left). By giving the body a block formatting context, the text doesn’t overlap (right).
+
+![By default, the text in the media object body wraps around the floated image (left). By giving the body a block formatting context, the text doesn’t overlap (right).](images/block-formatting-context.png)
+
+*Block formatting context (BFC)*: a region of the page in which elements are laid out. A block formatting context itself is part of the surrounding document flow, but it isolates its contents from the outside context. This isolation does three things for the element that establishes the BFC:
+
+- It contains the top and bottom margins of all elements within it. They won’t col- lapse with margins of elements outside of the block formatting context.
+- It contains all floated elements within it.
+- It doesn’t overlap with floated elements outside the BFC.
+
+Put simply, the contents inside a block formatting context will not overlap or interact with elements on the outside as you would normally expect.
+
+Applying any of the following property values to an element triggers a BFC:
+
+- `float: left` or `float: right`: anything but `none`.
+- `overflow: hidden`, `auto`, or `scroll`: anything but `visible`.
+- `display: inline-block`, `table-cell`, `table-caption`, `flex`, `inline-flex`, `grid`, or `inline-grid`: these are called block containers.
+- `position: absolute` or `position: fixed`.
