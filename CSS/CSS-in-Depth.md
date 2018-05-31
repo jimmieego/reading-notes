@@ -266,3 +266,30 @@ A floated element is removed from the normal document flow and pulled to the edg
 Floats are still the only way to move an image to the side of the page and allow text to wrap around it.
 
 *Double container pattern*: Place the content inside two nested containers and then set margins on the inner container to position it within the outer one.
+
+### Container collapsing and the clearfix
+
+Unlike elements in the normal document flow, floated elements do not add height to their parent elements.
+
+`clear: both`: Causes the element to move below the bottom of floated elements, rather than beside them. You can give `clear` the value `left` or `right` to clear only elements floated to the left or right, respectively. (Note: this sizes the container how you want, but it’s rather hacky.)
+
+### clearfix
+
+By using the `::after` pseudo-element selector, you can effectively insert an element into the DOM at the end of the container, without adding it to the markup.
+
+Example:
+
+```css
+/* Apply clearfix to the element that contains the floats */
+/* Contain any child elements’ margins at both the top and bottom of the container */
+
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  content: " ";
+}
+
+.clearfix::after {
+  clear: both;
+}
+```
