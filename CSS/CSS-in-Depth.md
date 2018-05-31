@@ -265,6 +265,10 @@ A floated element is removed from the normal document flow and pulled to the edg
 
 Floats are still the only way to move an image to the side of the page and allow text to wrap around it.
 
+The browser places floats as high as possible.
+
+![Three left-floated boxes: Box 3 doesn’t float all the way to the left if box 1 is taller than box 2, instead it floats up against box 1.](images/three-left-floated-boxes.png)
+
 *Double container pattern*: Place the content inside two nested containers and then set margins on the inner container to position it within the outer one.
 
 ### Container collapsing and the clearfix
