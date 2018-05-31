@@ -318,3 +318,7 @@ Applying any of the following property values to an element triggers a BFC:
 - `overflow: hidden`, `auto`, or `scroll`: anything but `visible`.
 - `display: inline-block`, `table-cell`, `table-caption`, `flex`, `inline-flex`, `grid`, or `inline-grid`: these are called block containers.
 - `position: absolute` or `position: fixed`.
+
+Using `overflow: auto` for the BFC is generally the simplest approach.
+
+A `float` or an `inline-block` will grow to 100% width, so you’d need to restrict the width of the element to prevent it from line wrapping below the float. On the contrary, a `table-cell` element will only grow enough to contain its contents, so you may need to set a large width to force it to fill the remaining space.
