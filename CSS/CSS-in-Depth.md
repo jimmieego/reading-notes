@@ -343,3 +343,9 @@ Example:
   <div class="column-8">8 column</div>
 </div>
 ```
+
+## Flexbox
+
+Applying `display: flex` to an element turns it into a *flex container*, and its direct children turn into *flex items*. By default, flex items align side by side, left to right, all in one row. The flex container fills the available width like a block element, but the flex items may not necessarily fill the width of their flex container. The flex items are all the same height, determined naturally by their contents.
+
+![A flexbox container and its elements](images/flexbox.png)
