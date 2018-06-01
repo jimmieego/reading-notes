@@ -322,3 +322,20 @@ Applying any of the following property values to an element triggers a BFC:
 Using `overflow: auto` for the BFC is generally the simplest approach.
 
 A `float` or an `inline-block` will grow to 100% width, so you’d need to restrict the width of the element to prevent it from line wrapping below the float. On the contrary, a `table-cell` element will only grow enough to contain its contents, so you may need to set a large width to force it to fill the remaining space.
+
+### Grid system
+
+A *grid system* is a series of class names you can add to your markup to structure portions of the page into rows and columns. It should provide no visual styles, like colors or borders, to the page—it should only set widths and positions of containers. Inside each of these containers, you can add new elements to visually style however you want.
+
+A grid system is usually defined to hold a certain number of columns in each row; this is usually 12, but that can vary. The child elements of a row may have a width anywhere from one column up to 12 columns wide.
+
+The general principle of a grid system: put a row container around one or more column containers. The classes applied to the column containers will each determine their respective widths.
+
+Example:
+
+```css
+<div class="row">
+  <div class="column-4">4 column</div>
+  <div class="column-8">8 column</div>
+</div>
+```
