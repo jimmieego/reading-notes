@@ -269,7 +269,7 @@ The browser places floats as high as possible.
 
 ![Three left-floated boxes: Box 3 doesn’t float all the way to the left if box 1 is taller than box 2, instead it floats up against box 1.](images/three-left-floated-boxes.png)
 
-*Double container pattern*: Place the content inside two nested containers and then set margins on the inner container to position it within the outer one.
+*Double container pattern*: Place the content inside two nested containers and then set margins on the inner container to position it within the outer one (e.g., center page contents).
 
 ### Container collapsing and the clearfix
 
@@ -300,6 +300,8 @@ Example:
 
 ### Media object and block formatting context
 
+Use the media object pattern to position descriptive text alongside an image.
+
 By default, the text in the media object body wraps around the floated image (left). By giving the body a block formatting context, the text doesn’t overlap (right).
 
 ![By default, the text in the media object body wraps around the floated image (left). By giving the body a block formatting context, the text doesn’t overlap (right).](images/block-formatting-context.png)
@@ -324,6 +326,8 @@ Using `overflow: auto` for the BFC is generally the simplest approach.
 A `float` or an `inline-block` will grow to 100% width, so you’d need to restrict the width of the element to prevent it from line wrapping below the float. On the contrary, a `table-cell` element will only grow enough to contain its contents, so you may need to set a large width to force it to fill the remaining space.
 
 ### Grid system
+
+Use a grid system to create a wide array of page layouts.
 
 A *grid system* is a series of class names you can add to your markup to structure portions of the page into rows and columns. It should provide no visual styles, like colors or borders, to the page—it should only set widths and positions of containers. Inside each of these containers, you can add new elements to visually style however you want.
 
