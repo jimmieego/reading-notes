@@ -354,6 +354,12 @@ Set `display: block` to links: Makes links block level so they add to the parent
 
 Auto margins inside a flexbox will fill the available space.
 
+General approach:
+
+- Identify a container and its items and use `display: flex` on the container
+- If necessary, set the `flex-direction` on the container
+- Declare margins and/or `flex` values for the flex items where necessary to control their size
+
 ### Flex item sizes
 
 The `flex` property is shorthand for three different sizing properties: `flex-grow`, `flex-shrink`, and `flex-basis`. For example, `flex: 2` is equivalent to `flex: 2 1 0%`. `1`, `1` and `0%` are default values of `flex-grow`, `flex-shrink` and `flex-basis`.
