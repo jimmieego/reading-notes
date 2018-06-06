@@ -25,7 +25,7 @@ When declarations conflict, the cascade considers three things to resolve the di
 - Inline styles have no selector because they are applied directly to the element they target. To override inline declarations in your stylesheet, you’ll need to add an `!important` to the declaration, shifting it into a higher-priority origin. If the inline styles are marked important, then nothing can override them. It’s preferable to do this from within the stylesheet.
 - Selector specificity (ID > Class > Tag):
   - If a selector has more IDs, it wins.
-  - If that results in a tie, the selector with the most classes wins. 
+  - If that results in a tie, the selector with the most classes wins.
   - If that results in a tie, the selector with the most tag names wins.
 
 Notes:
