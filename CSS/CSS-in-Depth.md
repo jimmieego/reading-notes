@@ -366,3 +366,11 @@ Flex items can consume remaining space based on `flex-grow` values:
 - `flex-grow: n`: `n` is a non-zero number. The item will grow until all of the remaining space is used up. Declaring a higher `flex-grow` value gives that element more “weight”; it’ll take a larger portion of the remainder. An item with `flex-grow: 2` will grow twice as much as an item with `flex-grow: 1`.
 
 The `flex-shrink` value for each item indicates whether it should shrink to prevent overflow. If an item has a value of `flex-shrink: 0`, it will not shrink. Items with a value greater than 0 will shrink until there is no overflow. An item with a higher value will shrink more than an item with a lower value, proportional to the `flex-shrink` values.
+
+### Flex direction
+
+`flex-direction`: Its initial value (`row`) causes the items to flow left-to-right. `flex- direction: column` causes the flex items to stack vertically (top to bottom). Flexbox also supports `row-reverse` to flow items right to left, and `column-reverse` to flow items bottom to top.
+
+In CSS, working with height is fundamentally different than working with widths. A flex container will be 100% the available width, but the height is determined naturally by its contents. This behavior does not change when you rotate the main axis.
+
+In a vertical flexbox, `flex-grow` and `flex-shrink` applied to the items will have no effect unless something else forces the height of the flex container to a specific size.
