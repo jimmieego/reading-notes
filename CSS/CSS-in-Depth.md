@@ -380,3 +380,49 @@ The `flex-shrink` value for each item indicates whether it should shrink to prev
 In CSS, working with height is fundamentally different than working with widths. A flex container will be 100% the available width, but the height is determined naturally by its contents. This behavior does not change when you rotate the main axis.
 
 In a vertical flexbox, `flex-grow` and `flex-shrink` applied to the items will have no effect unless something else forces the height of the flex container to a specific size.
+
+### Other flex container properties
+
+- `flex-wrap`: This specifies whether flex items will wrap on to a new row inside the flex container (or on to a new column if `flex-direction` is `column` or `column-reverse` and something constrains the height of the container). When wrapping is enabled, the items don’t shrink according to their `flex-shrink` values. Instead, any items that would overflow the flex container wrap onto a new line.
+  - `nowrap`: initial value
+  - `wrap`
+  - `wrap-reverse`
+- `flex-flow`: Shorthand for `flex-direction` `flex-wrap`. Example: `flex-flow: column wrap`.
+- `justify-content`: Controls how items are positioned along the **main axis**.
+  - `flex-start`: default. No space between items unless the items have margins specified.
+  - `flex-end`
+  - `center`
+  - `space-between`
+  - `space-around`
+  - Note: Spacing is applied after margins and flex-grow values are calculated. This means if any items have a non-zero `flex-grow` value, or any items have an `auto` margin on the main axis, then `justify-content` has no effect.
+- `align-items`: Controls how items are positioned along the **cross axis**.
+  - `stretch`: initial value. columns of equal height.
+  - `flex-start`
+  - `flex-end`
+  - `center`
+  - `baseline`: aligns the items so that the baseline of the first row of text in each flex
+item is aligned.
+- `align-content`: If `flex-wrap` is enabled, this controls the spacing of the flex rows along the **cross axis**. If items don’t wrap, this property is ignored.
+  - `flex-start`
+  - `flex-end`
+  - `center`
+  - `stretch`: initial value
+  - `space-between`
+  - `space-around`
+
+### Other flex item properties
+
+- `align-self`: Controls how the item is aligned on the **cross axis**. This will override the container’s `align-items` value for specific item(s). Ignored if the item has an `auto` margin set on the cross axis.
+  - `auto`: initial value. Defers to the container's `align-items` value.
+  - `flex-start`
+  - `flex-end`
+  - `center`
+  - `stretch`
+  - `baseline`
+- `order`: An integer that moves a flex item to a specific position among its siblings, disregarding source order.
+  - Initially, all flex items have an order of `0`.
+  - Specifying a value of `-1` to one item will move it to the beginning of the list.
+  - A value of `1` will move it to the end.
+  - You can specify order values for each item to rearrange them however you wish. The numbers don’t necessarily need to be consecutive.
+
+Note: The line height of the text inside each flex item is what determines the height of each item.
