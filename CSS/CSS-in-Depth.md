@@ -426,3 +426,5 @@ item is aligned.
   - You can specify order values for each item to rearrange them however you wish. The numbers don’t necessarily need to be consecutive.
 
 Note: The line height of the text inside each flex item is what determines the height of each item.
+
+## Grid layout
