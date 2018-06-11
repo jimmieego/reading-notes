@@ -429,7 +429,7 @@ Note: The line height of the text inside each flex item is what determines the h
 
 ## Grid layout
 
-The *grid container* is the element with `display: grid` and its child elements are *grid items*.
+The *grid container* is the element with `display: grid` and its child elements are *grid items*. 
 
 [Basic grid example](https://codepen.io/jimmieego/pen/MXbNgp)
 
@@ -437,3 +437,4 @@ Notes:
 
 - The container behaves like a block display element, filling 100% of the available width.
 - Your design doesn’t need to fill every cell of the grid. Leave a cell empty where you want to add whitespace.
+- Each grid item must be a child element of the grid container.
