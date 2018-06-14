@@ -229,7 +229,7 @@ Options:
 - Can you use flexbox? Use `align-items:center`.
 - Is the inner content only one line of text? Set a tall line height equal to the desired container height. This will force the container to grow to contain the line height. If the contents aren’t inline, you may have to set them to `inline-block`.
 
-Reference: http://howtocenterincss.com
+[How to Center in CSS](http://howtocenterincss.com)
 
 ### Negative margins
 
@@ -400,8 +400,7 @@ In a vertical flexbox, `flex-grow` and `flex-shrink` applied to the items will h
   - `flex-start`
   - `flex-end`
   - `center`
-  - `baseline`: aligns the items so that the baseline of the first row of text in each flex
-item is aligned.
+  - `baseline`: aligns the items so that the baseline of the first row of text in each flex item is aligned.
 - `align-content`: If `flex-wrap` is enabled, this controls the spacing of the flex rows along the **cross axis**. If items don’t wrap, this property is ignored.
   - `flex-start`
   - `flex-end`
@@ -429,7 +428,7 @@ Note: The line height of the text inside each flex item is what determines the h
 
 ## Grid layout
 
-The *grid container* is the element with `display: grid` and its child elements are *grid items*. 
+The *grid container* is the element with `display: grid` and its child elements are *grid items*.
 
 [Basic grid example](https://codepen.io/jimmieego/pen/MXbNgp)
 
@@ -438,3 +437,9 @@ Notes:
 - The container behaves like a block display element, filling 100% of the available width.
 - Your design doesn’t need to fill every cell of the grid. Leave a cell empty where you want to add whitespace.
 - Each grid item must be a child element of the grid container.
+
+### Flexbox vs. grid
+
+Flexbox is basically one-dimensional, whereas grid is two-dimensional. With flexbox, if lines wrap, items in one row don't necessarily align with items in another row.
+
+Flexbox works from the content out, whereas grid works from the layout in. Flexbox lets you arrange a series of items in a row or column, but their sizes don’t need to be explicitly set. Instead, the content determines how much space each item needs. With grid, you are first and foremost describing a layout, then placing items into that structure.
