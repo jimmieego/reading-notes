@@ -443,3 +443,5 @@ Notes:
 Flexbox is basically one-dimensional, whereas grid is two-dimensional. With flexbox, if lines wrap, items in one row don't necessarily align with items in another row.
 
 Flexbox works from the content out, whereas grid works from the layout in. Flexbox lets you arrange a series of items in a row or column, but their sizes don’t need to be explicitly set. Instead, the content determines how much space each item needs. With grid, you are first and foremost describing a layout, then placing items into that structure.
+
+When your design calls for an alignment of items in two dimensions, use grid. When you’re only concerned with a one-directional flow, use flexbox. In practice, this will often (but not always) mean grid makes the most sense for a high-level layout of the page, and flexbox makes more sense for certain elements within each grid area.
