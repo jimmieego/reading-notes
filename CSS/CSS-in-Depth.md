@@ -445,3 +445,30 @@ Flexbox is basically one-dimensional, whereas grid is two-dimensional. With flex
 Flexbox works from the content out, whereas grid works from the layout in. Flexbox lets you arrange a series of items in a row or column, but their sizes don’t need to be explicitly set. Instead, the content determines how much space each item needs. With grid, you are first and foremost describing a layout, then placing items into that structure.
 
 When your design calls for an alignment of items in two dimensions, use grid. When you’re only concerned with a one-directional flow, use flexbox. In practice, this will often (but not always) mean grid makes the most sense for a high-level layout of the page, and flexbox makes more sense for certain elements within each grid area.
+
+### Alternate syntaxes
+
+Naming grid lines:
+
+```css
+grid-template-columns: [start] 2fr [center] 1fr [end];
+```
+
+Naming grid areas:
+
+```css
+grid-template-areas: "title title"
+                     "nav   nav"
+                     "main  aside1"
+                     "main  aside2";
+
+.main {
+  grid-area: main;
+}
+```
+
+Note each named grid area must form a rectangle. You can leave a cell empty by using a period as its name.
+
+### Implicit grid
+
+By default, implicit grid tracks will have a size of `auto`, meaning they’ll grow to the size necessary to contain the grid item contents. The properties `grid-auto-columns` and `grid-auto-rows` can be applied to the grid container to specify a different size for all implicit grid tracks (for example, `grid-auto-columns: 1fr`).
