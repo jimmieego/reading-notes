@@ -508,3 +508,9 @@ Feature queries may be constructed in a few other ways:
 ### Reference
 
 - [Grid by example](https://gridbyexample.com/)
+
+## Positioning and stacking contexts
+
+The initial value of the `position` property is `static`. When you change this value to anything else, the element is said to be `positioned`. An element with static positioning is `not positioned`.
+
+Positioning removes elements from the document flow entirely.
