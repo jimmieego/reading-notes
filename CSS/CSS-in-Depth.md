@@ -488,3 +488,23 @@ Note that `auto-fill` can also result in some empty grid tracks, if there are no
 - `grid-auto-flow: row`: initial value; places grid items column by column, row by row, according to the order of the items in the markup. When an item doesn’t fit in one row (that is, it spans too many grid tracks), the algorithm moves to the next row, looking for space large enough to accommodate the item.
 - `grid-auto-flow: column`: places items in the columns first, moving to the next row only after a column is full.
 - `grid-auto-flow: row dense`: the keyword `dense` causes the algorithm to attempt to fill gaps in the grid, even if it means changing the display order of some grid items.
+
+### Feature queries
+
+Example:
+
+```css
+@supports (display: grid) {
+  /* more css grid code */
+}
+```
+
+Feature queries may be constructed in a few other ways:
+
+- `@supports not(<declaration>)`: Only apply rules in the feature query block if the queried declaration isn’t supported.
+- `@supports (<declaration>) or (<declaration>)`: Apply rules if *either* queried declaration is supported.
+- `@supports (<declaration>) and (<declaration>)`: Apply rules only if *both* queried declarations are supported.
+
+### Reference
+
+- [Grid by example](https://gridbyexample.com/)
