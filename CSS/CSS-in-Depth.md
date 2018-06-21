@@ -471,4 +471,20 @@ Note each named grid area must form a rectangle. You can leave a cell empty by u
 
 ### Implicit grid
 
+All grid items must be direct children of the grid container.
+
 By default, implicit grid tracks will have a size of `auto`, meaning they’ll grow to the size necessary to contain the grid item contents. The properties `grid-auto-columns` and `grid-auto-rows` can be applied to the grid container to specify a different size for all implicit grid tracks (for example, `grid-auto-columns: 1fr`).
+
+[Example on codepen](https://codepen.io/jimmieego/pen/yEjVGQ)
+
+`minmax()`: specifies two values—a minimum size and a maximum size.
+
+The `auto-fill` keyword is a special value you can provide for the `repeat()` function. With this set, the browser will place as many tracks onto the grid as it can fit, without violating the restrictions set by the specified size (the `minmax()` value).
+
+Note that `auto-fill` can also result in some empty grid tracks, if there are not enough grid items to fill them all. If you don’t want empty grid tracks, you can use the keyword `auto-fit` instead of `auto-fill`. This causes the non-empty tracks to stretch to fill the available space.
+
+`grid-auto-flow`:
+
+- `grid-auto-flow: row`: initial value; places grid items column by column, row by row, according to the order of the items in the markup. When an item doesn’t fit in one row (that is, it spans too many grid tracks), the algorithm moves to the next row, looking for space large enough to accommodate the item.
+- `grid-auto-flow: column`: places items in the columns first, moving to the next row only after a column is full.
+- `grid-auto-flow: row dense`: the keyword `dense` causes the algorithm to attempt to fill gaps in the grid, even if it means changing the display order of some grid items.
