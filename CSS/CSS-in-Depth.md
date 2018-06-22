@@ -514,3 +514,9 @@ Feature queries may be constructed in a few other ways:
 The initial value of the `position` property is `static`. When you change this value to anything else, the element is said to be `positioned`. An element with static positioning is `not positioned`.
 
 Positioning removes elements from the document flow entirely.
+
+### Fixed positioning
+
+`position: fixed`: position the element arbitrarily within the viewport.
+
+`top`, `right`, `bottom`, and `left`: specify how far the fixed element should be from each edge of the browser viewport.
