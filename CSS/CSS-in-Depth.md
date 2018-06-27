@@ -520,3 +520,10 @@ Positioning removes elements from the document flow entirely.
 `position: fixed`: position the element arbitrarily within the viewport.
 
 `top`, `right`, `bottom`, and `left`: specify how far the fixed element should be from each edge of the browser viewport.
+
+A fixed element is removed from the document flow. It no longer affects the position of other elements on the page. To make sure other content doesn't flow behind a fixed element, try adding a margin to the fixed element.
+
+### Absolute positioning
+
+Absolute positioning is based on the closest positioned ancester element. As with a fixed element, the properties `top`, `right`, `bottom`, and `left` place the edges of the element within its containing block.
+
