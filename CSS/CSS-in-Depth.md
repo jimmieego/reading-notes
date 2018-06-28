@@ -537,3 +537,23 @@ With relative positioning, the `top`, `right`, `bottom`, and `left` properties s
 
 You can use `top` or `bottom`, but not both together (`bottom` will be ignored); likewise, you can use `left` or `right`, but not both (`right` will be ignored).
 
+### Stacking
+
+The elements appearing later in the HTML markup are painted over the top of the previous ones.
+
+The browser first paints all non-positioned elements, then it paints the positioned ones. By default, any positioned element appears in front of any non-positioned elements.
+
+Typically, modals are added to the end of the page as the last bit of content before the closing `</body>` tag.
+
+#### `z-index`
+
+The `z-index` property can be set to any integer (positive or negative). Elements with a higher z-index appear in front of elements with a lower z-index. Elements with a negative z-index appear behind static elements.
+
+Note: 
+
+- `z-index` only works on positioned elements. You cannot manipulate the stacking order of static elements.
+- Applying a `z-index` to a positioned element establishes something called a *stacking context*.
+
+#### Stacking context
+
+A stacking context consists of an element or a group of elements that are painted together by the browser.
