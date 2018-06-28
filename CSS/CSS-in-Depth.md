@@ -525,5 +525,15 @@ A fixed element is removed from the document flow. It no longer affects the posi
 
 ### Absolute positioning
 
-Absolute positioning is based on the closest positioned ancester element. As with a fixed element, the properties `top`, `right`, `bottom`, and `left` place the edges of the element within its containing block.
+Absolute positioning is based on the closest positioned ancester element (a different containing block than the viewport). As with a fixed element, the properties `top`, `right`, `bottom`, and `left` place the edges of the element within its containing block.
+
+Absolute positioning is used often in conjunction with JavaScript for popping up menus, tooltips, and “info” boxes.
+
+### Relative positioning
+
+Main usage: Use `position: relative` to establish the containing block for an absolutely positioned element inside it.
+
+With relative positioning, the `top`, `right`, `bottom`, and `left` properties shift the element from its original position, but they won't change the position of any elements around it.
+
+You can use `top` or `bottom`, but not both together (`bottom` will be ignored); likewise, you can use `left` or `right`, but not both (`right` will be ignored).
 
