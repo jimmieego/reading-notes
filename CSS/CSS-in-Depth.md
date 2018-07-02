@@ -556,4 +556,31 @@ Note:
 
 #### Stacking context
 
-A stacking context consists of an element or a group of elements that are painted together by the browser.
+A stacking context consists of an element or a group of elements that are painted together by the browser. One element is the root of the stacking context, so when you add a `z-index` to a positioned element that element becomes the root of a new stacking context. All of its descendant elements are then part of that stacking context.
+
+All the elements within a stacking context are stacked in this order, from back to front:
+
+- The root element of the stacking context
+- Positioned elements with a negative `z-index` (along with their childen)
+- Non-positioned elements
+- Positioned elements with a `z-index` of `auto` (and their children)
+- Positioned elements with a positive `z-index` (and their children)
+
+Notes:
+
+- Stacking contexts deal with which elements are in front of other elements; block formatting contexts deal with the document flow and whether or not elements will overlap.
+- Positioning takes elements out of the document flow. Generally speaking, you should only do this when you need to stack elements in front of one another.
+
+
+### Sticky positioning
+
+The element scrolls normally with the page until it reaches a specified point on the screen, at which point it will “lock” in place as the user continues to scroll. A common use-case for this is sidebar navigation.
+
+Example:
+
+```css
+.sticky {
+  position: sticky;
+  top: 1em; /* Dock 1em from the top of the viewport */
+}
+```
