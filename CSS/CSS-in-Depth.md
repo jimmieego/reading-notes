@@ -584,3 +584,49 @@ Example:
   top: 1em; /* Dock 1em from the top of the viewport */
 }
 ```
+
+## Responsive design
+
+Three key principles to responsive design:
+
+1. *A mobile first approach to design*. This means you build the mobile version before you construct the desktop layout.
+2. *The `@media` at-rule*. With media queries, you can tailor your styles for viewports of different sizes.
+3. *The use of fluid layouts*. This approach allows containers to scale to different sizes based on the width of the viewport.
+
+### Mobile first
+
+When designing for mobile touchscreen devices, be sure to make all the key action items large enough to easily tap with a finger. Don’t make your users zoom in in order to tap precisely on a tiny button or link.
+
+The vieweport `meta` tag: An HTML tag that tells mobile devices you’ve intentionally designed for small screens.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+### Media queries
+
+Example:
+
+```css
+@media (min-width: 560px) {
+  .title > h1 {
+    font-size: 2.25rem;
+  }
+}
+```
+
+Use `and` to join two clauses:
+
+```css
+@media (min-width: 20em) and (max-width: 35em) { ... }
+```
+
+Use comma for one of multiple criteria (OR):
+
+```css
+@media (max-width: 20em), (min-width: 35em) { ... }
+```
+
+Note:
+
+- Use `em`s for media query breakpoints. It’s the only unit that performs consistently in all major browsers should the user zoom the page or change the default font size. `px`- and `rem`-based breakpoints are less reliable in Safari. `Em`s also have the benefit of scaling up or down with the user’s default font size, which is generally preferable.
