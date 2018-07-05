@@ -549,7 +549,7 @@ Typically, modals are added to the end of the page as the last bit of content be
 
 The `z-index` property can be set to any integer (positive or negative). Elements with a higher z-index appear in front of elements with a lower z-index. Elements with a negative z-index appear behind static elements.
 
-Note: 
+Note:
 
 - `z-index` only works on positioned elements. You cannot manipulate the stacking order of static elements.
 - Applying a `z-index` to a positioned element establishes something called a *stacking context*.
@@ -570,7 +570,6 @@ Notes:
 
 - Stacking contexts deal with which elements are in front of other elements; block formatting contexts deal with the document flow and whether or not elements will overlap.
 - Positioning takes elements out of the document flow. Generally speaking, you should only do this when you need to stack elements in front of one another.
-
 
 ### Sticky positioning
 
@@ -594,6 +593,8 @@ Three key principles to responsive design:
 3. *The use of fluid layouts*. This approach allows containers to scale to different sizes based on the width of the viewport.
 
 ### Mobile first
+
+A mobile-first approach means the type of media query you’ll use the most should be `min-width`. You’ll write your mobile styles first, outside of any media queries. Then you’ll work your way up to larger breakpoints.
 
 When designing for mobile touchscreen devices, be sure to make all the key action items large enough to easily tap with a finger. Don’t make your users zoom in in order to tap precisely on a tiny button or link.
 
@@ -627,6 +628,38 @@ Use comma for one of multiple criteria (OR):
 @media (max-width: 20em), (min-width: 35em) { ... }
 ```
 
+Target a high resolution (retina) display:
+
+```css
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) { ... }
+```
+
+You can also place a media query in the `<link>` tag. Example:
+
+```html
+<link rel="stylesheet" media="(min-width: 45em)" href="large-screen.css" />
+```
+
+The stylesheet will always download, regardless of the width of the viewport, so this is merely a tactic for code organization, not network traffic reduction.
+
 Note:
 
 - Use `em`s for media query breakpoints. It’s the only unit that performs consistently in all major browsers should the user zoom the page or change the default font size. `px`- and `rem`-based breakpoints are less reliable in Safari. `Em`s also have the benefit of scaling up or down with the user’s default font size, which is generally preferable.
+
+#### Print styles
+
+Apply basic print styles inside of a `@media print {...}` media query:
+
+- Use `display: none` to hide non-essential parts of the page, such as navigational menus and footers.
+- Globally change font colors to black and remove all background images and colors behind blocks of text.
+  
+  ```css
+  @media print {
+    * {
+      color: black !important;
+      background: none !important;
+    }
+  }
+  ```
+
