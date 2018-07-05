@@ -70,7 +70,7 @@ Most shorthand properties let you omit certain values and only specify the bits 
 
 **Horizontal, Vertical**: The order of properties that only support up to two values (e.g., `background-position`). The two values represent a Cartesian grid.
 
-## Working with relative units
+## 2. Working with relative units
 
 When you’ve multiple ways to solve a particular problem, you’ll need to favor the solution that works more generally under multiple and different circumstances.
 
@@ -168,7 +168,7 @@ var mainColor = styles.getPropertyValue('--main-bg');
 rootElement.style.setProperty('--main-bg', '#cdf');
 ```
 
-## Mastering the box model
+## 3. Mastering the box model
 
 When you set the width or height of an element, you’re specifying the width or height of its *content*; any padding, border, and margins are then added to that width.
 
@@ -257,7 +257,7 @@ Ways to prevent margins from collapsing:
 
 `* + *` targets any element that immediately follows any other element. That is, it selects all elements on the page that aren’t the first child of their parent. You’ll have to override it in places where you don’t want it to apply.
 
-## Floats
+## 4. Floats
 
 Purpose of floats: A float pulls an element (often an image) to one side of its container, allowing the document flow to wrap around it.
 
@@ -344,7 +344,7 @@ Example:
 </div>
 ```
 
-## Flexbox
+## 5. Flexbox
 
 Applying `display: flex` to an element turns it into a *flex container*, and its direct children turn into *flex items*. By default, flex items align side by side, left to right, all in one row. The flex container fills the available width like a block element, but the flex items may not necessarily fill the width of their flex container. The flex items are all the same height, determined naturally by their contents.
 
@@ -426,7 +426,7 @@ In a vertical flexbox, `flex-grow` and `flex-shrink` applied to the items will h
 
 Note: The line height of the text inside each flex item is what determines the height of each item.
 
-## Grid layout
+## 6. Grid layout
 
 The *grid container* is the element with `display: grid` and its child elements are *grid items*.
 
@@ -509,7 +509,7 @@ Feature queries may be constructed in a few other ways:
 
 - [Grid by example](https://gridbyexample.com/)
 
-## Positioning and stacking contexts
+## 7. Positioning and stacking contexts
 
 The initial value of the `position` property is `static`. When you change this value to anything else, the element is said to be `positioned`. An element with static positioning is `not positioned`.
 
@@ -584,7 +584,7 @@ Example:
 }
 ```
 
-## Responsive design
+## 8. Responsive design
 
 Three key principles to responsive design:
 
@@ -716,3 +716,5 @@ img {
   max-width: 100%;
 }
 ```
+
+## 9. Modular CSS
