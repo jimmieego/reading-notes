@@ -589,8 +589,8 @@ Example:
 Three key principles to responsive design:
 
 1. *A mobile first approach to design*. This means you build the mobile version before you construct the desktop layout.
-2. *The `@media` at-rule*. With media queries, you can tailor your styles for viewports of different sizes.
-3. *The use of fluid layouts*. This approach allows containers to scale to different sizes based on the width of the viewport.
+2. *The `@media` at-rule*. Use media queries to progressively enhance the page at larger and larger viewports.
+3. *The use of fluid layouts*. This approach allows containers to scale to different sizes based on the width of the viewport. Use responsive images to fit the bandwidth limitation of mobile devices.
 
 ### Mobile first
 
@@ -646,6 +646,7 @@ The stylesheet will always download, regardless of the width of the viewport, so
 Note:
 
 - Use `em`s for media query breakpoints. It’s the only unit that performs consistently in all major browsers should the user zoom the page or change the default font size. `px`- and `rem`-based breakpoints are less reliable in Safari. `Em`s also have the benefit of scaling up or down with the user’s default font size, which is generally preferable.
+- Make sure each media query always comes after the styles it overrides, so the styles within the media query take precedence.
 
 #### Print styles
 
@@ -663,3 +664,55 @@ Apply basic print styles inside of a `@media print {...}` media query:
   }
   ```
 
+### Fluid layouts
+
+Fluid layout (liquid layout) refers to the use of containers that grow and shrink according to the width of the viewport. Think of container widths in percentages rather than in any fixed size.
+
+#### Forcing a responsive table layout
+
+```css
+table {
+  width: 100%;
+}
+
+@media (max-width: 30em) {
+  table, thead, tbody, tr, th, td {
+    display: block; /* Makes all table elements block display */
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; /* Hides the headings row by moving it off the screen */
+  }
+
+  tr {
+    margin-bottom: 1em; /* Adds a little space between each set of table data */
+  }
+}
+```
+
+### Responsive images
+
+Use media queries to serve the correct sized image when the image is included via CSS.
+
+For inlined images using `<img>`, use the `srcset` attribute to specify multiple image URLs for one `<img>` tag for different resolutions. The browser will then figure out which image it needs and download that one.
+
+Example:
+
+```html
+<img alt="A white coffee mug on a bed of coffee beans"
+     src="coffee-beans-small.jpg"
+     srcset="coffee-beans-small.jpg 560w,
+             coffee-beans-medium.jpg 800w,
+             coffee-beans.jpg 1280w"
+/>
+```
+
+Always ensure images don't overflow their container's width:
+
+```css
+img {
+  max-width: 100%;
+}
+```
