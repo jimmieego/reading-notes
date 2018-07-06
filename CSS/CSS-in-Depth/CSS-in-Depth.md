@@ -854,3 +854,119 @@ The HTML and CSS are decoupled. The CSS must be developed first before it can be
 Don’t blindly add a CSS framework to your page; selectively take only the pieces you need.
 
 Instead of blindly using a framework, take on the mindset of a framework. Imagine your pattern library is a general-purpose library for use by unknown third parties. This will help you keep your styles reusable and provide a means for making changes in the future with fewer breakages on the page.
+
+## Backgrounds, shadows, and blend modes
+
+### Gradients
+
+#### Linear gradients
+
+A basic linear gradient:
+
+```css
+.fade {
+    height: 200px;
+    width: 400px;
+    background-image: linear-gradient(to right, white, blue); /* angle, starting color, and ending color */
+}
+```
+
+Angle: `0deg` is equivalent to `to top`. Higher values move clockwise around the circle: `90deg` points to the right, `180deg` points down, and `360deg` points up again.
+
+A gradient can accept any number of color stops, each separated by a comma.
+
+You can also explicitly set the position of the color stops in the gradient function: `linear-gradient(90deg, red 0%, white 50%, blue 100%)`. Color stops don’t need to be measured in percentages. Pixels, ems, and other length units are perfectly valid.
+
+Use `repeating-linear-gradient` and explicit color stops to create [Stripes](https://css-tricks.com/stripes-css/) to an element.
+
+A subtle background gradient rather than a flat color provides a little more
+complexity to the design. Even basic flat designs can benefit from some subtle shadows or gradients.
+
+#### Radial gradients
+
+A basic example:
+
+```css
+.fade {
+    height: 200px;
+    width: 400px;
+    background-image: radial-gradient(white, blue);
+}
+```
+
+### Shadows
+
+`box-shadow: 2px 2px 2px 1px black`: offset (x), offset (y), blur radius, spread radius, color.
+
+The larger a shadow’s offset, the further it “lifts” the image from the page, making the image seem deeper.
+
+`box-shadow: inset 0 0 0.5em #124`: `inset` makes the shadow appear inside the border of the element, rather than outside.
+
+### Blend modes
+
+The background image property accepts any number of values, each separated by a comma: 
+
+```css
+background-image: url(bear.jpg), linear-gradient(to bottom, #57b, #148);
+```
+
+With mutliple background images, those listed first render in front of those listed afterward.
+
+#### Example: Tint an image
+
+```css
+.blend {
+    min-height: 400px;
+    background-image: url("images/bear.jpg");
+    background-color: #148;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: luminosity;
+}
+```
+
+Use a grayscale image to artificially add film grain or some other texture to the image.
+
+The luminosity blend mode takes the luminosity from the front layer (the bear image) and blends it with the hue and saturation from the back layer (the blue back- ground color).
+
+The color blend mode is effectively an inverse of luminosity, taking the hue and saturation from the front layer, while luminosity is taken from the back.
+
+#### Example: Add texture to an image
+
+```css
+.blend {
+  min-height: 400px;
+  background-image: url("images/scratches.png"), url("images/bear.jpg");
+  background-size: 200px, cover;
+  background-repeat: repeat, no-repeat;
+  background-position: center center;
+  background-blend-mode: soft-light;
+}
+```
+
+The `soft-light` tends to work better with darker texture images, while `hard-light` and `overlay` are better suited for lighter texture images. This tendency is reversed when the texture is behind the primary image.
+
+#### Blend modes in five basic categories
+
+|Type of effect|Blend modes|Description|
+|---|---|--|
+|Darken|`multiply`|The lighter the front color, the more the base color will show through.|
+|Darken|`darken`|Selects darker of the two colors.|
+|Darken|`color-burn`|Darkens the base color, increasing contrast.|
+|Lighten|`screen`|The darker the front color, the more the base color will show through.|
+|Lighten|`lighten`|Selects the lighter of the colors.|
+|Lighten|`color-dodge`|Lightens base color, decreasing contrast.|
+|Contrast|`overlay`|Increases contrast by applying `multiply` to dark colors and `screen` to light colors, at half strength.|
+|Contrast|`hard-light`|Greatly increases contrast. Like `overlay`, but applies `multiply` or `screen` at full strength.|
+|Contrast|`soft-light`|Similar to `hard-light`, but uses `burn`/`dodge` instead of `multiply`/`screen`.|
+|Composite|`hue`|Applies hue from the top color onto the bottom color.|
+|Composite|`saturation`|Applies saturation from the top color onto the bottom color.|
+|Composite|`luminosity`|Applies luminosity from the top color onto the bottom color.|
+|Composite|`color`|Applies hue and saturation from the top color onto the bottom color.|
+|Comparative|`difference`|Subtracts the darker color from the lighter one.|
+|Comparative|`exclusion`|Similar to `difference`, with less contrast.|
+
+#### Mix blend mode
+
+The `mix-blend-mode` property can blend multiple elements. Text and borders of one element can be blended with the background image of its container.
