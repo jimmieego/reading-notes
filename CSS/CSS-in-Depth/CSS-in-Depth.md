@@ -825,3 +825,32 @@ Examples:
 - [SMACSS](https://smacss.com/): Scalable and Modular Architecture for CSS
 - [BEM](https://en.bem.info/methodology/): Block, Element, Modifier
 - [ITCSS](http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528): Inverted Triangle CSS
+
+## 10. Pattern libraries
+
+### KSS
+
+KSS stands for Knyle Style Sheets. [Node version of KSS](https://github.com/kss-node/kss-node)
+
+Modular CSS is the key to scaling your CSS, and a pattern library is a means of keeping those modules organized.
+
+CSS first workflow: Instead of writing your HTML first, you begin with the CSS. Build modular styles and then piece together a web page using those modules.
+
+1. When building a page, have a sketch or mockup or some general idea what that page should look like.
+2. Go to the pattern library. Look for existing modules that provide what you need for your page, and use them. Start from the outside (main page layout and con- tainers) and work your way in. If you can construct your entire page using exist- ing modules, do it. You won’t need to write any new CSS.
+3. Occasionally, you’ll need to build a new module or modules, or a new variant for an existing module. Set aside the page you’re working on, and build it within the pattern library. Document it and make sure it looks and behaves like you expect.
+4. Go back to your page and, using the new stylesheet, add the new module(s) to your page.
+
+We should write CSS first; well-structured HTML will follow.
+
+The HTML and CSS are decoupled. The CSS must be developed first before it can be used by the HTML, but the HTML is in control when it comes to upgrading to a new stylesheet. This is the benefit of CSS First development.
+
+### Semantic versioning
+
+*semver*: Short for Semantic Versioning, a system for versioning software packages using three numbers, each separated by a period (for example, `1.4.2`). The three numbers stand for the major, minor, and patch versions, respectively.
+
+### Use framework
+
+Don’t blindly add a CSS framework to your page; selectively take only the pieces you need.
+
+Instead of blindly using a framework, take on the mindset of a framework. Imagine your pattern library is a general-purpose library for use by unknown third parties. This will help you keep your styles reusable and provide a means for making changes in the future with fewer breakages on the page.
