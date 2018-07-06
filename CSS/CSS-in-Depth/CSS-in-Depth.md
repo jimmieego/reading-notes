@@ -760,9 +760,9 @@ Note:
 
 **Don't write context-dependent selectors**. Never use descendant selectors to alter a module based on its location in the page. When you need a module to look or behave differently, create a modifier class that can be applied directly to the specific element. For example, instead of writing `.page-header .dropdown`, for example, write `.dropdown--dark`.
 
-### Modules with multiple elements
+#### Modules with multiple elements
 
-Use `module__subelement` (double underscore). 
+Use `module__subelement` (double underscore).
 
 Example class names in CSS: `.media`, `.media__image`, `.media__body`.
 
@@ -774,16 +774,54 @@ Single Responsibility Principle: Modules should each be responsible for one thin
 
 Keep positioned elements that are related to one another within the same module.
 
-### State classes
+#### State classes
 
 Being all state classes with `is-` or `has-`. State classes indicate something about the module’s current state and are expected to change. Examples: `is-expanded`, `is-loading`, or `has-error`. State classes are intended to be added to or removed from the module dynamically using JavaScript.
 
-### Preprocessors
+#### Preprocessors
 
 Place each module of CSS in its own appropriately named file. Then create a master stylesheet that imports all modules.
 
-### Naming modules
+#### Naming modules
 
 Give the module a name that’s meaningful no matter what context you might want to use it. Avoid names that simply describe the visual appearance.
 
 Ask yourself what this module represents conceptually.
+
+### Utility classes
+
+A utility class does one simple, very specific thing to an element. Keep utility classes all near the end of the stylesheet, below all modules.
+
+Utility classes are the only place you should use the `!important` annotation.
+
+Examples:
+
+```css
+.text-center {
+  text-align: center !important;
+}
+
+.float-left {
+  float: left;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+
+.hidden {
+  display: none !important;
+}
+```
+
+### CSS methodologies
+
+- [OOCSS](https://github.com/stubbornella/oocss/wiki): Object-oriented CSS
+- [SMACSS](https://smacss.com/): Scalable and Modular Architecture for CSS
+- [BEM](https://en.bem.info/methodology/): Block, Element, Modifier
+- [ITCSS](http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528): Inverted Triangle CSS
