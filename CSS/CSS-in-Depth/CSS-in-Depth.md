@@ -998,3 +998,64 @@ Try colors that are complementary to colors already on the page. With HSL color 
 #### Line height can impact vertical spacing
 
 In the box model, the element’s content box is surrounded by padding, then border, then margin. But with elements like paragraphs and headings, there’s more to the content box than the printed text: the element’s line height contributes to the overall height, beyond the top and bottom of the characters.
+
+## 13. Typography
+
+Web fonts use the `@font-face` at-rule to tell the browser where it can find and download custom fonts for use on a page.
+
+### Web fonts
+
+Use a font provider such as Google Fonts for easy web font integration.
+
+Strictly limit the number of web fonts you add to the page to keep page size under control.
+
+Use `@font-face` rules when hosting your own fonts.
+
+The `font-family` defines the name you’ll use to reference this font elsewhere in your stylesheet. The `src:` provides a comma-separated list of locations where the browser will look.
+
+### Body copy spacing
+
+`line-height`: controls the space between lines of text (verticially).
+
+`letter-spacing`: controls the distance between individual characters (horizontally).
+
+The initial value for the line-height property is the keyword `normal`, which is equal to about 1.2. For body copy, a value between 1.4 and 1.6 is usually closer to ideal.
+
+Longer lines of text should have a larger line height. Ideally, you should aim for line lengths that hold between 45 and 75 characters per line, as this is generally considered the most easily readable.
+
+For `letter-spacing`, generally change it in increments of 1/100ths of an em. For example, `letter-spacing: 0.01em`.
+
+### Headings, small elements, and spacing
+
+Use a negative letter spacing to compress text in short headings.
+
+Text set in all caps generally looks better with a larger letter spacing.
+
+### FOUT and FOIT
+
+FOUT: Flash of Unstyled Text. The page first renders with available system fonts and re-renders with the web fonts when they are downloaded.
+
+FOIT: Flash of Invisible Text. The text only appears when web fonts are ready.
+
+A FOIT generally looks better on a fast connection, but a FOUT is preferable on a slow connection.
+
+#### Use Font Face Observer
+
+[Font Face Observer](https://fontfaceobserver.com/): lets you wait for the web fonts to load, then responds accordingly. You can add a fonts-loaded class to the `<html>` element using JavaScript as soon as fonts are ready. You can then use this class to style the page differently, both with and without web fonts.
+
+#### Fall back to system fonts
+
+Method 1: You can apply the fallback fonts in your CSS, then using `.fonts-loaded` in a selector, change them to your desired web fonts. This’ll change your browser’s FOIT (invisible text) into a FOUT (unstyled text).
+
+Method 2: You can apply the web fonts in your CSS, then using `.fonts-failed` in a selector, change the fonts to the fallback fonts. This’ll still produce a FOIT, but it’ll time out and revert to system fonts, so the page doesn’t get stuck with invisible text when loading fails.
+
+### `font-display`
+
+`font-display` goes inside a `@font-face` rule. It specifies how the browser should treat web font loading. Supported values are:
+
+- `auto`: The default behavior (a FOIT in most browsers).
+- `swap`: Displays the fallback font, then swaps in the web font when it’s ready (a FOUT).
+- `fallback`: A compromise between `auto` and `swap`. For a brief time (100 ms), the text will be invisible. If the web font isn’t available at this point, the fallback font is displayed. Then, once the web font is loaded, it’ll be displayed.
+- `optional`: Similar to `fallback`, but allows the browser to decide whether to display the web font based on the connection speed. Typically, this means the web font may not appear at all on slower connections.
+
+For fast connections, `fallback` works best. For slow connections, `swap` is a bit better, rendering the fallback font immediately. Use `optional` in cases where the web font is a less vital part of your design.
