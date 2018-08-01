@@ -970,3 +970,31 @@ The `soft-light` tends to work better with darker texture images, while `hard-li
 #### Mix blend mode
 
 The `mix-blend-mode` property can blend multiple elements. Text and borders of one element can be blended with the background image of its container.
+
+## 12. Contrast, color, and spacing
+
+### Contrast
+
+Establish contrast by using color, spacing, or size.
+
+### Establish patterns
+
+Two aspects of a cohesive design: color choice and controlling space.
+
+### Color
+
+Don’t over-use color, but selectively put it in the places you want to draw atten- tion. Establish consistent patterns, then break those patterns to draw the users eye to the most important things on the page.
+
+In Chrome DevTools, Shift-click the small color square beside a color value to cycle between hex, RGB, and HSL color notations.
+
+True colorless grays almost never happen in the real world, and our eyes expect to see some color, even if it’s subtle.
+
+Consider using names with numeric values like `--gray-50` or `--gray-80`, where the number roughly corresponds to luminescence. This way you can insert another value between two exist- ing ones when needed.
+
+Try colors that are complementary to colors already on the page. With HSL color values, finding the complementary color is easy: add or subtract 180 to the hue value. Play with the saturation and luminescence in DevTools to find something that looks nice.
+
+### Spacing
+
+#### Line height can impact vertical spacing
+
+In the box model, the element’s content box is surrounded by padding, then border, then margin. But with elements like paragraphs and headings, there’s more to the content box than the printed text: the element’s line height contributes to the overall height, beyond the top and bottom of the characters.
