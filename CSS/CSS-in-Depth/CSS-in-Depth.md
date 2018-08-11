@@ -1094,3 +1094,66 @@ GUI tool for creating custom Bézier curve: [http://cubic-bezier.com/](http://c
 Steps: `steps(3, end)`. Parameters: the number of steps and a keyword (either `start` or `end`), indicating whether each change should take place at the start or end of each step.
 
 As a rule of thumb, most of your transitions should be somewhere between **200 and 500 ms**. Use quick transition speeds (below 300 ms) for hover effects, fades, and small scaling effects. For transitions that involve large moves or complex timing functions (e.g., bounces), use slightly longer transitions between 300 and 500 ms.
+
+## 15. Transforms
+
+### Rotate, translate, scale, and skew
+
+A basic transform rule:
+
+```css
+transform: rotate(90deg);
+```
+
+- `Rotate`: Spins the element a certain number of degrees around an axis.
+- `Translate`: Moves the element left, right, up, or down (similar to relative positioning).
+- `Scale`: Shrinks or expands the element
+- `Skew`: Distorts the shape of the element, sliding its top edge in one direction and its bottom edge in the opposite direction.
+
+When using transforms, while the element may be moving to a new position on the page, it doesn’t shift the document flow. The element's original location remains unoccupied by other elements. When rotating an element, a corner of it may shift off the edge of the screen. Similarly, it could potentially cover up portions of another element beside it.
+
+Transforms cannot be applied to inline elements like `<span>` or `<a>`. To transform such an element, you must either change the display property to something other than inline (such as `inline-block`) or change the element to a flex or grid item (apply `display: flex` or `display: grid` to the parent element).
+
+By default, the point of origin is the center of the element, but you can change this with the `transform-origin` property. For example, `transform-origin: right center;`.
+
+You can specify multiple values for the transform property, each separated by a space. Each transform value is applied in succession from **right to left**.
+
+### Page rendering pipeline
+
+Transforms are far more performant in the browser. If you’re doing any sort of transition or animation, you should always favor a trans- form over positioning or explicit sizing if you can.
+
+The process of rendering can be broken down into three stages: **layout**, **paint**, and **composite**.
+
+#### Layout
+
+The browser calculates how much space each element is going to take on the screen. When a layout change occurs, the browser then must reflow the page, recomputing the layout of all other elements that are moved or resized as a result of the change.
+
+#### Paint
+
+This is the process of filling in pixels: text is drawn; images and borders and shadows are all colored. This is not physically displayed on the screen, but rather drawn into memory. Portions of the page are painted into *layers*.
+
+Changing a background color is less computationally intensive than changing the size of an element, because the background color has no impact on the position or sizing of any elements on the page, thus layout doesn’t need to be recalculated to account for this change.
+
+*Hardware acceleration* occurs here as GPU paints other layers on the page.
+
+#### Composite
+
+The browser takes all of the layers that have been painted and draws them into the final image that’ll be displayed onscreen. These are drawn in a certain order so that the correct layers appear in front of other layers, in cases where they overlap.
+
+Changes of `opacity` and `transform` result in a much faster rendering time, because the browser can pro- mote that element to its own paint layer and use GPU acceleration. Because the element is in its own layer, the main layer won’t change during the animation and won’t require repeated re-painting.
+
+### Performance tips
+
+When transitioning or animating, try to make changes only to `transform` and `opacity`. Then, if needed, you can change properties that result in a paint but not a re-layout. Only change properties that affect layout when it’s your only option and look to them first if you ever notice performance problems with your animations.
+
+For a complete breakdown of which properties result in layout, paint, and/or composite, check [https://csstriggers.com/](https://csstriggers.com/).
+
+### 3D transform
+
+Adding a `perspective` is an important part of 3D transforms.
+
+The `perspective-origin` property shifts the camera position left or right and up or down.
+
+With `rotateY(180deg)`, you see the back of the element, which looks like a mirror image of the original. By default, the backface is visible, but you can change this by applying `backface-visibility: hidden` to the element. One possible application of this technique is to place two elements back-to-back, like two sides of a card. The front of the card will be visible, but the back of the card is hidden. Then you can rotate their container element to flip both elements around, making the front hidden and the back visible.
+
+The `transform-style` property becomes important if you go about building complex scenes with nested elements in 3D. It may be needed to apply `transform-style: preserve-3d` to the parent element.
