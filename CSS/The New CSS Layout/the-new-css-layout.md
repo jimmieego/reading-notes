@@ -2,7 +2,7 @@
 
 Rachel Andrew
 
-## Where we are
+## 2. Where we are
 
 ### CSS architecture
 
@@ -23,7 +23,7 @@ Rachel Andrew
 - [Fractal](https://fractal.build/)
 - [Website Style Guide Resources](http://styleguides.io/)
 
-## The new layout
+## 3. The new layout
 
 ### Formatting contexts in CSS
 
@@ -129,3 +129,63 @@ To address the issue above, set `flex-grow` and `flex-shrink` to `0` and `flex-b
      flex: 0 0 auto;
 }
 ```
+
+### CSS Grid
+
+Example:
+
+```css
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    gap: 20px; /* new name */
+}
+
+.card1 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.card2 {
+     grid-column: 3;
+     grid-row: 1;
+}
+
+.card3 {
+     grid-column: 1;
+     grid-row: 2 / 4;
+}
+
+.card4 {
+     grid-column: 2 / 4;
+     grid-row: 2;
+}
+
+.card5 {
+     grid-column: 2 / 4;
+     grid-row: 3;
+   }
+```
+
+Use *named areas*:
+
+```css
+.card1 { grid-area: a; }
+.card2 { grid-area: b; }
+.card3 { grid-area: c; }
+.card4 { grid-area: d; }
+.card5 { grid-area: e; }
+
+.cards {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-gap: 20px;
+     grid-template-areas:
+       "a a b"
+       "c d d"
+       "c e e";
+}
+```
+
+To leave white space, and to leave a cell empty, use a full-stop character such as `.`.
