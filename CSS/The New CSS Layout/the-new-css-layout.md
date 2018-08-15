@@ -190,3 +190,7 @@ Use *named areas*:
 
 To leave white space, and to leave a cell empty, use a full-stop character such as `.`.
 
+## 4. Alignment control
+
+### Aligning flex items
+
