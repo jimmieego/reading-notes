@@ -336,6 +336,37 @@ Make good decisions for your source and then work out how to manage the visual d
 
 In the [CSS Display specification](https://drafts.csswg.org/css-display/#box-generation), the value of contents is described thus:
 
-> The element itself does not generate any boxes, but its children and pseudo-elements still generate boxes as normal. For the purposes of box generation and layout, the element must be treated as if it had been replaced with its children and pseu- do-elements in the document tree.
+> The element itself does not generate any boxes, but its children and pseudo-elements still generate boxes as normal. For the purposes of box generation and layout, the element must be treated as if it had been replaced with its children and pseudo-elements in the document tree.
 
 Judicious use of `display: contents` can help prevent markup flattening and allow you to make items deeper in the markup part of a flex or Grid layout.
+
+## 7. Embrace the future
+
+### CSS feature query
+
+```css
+@supports (display: grid) {
+    /* code only for browsers that support CSS Grid layout */
+    .container {
+        display: grid;
+    }
+}
+```
+
+The approach to take with feature queries is to layer on support in a progressively enhanced way. Write CSS for the simplest case, for the browsers with no support. Then layer on features, wrapping that code in a feature query.
+
+### Overwriting floats
+
+```css
+.cards {
+     display: flex;
+     flex-wrap: wrap;
+}
+.cards li {
+     /* float for older browsers */
+     float: left;
+     width: calc(33.333333333% - 20px);
+     /* flex for newer ones*/
+     flex: 1 1 auto;
+}
+```
