@@ -300,3 +300,42 @@ Using `auto` as a maximum in `minmax()`: This enables the creation of tracks tha
 
 ## 6. Source order and display order
 
+The default tab order follows the source and not the display. If you reorder the display through auto-placement, or by placing items in an order other than the document order, you could cause someone to jump around the document haphazardly when using the keyboard.
+
+### The `order` property in flexbox and grid
+
+Using the `order` property in flexbox changes the display order of the items.
+
+```css
+.cards {
+    display: flex;
+}
+
+.cards li:nth-child(1) {
+    order: 3;
+   }
+
+.cards li:nth-child(2) {
+    order: 1;
+}
+
+.cards li:nth-child(3) {
+    order: 2;
+}
+```
+
+The initial value of `order` is `0`, and all items without an order have an `order` of `0`. Items with `order` values larger than `0` will be placed after items with smaller `order` values or 0. Note: this only changes the display order.
+
+### The danger of markup "flattening"
+
+An item only becomes a flex or Grid item if it is a direct child of the flex or Grid container.
+
+Make good decisions for your source and then work out how to manage the visual display of items.
+
+### `display: contents`
+
+In the [CSS Display specification](https://drafts.csswg.org/css-display/#box-generation), the value of contents is described thus:
+
+> The element itself does not generate any boxes, but its children and pseudo-elements still generate boxes as normal. For the purposes of box generation and layout, the element must be treated as if it had been replaced with its children and pseu- do-elements in the document tree.
+
+Judicious use of `display: contents` can help prevent markup flattening and allow you to make items deeper in the markup part of a flex or Grid layout.
