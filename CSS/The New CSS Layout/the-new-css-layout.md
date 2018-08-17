@@ -194,3 +194,69 @@ To leave white space, and to leave a cell empty, use a full-stop character such 
 
 ### Aligning flex items
 
+Set `align-items` to the flex container:
+
+- `flex-start`: align items at the top of the container.
+- `flex-end`: send items all to the bottom.
+- `center`: center all items.
+
+Set `align-self` on an individual flex item to override the `align-items` setting.
+
+Alignment works on items on the *cross axis* (*column axis* in the Grid specification). Flex items are displayed as a row; the cross axis runs across the row vertically, stretching the height of the flex container.
+
+If we change the `flex-direction` to `column`, the cross axis becomes horizontal. Aligning the items to `flex-end` moves the column over to the right-hand side.
+
+The `justify-content` property affects the entire flex container. The `justify-content` property acts on the **main axis**—on the row if our `flex-direction` is `row`, on the column if `flex-direction` is `column`. The initial value of `justify-content` is `flex-start`.
+
+The `justify-content` property is also the property used to space items out along the main axis:
+
+- `space-between`: creates an equal amount of space between items.
+- `space-around`: creates an equal amount of space around the items.
+- `space-evenly`: distributes the items evenly on the main axis.
+
+The `align-content` property works on the **cross axis** in flexbox, which will only have free space available if the following conditions are met:
+
+- `flex-wrap` is `wrap`
+- The container is taller than the space needed to display the items
+
+If both of these things are true, you can use `align-content` in the same way as justify content.
+
+### Aligning grid items
+
+The `align-items` and `align-self` properties still apply. The default value for `align-items` is `stretch`.
+
+Set the alignment of grid items along the row (or inline) axis with the `justify-items` property, which sets the `justify-self` value of the individual grid items. The initial value of `justify-items` in Grid Layout is `stretch`, so the items stretch over their entire area.
+
+### Aligning and justifying grid tracks
+
+The `align-content` and `justify-content` properties affect the grid tracks in Grid Layout. 
+
+### The simplest way to center a box
+
+```css
+.example {
+     height: 50vh;
+     display: flex;
+     justify-content: center;
+      align-items: center;
+}
+```
+
+As with `align-content` in flexbox, you need additional space in the grid container for these to work (e.g., using fixed-sized tracks).
+
+### Alignment with auto margins
+
+Example:
+
+```css
+.cards {
+     display: flex;
+}
+
+.cards li:last-child {
+     margin-left: auto;
+}
+```
+
+The margin of the last card takes up all the space and pushes that one item over to the right.
+
