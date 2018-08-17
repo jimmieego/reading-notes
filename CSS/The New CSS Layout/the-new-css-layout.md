@@ -295,3 +295,8 @@ The `flex` shorthand: order of the values is: `flex-grow` `flex-shrink` `flex-ba
 ### Sizing in grid
 
 In Grid: The `fr` unit is used when creating track sizes.
+
+Using `auto` as a maximum in `minmax()`: This enables the creation of tracks that are always a minimum height or width, but that expand if more content is added than expected.
+
+## 6. Source order and display order
+
