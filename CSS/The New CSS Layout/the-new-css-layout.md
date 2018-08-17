@@ -260,3 +260,38 @@ Example:
 
 The margin of the last card takes up all the space and pushes that one item over to the right.
 
+## 5. Responsive by default
+
+Use `auto-fill` with a fixed-size value:
+
+```css
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+}
+```
+
+Note:
+
+- If we used `1fr`, we would only get one column track, since `1fr` would use all the available space in the grid container.
+- `minmax()` sets a minimum and maximum size for a track.
+- Use `auto-fill` if you want to maintain the tracks; use `auto-fit` if you want the content to fill the container in case there are fewer items than tracks.
+
+### Flexible sizing in flexbox
+
+In flexbox, the key to flexible sizing lies in three properties: `flex-grow`, `flex-shrink`, and `flex-basis`. These are applied to the flex items.
+
+The `flex-basis` can be used to set a width on the main axis for the flex item. It can accept a length unit, or the keywords `content` and `auto`.
+
+- `flex-basis: content;`: the `flex-basis` is taken from the content size of the item in the main axis.
+- `flex-basis: auto;`: if you’ve set a width on the item, that width will be used as the `flex-basis` value. If you haven’t set a width, auto resolves to the content size.
+
+The `flex-grow` defines whether an item can grow larger than the size set in `flex-basis`.
+
+The `flex-shrink` determines whether an item can shrink smaller than the `flex-basis` value.
+
+The `flex` shorthand: order of the values is: `flex-grow` `flex-shrink` `flex-basis`.
+
+### Sizing in grid
+
+In Grid: The `fr` unit is used when creating track sizes.
