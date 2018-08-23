@@ -72,3 +72,9 @@ The only way for a designer or developer to ensure that she’s making the right
 Neoclassical art usually depicted scenes from ancient Greek or Roman history or mythology, painted as realistically as possible.
 
 Avoid simply copying a graphic style, and try to understand its technological and cultural influences.
+
+## Chapter 5. Fool’s Golden Ratio: Understanding Proportions
+
+*Proportion* is how the size or magnitude of one thing relates to that of another related thing.
+
+Proportional relationships help organize the various elements involved in a design, not only drawing the attention of the viewer, but guiding her eye throughout that piece of design.
