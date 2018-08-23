@@ -69,3 +69,6 @@ The only way for a designer or developer to ensure that she’s making the right
 
 ## Chapter 4. Technology and Culture
 
+Neoclassical art usually depicted scenes from ancient Greek or Roman history or mythology, painted as realistically as possible.
+
+Avoid simply copying a graphic style, and try to understand its technological and cultural influences.
