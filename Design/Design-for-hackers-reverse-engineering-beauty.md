@@ -78,3 +78,23 @@ Avoid simply copying a graphic style, and try to understand its technological an
 *Proportion* is how the size or magnitude of one thing relates to that of another related thing.
 
 Proportional relationships help organize the various elements involved in a design, not only drawing the attention of the viewer, but guiding her eye throughout that piece of design.
+
+Well-considered geometric relationships help make a composition interesting.
+
+## Chapter 6. Holding the Eye: Composition and Design Principles
+
+The term *composition* refers to the way that elements are arranged within a piece of design, the interrelationships between those elements, and – if applicable – the relationships between those elements and a canvas or display.
+
+### Foreground/background relationships
+
+Size, color, texture, and use of shadows are just some of the factors that can make some things pop, while others recede.
+
+### Design principles
+
+Dominance: The principle of dominance creates visual interest in a composition by drawing the viewer’s eye to an important element in the composition.
+
+Similarity: Similarity means that various elements of a composition – their shape, color, line characteristics (smooth or jagged), or texture – are similar to one another. Similarity makes a design look cohesive, because the various elements within it echo one another.
+
+Rhythm: The repetition of a particular design element or characteristic throughout a composition create a sense of rhythm in design.
+
+Texture: Texture is the visual indication that something has characteristics that would be palpable if you were able to touch them.
