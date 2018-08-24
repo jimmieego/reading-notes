@@ -98,3 +98,7 @@ Similarity: Similarity means that various elements of a composition – their sh
 Rhythm: The repetition of a particular design element or characteristic throughout a composition create a sense of rhythm in design.
 
 Texture: Texture is the visual indication that something has characteristics that would be palpable if you were able to touch them.
+
+Direction: The principle of direction helps guide the viewer’s eye throughout the composition and helps keep the viewer looking at the design piece.
+
+Contrast: The principle of contrast causes certain parts of a composition to stand out more than others because of differences – or contrast – between elements.
