@@ -102,3 +102,42 @@ Texture: Texture is the visual indication that something has characteristics tha
 Direction: The principle of direction helps guide the viewer’s eye throughout the composition and helps keep the viewer looking at the design piece.
 
 Contrast: The principle of contrast causes certain parts of a composition to stand out more than others because of differences – or contrast – between elements.
+
+## Chapter 7. Enlivening Information: Establishing a Visual Hierarchy
+
+A piece of information with lots of white space around it will often look more important than other information. Simply considering the amount of white space used between elements, and being consistent, can go a long way toward making a design look more clean.
+
+It’s good practice to pick some proportional scale of type sizes to work with. For example: 5, 7, 9, 12, 16, 21, 28, 37, 50, 67. (The scale factor is 0.75.)
+
+## Chapter 8. Color Science
+
+### Color and quantitative data
+
+When choosing a color palette to express quantitative data, you need to understand how different color shifts – within various color models – differ perceptually. The data representations of color that are present in popular color spaces don’t always translate to equivalent perceptual differences in the colors produced.
+
+For example, the Lightness value in HSL – like the Brightness value in HSB – isn’t consistent with actual human perception.
+
+[Colorbrewer](http://www.colorbrewer2) makes it easy to create color palettes that are perceptually distinct.
+
+A *diverging color palette* places two concentrated hues, each at its own extreme ends of the data, and fade those hues into a neutral color for data that is around the data point that is neutral (such as the median).
+
+Use colors with a consistent perceptual lightness for qualitative data sets, and color palettes with appropriately perceptually contrasting lightness for quantitative data sets.
+
+### Hexadecimal color
+
+To know how to mentally navigate through the hexadecimal color cube in a 256-color palette, you need to remember only this progression: `0`, `3`, `6`, `9`, `C`, `F`.
+
+### HSL
+
+HSL: Hue, Saturation, Lightness.
+
+Hue: 0 - 360. Saturation and lightness are in percentages.
+
+In HSL, any color with 100 percent Lightness will simply be white, and *50 percent* is designated for pure hues.
+
+### Color across media
+
+When working with an RGB image, make sure to work within the sRGB color space, so the image’s colors can be interpreted across a wide variety of devices. Don’t attach an ICC profile to web graphics that you need to match with CSS colors.
+
+## Chapter 9. Color Theory
+
