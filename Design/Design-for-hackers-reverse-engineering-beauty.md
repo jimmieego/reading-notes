@@ -286,3 +286,51 @@ As a good rule of thumb, body copy tends to be most readable when the leading is
 
 ## Appendix B. Typographic Etiquette
 
+- Typography exists to communicate language.
+- Typographic form is derived from a mixture of medium and language.
+- The aim of a typeface is to allow the inherent qualities of the individual letters to shine through, sometimes while conveying a particular mood.
+- The design of a typeface should be respected.
+- An even texture is the aim of any block of body text.
+- Visual differentiation between pieces of information should be appropriate to how it is consumed.
+
+### What not to do
+
+- Fake bold: The artificially bolded fonts are essentially just the original version of the font, but with an outline around them. This removes all the subtlety from the forms of the letters and usually closes up small counterforms, reducing the legibility of the font.
+- Fake italic: This distortion usually comes in the form of the program simply slanting the font, distorting its letterforms.
+- Fake small caps: When you use the CSS `font-variant: small-caps` property – even if there is an authentic small-caps version available – browsers will instead create fake small caps by replacing any lowercase letters within the element with smaller versions of capital letters.
+- Stretch type
+- Outline type: It’s important to choose an option that places the outline just outside the edge of the letterforms.
+- Place images or textures directly inside the forms of typography.
+- Place text over images or textures. If do, make sure that the type contrasts well with this image or texture.
+
+### Setting body copy
+
+#### Indicating a change in paragraphs
+
+Use either an indentation or a space after a paragraph to designate a change in paragraphs – never both.
+
+Not much indentation is needed, usually about `1em` (if your font is 12px, then that will amount to about 12px). If you use space after paragraphs instead, a full line break is generally too much. About `0.8em` usually is about right.
+
+When indenting paragraphs, you don’t need to indent the opening paragraph of a section.
+
+Allow punctuation and ornamentation, such as quotes or drop caps, to hang into the margin.
+
+#### Avoiding justified type
+
+Leaving the right side of type ragged (often called ragged right or flush left) actually improves readability because the differences in line length make it easier for the reader to distinguish the line she just finished from the one she is about to begin.
+
+#### Avoiding widows and orphans
+
+*Orphans* are single words – or a couple of short words – that end the last line of a paragraph. They also can be single lines of a new paragraph that start at the bottom of a page or column.
+
+#### Quotes
+
+- To open a quotation, use “ (`&ldquo;`), and to close a quotation, use ” (`&rdquo;`).
+- For opening single quotes use ‘ (`&lsquo;`), and for closing single quotes use ’ (`&rsquo;`).
+- For feet, you should use ʹ (`&prime;`), and for inches, ʺ (`&Prime;`).
+
+#### Dashes
+
+- Hyphen (`-`): in compound modifiers such as fine-tuned.
+- En dash (`–`): width of a lowercase `n`. Dashes used in text should be an en dash flanked by a space on each side. The en dash also is used to indicate ranges of numbers – such as 1999–2000 – though it isn’t flanked with single spaces in this case.
+- Em dash (`—`): one em wide or the width of a lowercase `m`.
