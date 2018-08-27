@@ -199,3 +199,42 @@ Don’t be so quick to use black – if you really master manipulating color rel
 #### Monochromatic
 
 A monochromatic color scheme uses a single base hue - usually with varied tints and shades of that hue - throughout the design.
+
+#### Analogous
+
+Analogous color schemes typically use three hues that are adjacent to each other on the color wheel (for example, green-blue, green, and green-yellow), though sometimes an intermediate color may be skipped between colors (for example, blue, green, yellow). Analogous color schemes tend to be harmonious and quiet.
+
+#### Complementary
+
+Complementary color schemes are made up primarily of two colors that are opposite each other on the color wheel. Complementary colors contrast with each other as much as possible, so these color schemes tend to have an exciting, jarring appearance.
+
+#### Split-complementary
+
+A split-complementary color scheme is made up of a color and the two colors that are on either side of the complement of that color. Split-complementary color schemes tend to feel less jarring and more harmonious than complementary color schemes.
+
+#### Triadic
+
+A triadic color scheme is composed of three colors that are evenly spaced on the color wheel.
+
+#### Tetradic
+
+A tetradic color scheme is composed of two pairs of complementary colors, for a total of four colors.
+
+### Creating a mood with color
+
+Mysterious or exclusive: Designs that have a sense of mystery or exclusivity tend to have a very dark overall feeling to them, possibly with some sparse but bright highlights or accent colors.
+
+Active: Designs that feel active tend to have bright and highly saturated colors that contrast each other.
+
+Calm: Designs with a muted palette have a very quiet, often calming feeling. Muted color palettes generally consist of very unsaturated tints of colors – mostly grays, beiges, or even subtle pastels.
+
+Muted: Muted color palettes are often a good setup for increasing the impact of accent colors.
+
+Natural: Natural color palettes have an earthy feeling that reminds you of a hike through the woods. Usually, greens, browns, brownish-orange, and brownish-yellow colors are seen in designs that have a “natural” feeling.
+
+### Key points
+
+- When working with predefined color palettes, use accents to your advantage. Just pick one or two colors to dominate your color usage, and use the others sparingly to add accents to particular elements you want to call attention to.
+- When designing for an unfamiliar culture, do your research. Make sure you aren’t bringing to mind any dominant cultural elements, such as religion or death, unless you intend to.
+- Use your knowledge about how colors interact (for example, cool colors recede while warm colors pop) to add extra life and dimension to your designs.
+- Use your knowledge of some of the common signals that colors carry with them (for example, yellow for bonus information) to guide your color choices in appropriate contexts.
