@@ -141,3 +141,61 @@ When working with an RGB image, make sure to work within the sRGB color space, s
 
 ## Chapter 9. Color Theory
 
+- Use red in contexts where you want to drive user behavior forward.
+- Use red in error messages and other urgent notes.
+- Consider using red if you're doing any work related to food. Avoid strong use of blue in these contexts.
+- Avoid red in performance-based contexts.
+
+### Artist's color wheel
+
+*Primary colors*: Red, Yellow, Blue
+
+*Secondary colors*: Orange (Red + Yellow), Green (Yellow + Blue), Purple (Blue + Red)
+
+*Tertiary colors*: Mix one of the primary colors with the adjacent secondary color.
+
+### Color choices and web conventions
+
+#### Backgrounds
+
+White: A white background, when used with dark type, provides good contrast for reading and conveys a sense of trustworthiness. The more widespread the audience of a website, the more likely it is to have a white background.
+
+Off-white: Off-white or cream colors often are associated with things that have a natural feel to them. Additionally, off-white or cream gives a stronger sense of intimacy than does pure white. Off- white gives a sense of antiqueness, too, like paper that is old and has started to yellow.
+
+Dark: Dark backgrounds can provide a sense of exclusivity and sophistication.
+
+Bright: If you choose to use a brightly colored background, make sure it’s relevant. Bright background may not be suitable for reading a lot of content on the page.
+
+#### Graphics and text
+
+Green: A mark of progress. Call-to-action buttons.
+
+Yellow: Call attention to important messages or notes.
+
+Red: Error or other urgent message that's critical for the user to see.
+
+Blue: Link color.
+
+#### Accent colors
+
+The color needs to contrast with its surroundings.
+
+### Color theory
+
+As a general rule, warm hues pop out at the viewer, giving the appearance of being closer, while cool hues recede, giving the appearance of being farther away.
+
+A tint of a hue is basically a lighter version of that hue. A shade is a darker version of the base hue. Tints pop and shades recede.
+
+By understanding how colors interact with one another, you can more strongly establish a hierarchy of information in your typography. Web conventions have made it widely acceptable to use black on white for text on web pages, but this isn’t universally the most readable, nor is it the most aesthetically pleasing option.
+
+Example:
+
+Main text color: `#503e2b`. Secondary text color: `#808094`.
+
+Don’t be so quick to use black – if you really master manipulating color relationships to create dimension, you can really add freshness and life to your designs.
+
+### Color schemes
+
+#### Monochromatic
+
+A monochromatic color scheme uses a single base hue - usually with varied tints and shades of that hue - throughout the design.
