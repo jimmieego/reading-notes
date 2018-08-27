@@ -238,3 +238,51 @@ Natural: Natural color palettes have an earthy feeling that reminds you of a hik
 - When designing for an unfamiliar culture, do your research. Make sure you aren’t bringing to mind any dominant cultural elements, such as religion or death, unless you intend to.
 - Use your knowledge about how colors interact (for example, cool colors recede while warm colors pop) to add extra life and dimension to your designs.
 - Use your knowledge of some of the common signals that colors carry with them (for example, yellow for bonus information) to guide your color choices in appropriate contexts.
+
+## Appendix A. Choosing and Pairing Fonts
+
+### Humanist typefaces
+
+Very readable on-screen.
+
+- Gill Sans: friendly and approachable.
+- Lucida Grande
+- Verdana
+- Tahoma
+- Trebuchet MS
+
+### Geometric typefaces
+
+More directly influenced by the square, circle, and triangle. The `o`’s of geometric typefaces tend to be nearly perfect circles.
+
+- Futura: simple yet sophisticated.
+- Bodoni
+
+### Realist/Transitional typefaces
+
+A balance between calligraphic and geometric influence.
+
+- Helvetica
+- Georgia
+- Times New Roman: A major consideration in the 1931 design of Times New Roman was to save space in the British newspaper, *The Times*.
+
+### Pairing fonts
+
+Use no more than two fonts: one of them serif, and one sans-serif.
+
+In print, if two fonts are being used, a sans-serif face is typically used for titles and headers, while a serif face is used for body copy.
+
+Sans-serif typefaces are regarded as more readable on-screen, so when a second font is used, it’s often a serif typeface for more sophisticated-looking headers and titles.
+
+The reverse of this common configuration – a sans-serif font for headers and titles, with a serif font for body copy – is certainly a viable option, provided that the serif face is one designed for the web (such as Georgia) and is displayed large enough to be readable.
+
+When pairing fonts, it’s best to achieve *harmony* or *contrast*. It’s the area in between these two approaches that you want to avoid.
+
+A good shortcut is to choose fonts that are created by the same type designer (e.g., Joanna and Gill Sans by Eric Gill).
+
+### Font
+
+As a good rule of thumb, body copy tends to be most readable when the leading is about 120 percent to 140 percent of the type size (a `line-height` of `1.2em` to `1.4em`). Smaller portions of text, such as within bulleted lists, tend to look better with a smaller `line-height` (`1em` or `1.1em`).
+
+## Appendix B. Typographic Etiquette
+
