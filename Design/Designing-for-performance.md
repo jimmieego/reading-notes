@@ -60,3 +60,23 @@ Repaints are expensive operations for browsers, and will make your page feel slu
 
 - *Baseline JPEG*: full-resolution, top-to-bottom scan of an image.
 - *Progressive JPEG*: appear all at once at low quality; then this low-quality version of the image is replaced with versions of progressively higher quality.
+
+Serving an image that is larger than necessary and scaling it down within an image tag will negatively impact your page load time, as you are forcing the user to download more bytes than needed.
+
+### Replacing image requests
+
+- Combine images into sprites
+- Replace image files with CSS3, data URIs, or SVG versions
+
+Use CSS to replace images. For example:
+
+```css
+/* Adding a basic bevel gradient */
+button {
+    background-image: linear-gradient(to bottom, #FFF, transparent);
+    background-color: #DDD;
+    border: 1px #DDD solid;
+}
+```
+
+If you find that your user interface does become sluggish, especially upon scrolling, you may have a CSS3 or JavaScript repaint issue and will want to diagnose what’s causing it using tools from [JankFree.org] (http://jank-free.org/).
