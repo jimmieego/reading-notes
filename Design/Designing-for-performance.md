@@ -44,3 +44,19 @@ Optimize the critical rendering path:
 - Ensure that any primary actions for the page are available to the user as quickly as possible
 
 Repaints are expensive operations for browsers, and will make your page feel sluggish.
+
+## Chapter 3. Optimizing Images
+
+- Finding the right balance of file size and quality for each image
+- Looking for ways to reduce the total number of image requests on your site
+- Optimizing your site’s image creation workflows for performance improvements
+
+|Format |Best for | Optimization options|
+|-------|---------|---------------------|
+|JPEG|Photos, images with many colors|Decrease quality, export as progressive, reduce noise|
+|GIF|Animations|decrease dithering, decrease number of colors, increase horizontal patterns, reduce vertical noise |
+|PNG-8|Images with few colors|decrease dithering, decrease number of colors, increase horizontal and vertical patterns|
+|PNG-24|Partial transparency|reduce noise, reduce number of colors|
+
+- *Baseline JPEG*: full-resolution, top-to-bottom scan of an image.
+- *Progressive JPEG*: appear all at once at low quality; then this low-quality version of the image is replaced with versions of progressively higher quality.
