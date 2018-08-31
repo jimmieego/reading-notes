@@ -127,3 +127,30 @@ The most important action you can take when applying web fonts is to be delibera
 ### Creating repurposable markup
 
 The more patterns are repurposed, the higher the chances are that the styles and other assets will already be cached, the shorter your stylesheets will be, and the faster the site will load.
+
+### Additional markup considerations
+
+Putting stylesheets in the `<head>` allows content to be displayed progressively to the user because the browser isn’t still looking for more style information.
+
+Avoid using `@import`, which can significantly increase page load time.
+
+JavaScript files should be loaded at the end of the page and loaded asynchronously whenever possible. This will allow other page content to be displayed to the user more quickly, as JavaScript blocks DOM construction unless it is explicitly declared as asynchronous.
+
+```html
+<script src="main.js" async></script>
+```
+
+Anything that loads late and affects page layout can cause content to shift, surprising the user; build in placeholders to make sure the page looks and feels stable as it loads.
+
+In terms of script performance, watch your waterfall charts to make sure that your JavaScript files are loading *after* your other content and not blocking other downloads or rendering important pieces of the page.
+
+gzip is great for all kinds of text files like stylesheets, HTML, JavaScript, and fonts. The only exception to this is WOFF font files, which come with built-in compression.
+
+### Caching assets
+
+There are two kinds of caching parameters that can be included in a response header:
+
+- Those that set the time period during which a browser can use its cached asset without checking to see if there’s a new one available from the server (`Expires` and `Cache-Control: max-age`).
+- Those that tell the browser information about the asset's version so it can compare its cached version to the one that lives on the server (`Last-Modified` and `ETag`).
+
+All static assets (CSS files, JavaScript files, images, PDFs, fonts, etc .) should be cached.
