@@ -80,3 +80,50 @@ button {
 ```
 
 If you find that your user interface does become sluggish, especially upon scrolling, you may have a CSS3 or JavaScript repaint issue and will want to diagnose what’s causing it using tools from [JankFree.org] (http://jank-free.org/).
+
+## Optimizing Markup and Styles
+
+### Cleaning HTML
+
+When looking at your site’s HTML, watch for:
+
+- Embedded or inline styles that should be moved to a stylesheet
+- Elements that have no need for special styling
+- Old, commented-out code that can be removed
+
+### Cleaning CSS
+
+Watch for:
+
+- Element names that don’t have semantic meaning
+- `!important` declarations
+- Browser-specific hacks
+- Lots of selector specificity
+- Unused styles
+
+Look through your stylesheets for opportunities to combine or condense these styles, as they will help with both the performance and maintainability of your code.
+
+If you have many icons or other small images used throughout the site, a sprite can be a huge help in optimizing requests.
+
+Consider the number of stylesheet images called and whether they can be condensed or replaced with CSS or SVG.
+
+Always start with the smallest, lightest selector possible and add specificity from there. Reducing specificity means that it will be easier to override styles with the naturally cascading power of CSS, rather than slip in additional weight or `!important` rules.
+
+### Optimizing web fonts
+
+```css
+@font-face {
+    font-family: 'FontName';
+    src: url('fontname.woff') format('woff');
+}
+
+body {
+    font-family: 'FontName', Fallback, sans-serif;
+}
+```
+
+The most important action you can take when applying web fonts is to be deliberate about their uses. Document when and how to use a particular font weight so that others working on your site can repurpose this markup and understand when it is appropriate to apply a font weight.
+
+### Creating repurposable markup
+
+The more patterns are repurposed, the higher the chances are that the styles and other assets will already be cached, the shorter your stylesheets will be, and the faster the site will load.
