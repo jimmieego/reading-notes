@@ -154,3 +154,62 @@ There are two kinds of caching parameters that can be included in a response hea
 - Those that tell the browser information about the asset's version so it can compare its cached version to the one that lives on the server (`Last-Modified` and `ETag`).
 
 All static assets (CSS files, JavaScript files, images, PDFs, fonts, etc .) should be cached.
+
+## Chapter 5. Responsive Web Design
+
+### Loading the correct image size
+
+Simply setting `display: none` to an element will not prevent a browser from downloading the image. The same goes for applying `display: none` to an element with a `background-image`; the image will still be downloaded. Instead, if you want to hide an image from displaying with CSS in a responsive design, you can try hiding the *parent* element of the element with a `background-image`. Alternatively, you could apply different media queries to tell the browser which `background-image` is appropriate to download at which screen size.
+
+The `picture` element in HTML:
+
+```html
+<picture>
+    <source media="(min-width: 800px)" srcset="big.png 1x, big-hd.png 2x">
+    <source media="(min-width: 600px)" srcset="medium.png 1x, medium-hd.png 2x">
+    <img src="small.png" srcset="small-hd.png 2x" alt="Description">
+</picture>
+```
+
+The first `source` to match, top to bottom, is the resource that gets picked for the browser to download.
+
+The `type` attribute of the `picture` element:
+
+```html
+<picture>
+    <source type="image/svg+xml" srcset="pic.svg">
+    <img src="pic.png" alt="Description">
+</picture>
+```
+
+The `size` attribute of the `picture` element:
+
+```html
+<img srcset="small.jpg 400w, medium.jpg 800w, big.jpg 1600w" sizes="(min-width: 1000px) 33.3vw, 100vw" src="small.jpg" alt="Description">
+<!-- at larger screens, the image will be shown at 33% of the viewport, but the default width of the image is 100% of the viewport -->
+```
+
+### Fonts
+
+Load the custom font file only on larger screens:
+
+```css
+@font-face {
+    font-family: 'FontName';
+    src: url('fontname.woff') format('woff');
+}
+
+body {
+    font-family: Georgia, serif;
+}
+
+@media (min-width: 1000px) { 
+    body {
+        font-family: 'FontName', Georgia, serif;
+    }
+}
+```
+
+### Mobile first approach
+
+Consider the smallest screen sizes first. Reorder the CSS to deliver small screen styles first, and use progressive enhancement to add content and capabilities as screen sizes get larger. From there, you can make decisions about how to share larger assets on larger screens, reflow content in your hierarchy, and continue to be deliberate about performance in your overall user experience.
