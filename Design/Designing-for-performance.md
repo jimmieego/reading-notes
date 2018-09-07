@@ -232,3 +232,25 @@ Incorporate performance into daily development workflow:
 You can favor aesthetics in one area and favor performance in another by defining your performance budget up front. 
 
 To decide on what your performance goals will be, you can conduct a competitive analysis.
+
+## Chapter 8. Changing Culture at Your Organization
+
+Limiting the responsibility of performance to a small group of people will make it nearly impossible to keep the site’s speed under control, particularly as the site ages, changes, and is worked on by new people.
+
+The work to be done to actually improve and maintain performance needs to be owned and shared across your organization, rather than lie with an individual or single team.
+
+To emphasize the importance of performance upward, focus on showcasing it both within business metrics and with end user experience. The first angle involves numbers: impact on conversion rate, total revenue, returning visitors. The second angle focuses on helping management feel how slow your site is and empathize with your end users.
+
+Possible education topics:
+
+- How mobile performance works
+- How people can impact performance during the design stage
+- How to improve perceived performance
+
+To empower people to make good choices during their daily workflows, figure out how to surface performance data on their current work. Publicly acknowledging how your site is performing will make people feel accountable, and will also make them want to help. Make it very easy for the team to feel productive when making performance improvements.
+
+Easy performance wins:
+
+- Clean up and normalize existing button styles across the site, and document where all the different buttons live so people can pick them off one by one.
+- Isolate suspect chunks of CSS that are likely no longer needed in your stylesheet and ask someone to verify that they’re no longer needed, then have folks clean them out.
+- Find large images used on the site and list them so that someone can re-export them, compress them, or find other ways to optimize their file size.
