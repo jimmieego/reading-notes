@@ -203,7 +203,7 @@ body {
     font-family: Georgia, serif;
 }
 
-@media (min-width: 1000px) { 
+@media (min-width: 1000px) {
     body {
         font-family: 'FontName', Georgia, serif;
     }
@@ -213,3 +213,9 @@ body {
 ### Mobile first approach
 
 Consider the smallest screen sizes first. Reorder the CSS to deliver small screen styles first, and use progressive enhancement to add content and capabilities as screen sizes get larger. From there, you can make decisions about how to share larger assets on larger screens, reflow content in your hierarchy, and continue to be deliberate about performance in your overall user experience.
+
+## Chapter 6. Measuring and Iterating on Performance
+
+Speed Index: The average time at which visible parts of the page are displayed. It helps you benchmark the perceived performance of your page, since it will tell you how quickly the “above the fold” content is populated for your users. The smaller the Speed Index score, the better.
+
+Benchmarking performance as it changes over time, especially when you can directly attribute it to work being done on your site, will empower you and others to make smart decisions about aesthetics and performance.
