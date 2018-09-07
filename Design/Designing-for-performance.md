@@ -219,3 +219,16 @@ Consider the smallest screen sizes first. Reorder the CSS to deliver small scree
 Speed Index: The average time at which visible parts of the page are displayed. It helps you benchmark the perceived performance of your page, since it will tell you how quickly the “above the fold” content is populated for your users. The smaller the Speed Index score, the better.
 
 Benchmarking performance as it changes over time, especially when you can directly attribute it to work being done on your site, will empower you and others to make smart decisions about aesthetics and performance.
+
+## Chapter 7. Weighing Aesthetics and Performance
+
+Incorporate performance into daily development workflow:
+
+- Automate image compression as new images are added to your site.
+- Use an image resizing service and caching by breakpoint so you don’t need to manually create a new image for every screen size.
+- Document copy-and-pasteable design patterns in a style guide for easy reuse.
+- Check your page weight and critical path using browser plug-ins.
+
+You can favor aesthetics in one area and favor performance in another by defining your performance budget up front. 
+
+To decide on what your performance goals will be, you can conduct a competitive analysis.
