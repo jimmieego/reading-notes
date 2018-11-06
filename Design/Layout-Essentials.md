@@ -33,3 +33,15 @@ Many discrete chunks of information -> Need more than mere space between the col
 Caution: Too many rules can dull a page.
 
 When there is a lot of informational action going on, a horizontal rule can separate a page number or a running foot from the rest of the hard-core information.
+
+## 21. Make It Look Simple
+
+When captions are long and contain a lot of additional information, such as credits and supplemental descriptions, distinguish the captions from the text by using different typefaces, by setting the type smaller, or by varying the amount of space between elements.
+
+One structural solution is a three-column grid that scans like a one- or two-column design. Use two of the columns for a single text width and position the text on the right side of the page. The result is a clean look for the running text and a generous left margin for a long caption.
+
+## 24. Lower the Columns
+
+A full page of three-column text can become dense. A good way to keep the reader engaged and undaunted is to lower the columns on the page, which creates clean spreads and a feeling of movement.
+
+Lowered text columns also enable the designer to create a clear area for lead information such as the running head and page number, spread title, head- note, and photos.
