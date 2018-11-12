@@ -45,3 +45,11 @@ One structural solution is a three-column grid that scans like a one- or two-col
 A full page of three-column text can become dense. A good way to keep the reader engaged and undaunted is to lower the columns on the page, which creates clean spreads and a feeling of movement.
 
 Lowered text columns also enable the designer to create a clear area for lead information such as the running head and page number, spread title, head- note, and photos.
+
+## 42. Determine a Palette
+
+Determining a controlled palette can provide coherence. When the function of color is to grab attention, it makes sense to use bright colors. When color is used to serve more serious text such as a case study or financial report, a palette can be more muted (less saturated) to better serve the content.
+
+## 43. Let the Color Be the Information
+
+Using a limited amount of color (e.g., black) to offset highly saturated images allows the reader to focus on the point of the image. Too much visual competition is counterproductive.
