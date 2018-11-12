@@ -29,3 +29,19 @@ There are four characteristics of accessible designs:
     - use good affordances and constraints (e.g., controls that can only be used the correct way) to prevent errors from occurring
     - use confirmations and warnings to reduce the occurrence of errors
     - include reversible actions and safety nets to minimize the consequence of errors (e.g., the ability to undo an action)
+
+## Area Alignment
+
+Alignment based on the area of elements versus the edges of elements.
+
+For example, pull quotes should be aligned based on text edge and not on the quotation marks. Numbered or bulleted items should be aligned based on the text edge and not on the numbers and bullets, unless the specific intent is to subordinate the listed items.
+
+Consider area alignment when incorporating dissimilar elements into a composition. When objects are simple and symmetrical, align based on their edges; otherwise, align based on their areas.
+
+## Confirmation
+
+The message should end with one question that is structured to be answered *Yes* or *No*, or with an action verb that conveys the action to be performed. 
+
+The use of *OK* and *Cancel* should be avoided for confirmations.
+
+For less critical confirmations that act more like reminders, an option to disable the confirmation should be provided.
