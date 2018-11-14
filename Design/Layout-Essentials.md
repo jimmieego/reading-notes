@@ -53,3 +53,7 @@ Determining a controlled palette can provide coherence. When the function of col
 ## 43. Let the Color Be the Information
 
 Using a limited amount of color (e.g., black) to offset highly saturated images allows the reader to focus on the point of the image. Too much visual competition is counterproductive.
+
+## 66. Guide Your Reader
+
+Rules, drop caps, bold headlines, and different (although controlled) weights and colors can break up the grayness of many pages of running text and help the reader find various points of interest—and resting points—along the way. Judiciously sized and placed images further enhance the reading experience.
