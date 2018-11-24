@@ -45,3 +45,9 @@ The message should end with one question that is structured to be answered *Yes*
 The use of *OK* and *Cancel* should be avoided for confirmations.
 
 For less critical confirmations that act more like reminders, an option to disable the confirmation should be provided.
+
+## Highlighting
+
+Highlight no more than 10 percent of the visible design; highlighting effects are diluted as the percentage increases. Use a small number of highlighting techniques applied consistently throughout the design.
+
+Bolding is generally preferred over other techniques (italics and underlying) as it adds minimal noise to the design and clearly highlights target elements.
