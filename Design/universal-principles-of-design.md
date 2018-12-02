@@ -51,3 +51,15 @@ For less critical confirmations that act more like reminders, an option to disab
 Highlight no more than 10 percent of the visible design; highlighting effects are diluted as the percentage increases. Use a small number of highlighting techniques applied consistently throughout the design.
 
 Bolding is generally preferred over other techniques (italics and underlying) as it adds minimal noise to the design and clearly highlights target elements.
+
+## Normal Distribution
+
+It is important to avoid trying to create something that is average in all dimensions. A person average in one measure will not be average in other measures. The probability tha a person will match the average of their population group in two measures is approximately 7 percent; this falls to less than 1 percent for eight measures. The common belief that average people exist and are the standard to which designers should design is called the "average person fallacy."
+
+There is no *average person* in reality.
+
+In a normal distribution, approximately 68 percent of the population falls within one standard deviation of the average; approximately 95 percent of the population falls within two standard deviations of the average; and approximately 99 percent of the population falls within three standard deviations of the average.
+
+## Ockham's Razor
+
+Ockham's razor asserts that simplicity is preferred to complexity in design, if functionalities are equivalent. 
