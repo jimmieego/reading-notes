@@ -62,4 +62,37 @@ In a normal distribution, approximately 68 percent of the population falls withi
 
 ## Ockham's Razor
 
-Ockham's razor asserts that simplicity is preferred to complexity in design, if functionalities are equivalent. 
+Ockham's razor asserts that simplicity is preferred to complexity in design, if functionalities are equivalent.
+
+## Performance Versus Preference
+
+The designs that help people perform optimally are often not the same as the designs that help people find most desirable.
+
+The reasons people prefer one design to another is a combination of many factors, and may have nothing to do with performance.
+
+The best method of obtaining accurate performance and preference requirements is to observe people interacting with the design (or a similar design) in real contexts. When this is not feasible, test using structured tasks that approximate key aspects of the way the design will be used. It is important to obtain preference information in context while the task is being performed, and not afterward.
+
+## Storytelling
+
+The fundamental elements of storytelling experiences are:
+
+- Setting: The setting orients the audience, providing a sense of time and place for the story.
+- Characters: Character identification is how the audience becomes involved in the story, and how the story becomes relevant.
+- Plot: The plot ties events in the story together, and is the channel through which the story can flow.
+- Invisibility: The awareness of the storyteller fades as the audience focuses on a good story. When engaged in a good movie or book, the existence of the medium is forgotten.
+- Mood: Music, lighting, and style of prose create the emotional tone of the story.
+- Movement: In a good story, the sequence and flow of events is clear and interesting. The storyline doesn't stall.
+
+## Visibility
+
+The usability of a system is improved when its status and methods of use are clearly visible.
+
+Hierarchical organization and context sensitivity are good solutions for managing complexity while preserving visibility.
+
+## Wabi-Sabi
+
+Objects and environments that embody naturalness, simplicity, and subtle imperfection achieve a deeper, more meaningful aesthetic.
+
+*Wabi*: a kind of transcendental beauty achieved through subtle imperfection.
+
+*Sabi*: beauty that comes with time.
