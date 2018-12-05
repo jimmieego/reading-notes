@@ -57,3 +57,21 @@ Using a limited amount of color (e.g., black) to offset highly saturated images 
 ## 66. Guide Your Reader
 
 Rules, drop caps, bold headlines, and different (although controlled) weights and colors can break up the grayness of many pages of running text and help the reader find various points of interest—and resting points—along the way. Judiciously sized and placed images further enhance the reading experience.
+
+## 75. Allow for Drama
+
+Cropping creates drama. Showing an image as it was originally photographed can tell the story, but cropping that same image makes a particular point, gives a point of view, and generates fear or excitement.
+
+## 76. Use Silhouettes to Enliven a Piece
+
+For layout purposes, a silhouette, also abbreviated to “silo,” is an image from which the background has been eliminated. Silhouettes can keep a spread from feeling too regimented or blocky.
+
+## 81. Use Rules
+
+Rules can function as:
+
+- navigation bars
+- containers for headlines
+- grounding baselines for images
+- separation devices
+- mastheads
