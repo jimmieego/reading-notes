@@ -2,6 +2,17 @@
 
 [Source](https://sass-lang.com/guide)
 
+## Preprocessing
+
+```
+sass input.scss output.css
+
+sass --watch input.scss output.css
+
+sass --watch app/sass:public/stylesheets
+
+```
+
 ## Variables
 
 Sass use the `$` symbol to define a variable. Example:
