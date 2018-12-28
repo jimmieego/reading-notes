@@ -109,7 +109,7 @@ How do you know if responsive design is right for you?
 
 1. Identify the breakpoints
 2. Iterative, collaborative design.   
-  Prototype before the designs are final to get beyond the pixel limitations of design tools. Beging building a design that can flex and grow inside a changing browser window. 
+  Prototype before the designs are final to get beyond the pixel limitations of design tools. Begin building a design that can flex and grow inside a changing browser window. 
 3. The interactive design review.  
   The goal is to close the gap between the traditional "design" and "development" cycles, to let the two groups collaborate more closely to produce a finished, responsive design.
 
