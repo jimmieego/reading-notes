@@ -84,7 +84,7 @@ We need to reduce the number of blocking requests.
 
 When it comes to page-load performance, two panes are especially useful: **Network** and **Timeline**.
 
-### Percevied performance
+### Perceived performance
 
 **Perceived load time** is often more important to us than total page-load time.
 

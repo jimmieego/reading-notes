@@ -9,8 +9,8 @@ by Ethan Marcotte
 - Common pattern: use the hamburger icon and drawer to conceal navigation in small screens.
 	- The downside of being able to show a lot of options is that you can show a lot of options (in the drawer navigation menu).
 	- Need to prioritize and focus on only the most important tasks users want to accomplish on small screens.
-- If we’re collapsing or hiding something because it doesn’t “fit,” let’s instead see that as an opportunity to stop and ask if there’s a larger issue at play: that is, if we’re hiding or removing an element because it doesn’t have value on smaller screens, can we simplify the design and content of that element until it works on smaller screens? Or, alternately, maybe it doesn’t have value for any screen?
-- We should stop trying to make complex, widescreen-de- signed elements play nice on smaller screens—instead, we should consider the small-screen user’s needs first.
+- If we’re collapsing or hiding something because it doesn’t “fit", let’s instead see that as an opportunity to stop and ask if there’s a larger issue at play: that is, if we’re hiding or removing an element because it doesn’t have value on smaller screens, can we simplify the design and content of that element until it works on smaller screens? Or, alternately, maybe it doesn’t have value for any screen?
+- We should stop trying to make complex, widescreen-designed elements play nice on smaller screens—instead, we should consider the small-screen user’s needs first.
 - There’s nothing inherently wrong with the hamburger icon itself — but assuming it’s a safe default for every responsive navigation system can be problematic. Need to do testing. 
 - Alternate patterns:
 	- Progressive reveal: As the design gets wider, more links are gradually, progressively revealed. Use JavaScript to measure the width of the browser’s viewport and then, based on its width, shows or hides certain links in each menu. Key elements are kept visible at all times.
@@ -89,7 +89,8 @@ Ajax-Include pattern:
 ```
 
 ### Rethinking the hierarchy
-Resposition the advertisements: The placement of an advertisement would be determined by the width of the page. When the site is a single column, insert ads into sensible points in the content flow. As the layout widened to two columns, the ad would move from its initial position and stick to the top of that new column. Similarly, when a third column appeared at the widest breakpoint, the ad would shift again. 
+
+Reposition the advertisements: The placement of an advertisement would be determined by the width of the page. When the site is a single column, insert ads into sensible points in the content flow. As the layout widened to two columns, the ad would move from its initial position and stick to the top of that new column. Similarly, when a third column appeared at the widest breakpoint, the ad would shift again. 
 
 ```html
 <div data-adname="MAIN_AD" class="ad-slot-a"></div>
@@ -105,10 +106,12 @@ Resposition the advertisements: The placement of an advertisement would be deter
 
 
 ### New models
-- Treat ads as small-scale responsive layouts instead of fixed, inflexible blocks. Reposition these elements within a flexible, responsive canvas. 
+
+Treat ads as small-scale responsive layouts instead of fixed, inflexible blocks. Reposition these elements within a flexible, responsive canvas. 
 
 
 ## Chapter 5. Designing the Infinite Grid
+
 We need to focus not just on the individual bits of a design, but also the relationship between those elements within a larger layout system. With responsive, it's everything first. 
 
 Most complex layout don't preclude us from refining the smallest view of the design — in many instances, reviewing the work at one breakpoint informed the shape of the other. 
@@ -140,4 +143,4 @@ Technique: CSS flexbox.
 
 Talk about features (input method, screen size, network speed, and network condition), not device classes (mobile, tablet, and desktop).
 
-Break down the page into component parts: understand how our small layout systems need to adapt, and then use those modules to gradually build more complex, responsive layout systems.  
+Break down the page into component parts: understand how our small layout systems need to adapt, and then use those modules to gradually build more complex, responsive layout systems.
